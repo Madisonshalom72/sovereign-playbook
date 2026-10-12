@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <title>The Private Rights Playbook — UCC, Trusts, Local AI & Blockchain</title>
+  <meta name="description" content="A reality-based 10-page guide to organizing rights, records, trusts, private AI workflows, blockchain evidence and an ethical income plan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Spectral:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:light dark;
+      --navy:#0d1d29;--navy-2:#132936;--paper:#f4f0e8;--paper-2:#e7ded0;--card:#fbfaf6;
+      --ink:#142431;--muted:#596771;--gold:#c28a45;--gold-2:#8b5824;--line:#cec4b6;--sage:#365f54;
+      --danger:#8a443a;--white:#fffdf8;--shadow:0 24px 70px rgba(13,29,41,.18)
+    }
+    @media(prefers-color-scheme:dark){:root{
+      --paper:#111a20;--paper-2:#19262e;--card:#1c2931;--ink:#f0f1ed;--muted:#b7c0c5;--gold:#d2a266;
+      --gold-2:#e1b57c;--line:#3c4a52;--sage:#7cad9e;--danger:#df958b;--white:#fffdf8;--shadow:0 24px 70px rgba(0,0,0,.38)
+    }}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.58;overflow-x:hidden}a{color:inherit}button,input{font:inherit}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+    h1,h2,h3{font-family:Spectral,Georgia,serif;line-height:1.04;margin:0}h1{font-size:clamp(3.3rem,6.6vw,6.6rem);font-weight:600;letter-spacing:-.05em}h2{font-size:clamp(2.55rem,5vw,4.85rem);letter-spacing:-.04em}h3{font-size:1.55rem}.eyebrow{display:flex;align-items:center;gap:12px;color:#e0b57c;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.eyebrow:before{content:"";width:34px;height:2px;background:currentColor}
+    .hero{position:relative;isolation:isolate;background:var(--navy);color:var(--white);min-height:760px;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(black,transparent 94%)}.hero:after{content:"";position:absolute;z-index:-1;width:690px;height:690px;border-radius:50%;right:-310px;top:-150px;border:1px solid rgba(194,138,69,.27);box-shadow:0 0 0 90px rgba(194,138,69,.06),0 0 0 180px rgba(194,138,69,.025)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;padding:78px 0 72px}.hero h1{max-width:720px;margin-top:24px}.hero h1 em{display:block;color:#e0af70;font-weight:600}.hero-copy{max-width:650px;color:#d4dce0;font-size:clamp(1.05rem,1.7vw,1.25rem);margin:26px 0 28px}.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:11px 22px;list-style:none;padding:0;margin:0 0 32px}.outcomes li{position:relative;padding-left:23px;font-size:.88rem;color:#eef1f1}.outcomes li:before{content:"✓";position:absolute;left:0;color:#e5b473;font-weight:800}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:0 23px;border:0;border-radius:3px;text-decoration:none;background:var(--gold);color:#101a20;font-weight:800;cursor:pointer;box-shadow:0 12px 32px rgba(194,138,69,.25);transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:#d29a55}.button.ghost{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.38);box-shadow:none}.button.ghost:hover{background:rgba(255,255,255,.08)}.micro{margin-top:14px;color:#aebbc1;font-size:.78rem}.micro b{color:#fff}
+    .book-stage{position:relative;min-height:585px;display:grid;place-items:center}.book-stage:before{content:"";position:absolute;width:73%;height:70%;background:rgba(0,0,0,.43);filter:blur(44px);transform:translate(38px,60px)}.book-cover{position:relative;width:min(360px,78vw);margin:0;box-shadow:0 38px 90px rgba(0,0,0,.62);border:1px solid rgba(224,175,112,.45);background:#0b1a24}.cover-art{display:block;width:100%;height:auto;aspect-ratio:7/9.8}.book-cover:after{content:"";position:absolute;inset:0 auto 0 0;width:9px;background:linear-gradient(90deg,rgba(0,0,0,.38),rgba(255,255,255,.08))}
+    .trust-strip{background:var(--card);border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}.trust-item{padding:24px 26px;border-right:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center}.trust-item:first-child{border-left:1px solid var(--line)}.trust-item b{font-family:Spectral,serif;font-size:2rem;color:var(--gold-2);line-height:1}.trust-item span{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.055em;color:var(--muted)}
+    section{padding:94px 0;position:relative;isolation:isolate}.section-head{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:end;margin-bottom:48px}.section-head p{font-size:1.08rem;color:var(--muted);max-width:620px;margin:0}
+    .illustrated-map{padding:72px 0 82px;background:var(--paper);overflow:hidden}.illustrated-map:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 13% 22%,rgba(194,138,69,.17),transparent 24%),radial-gradient(circle at 86% 76%,rgba(54,95,84,.16),transparent 27%),linear-gradient(135deg,transparent 46%,rgba(194,138,69,.08) 46.1%,transparent 46.3%)}.map-shell{position:relative;min-height:510px;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 91%,transparent);box-shadow:var(--shadow);overflow:hidden}.map-shell:before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,var(--line) 1px,transparent 1px);background-size:28px 28px;opacity:.35}.map-intro{position:absolute;z-index:2;left:clamp(22px,5vw,64px);top:clamp(24px,5vw,56px);max-width:415px}.map-intro h2{font-size:clamp(2.35rem,4.8vw,4.4rem)}.map-intro p{color:var(--muted);max-width:390px;margin:15px 0 0}.system-art{position:absolute;right:-2%;bottom:-4%;width:min(72%,840px);height:auto}.system-art .orbit{transform-origin:600px 350px;animation:turn 36s linear infinite}.system-art .pulse{animation:pulse 3.4s ease-in-out infinite}.system-art text{font-family:Manrope,system-ui,sans-serif;font-weight:800;letter-spacing:.08em}.map-caption{position:absolute;z-index:3;right:28px;bottom:23px;display:flex;gap:12px;align-items:center;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.map-caption:before{content:"";width:28px;height:2px;background:var(--gold)}@keyframes turn{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.48;transform:scale(.97)}}
+    .stakes{background:var(--paper-2);overflow:hidden}.stakes:before{content:"";position:absolute;z-index:-1;right:-130px;top:36px;width:520px;height:520px;border:1px solid rgba(194,138,69,.2);border-radius:50%;box-shadow:0 0 0 58px rgba(194,138,69,.045),0 0 0 116px rgba(194,138,69,.025)}.stakes-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:28px}.emotion-card{min-height:360px;padding:42px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--navy);color:var(--white);position:relative;overflow:hidden;box-shadow:var(--shadow)}.emotion-card:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 25%,rgba(194,138,69,.16))}.emotion-card:after{content:"01";position:absolute;right:24px;top:-30px;font-family:Spectral,serif;font-size:11rem;color:rgba(255,255,255,.045);line-height:1}.emotion-card h3,.emotion-card p{position:relative}.emotion-card h3{font-size:2.7rem;max-width:560px}.emotion-card p{color:#c9d2d6;max-width:600px;margin:18px 0 0}.relief-stack{display:grid;gap:16px}.relief{padding:27px 28px;background:var(--card);border-top:3px solid var(--gold)}.relief small{font-weight:800;color:var(--gold-2);text-transform:uppercase;letter-spacing:.08em}.relief h3{margin:7px 0 8px}.relief p{margin:0;color:var(--muted);font-size:.92rem}
+    .transformation{background:var(--paper);overflow:hidden}.transformation:after{content:"";position:absolute;z-index:-1;left:-90px;bottom:-190px;width:470px;height:470px;background:repeating-radial-gradient(circle,transparent 0 21px,rgba(54,95,84,.1) 22px 23px)}.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--card);box-shadow:0 20px 48px rgba(13,29,41,.09)}.step{position:relative;padding:34px 26px;min-height:250px;border-right:1px solid var(--line);overflow:hidden}.step:after{content:"";position:absolute;right:-22px;bottom:-30px;width:96px;height:96px;border:1px solid rgba(194,138,69,.2);transform:rotate(45deg)}.step:last-child{border-right:0}.step-num{font-family:Spectral,serif;font-size:3.5rem;color:var(--gold-2);line-height:1}.step h3{margin:16px 0 10px}.step p{color:var(--muted);font-size:.9rem;margin:0;position:relative}.pillars{background:var(--paper-2);overflow:hidden}.pillars:after{content:"";position:absolute;z-index:-1;right:-8%;bottom:-22%;width:560px;height:560px;background:conic-gradient(from 45deg,rgba(194,138,69,.09),transparent 18%,rgba(54,95,84,.1) 35%,transparent 54%,rgba(194,138,69,.08) 72%,transparent 90%);border-radius:50%}.tabs{display:grid;grid-template-columns:300px 1fr;min-height:410px;background:var(--card);border:1px solid var(--line)}.tab-list{display:flex;flex-direction:column;padding:18px;border-right:1px solid var(--line)}.tab-btn{display:flex;justify-content:space-between;align-items:center;border:0;background:transparent;color:var(--muted);padding:18px 16px;text-align:left;font-weight:800;cursor:pointer;border-radius:2px}.tab-btn span{font-size:.74rem;color:var(--gold-2)}.tab-btn[aria-selected="true"]{background:var(--navy);color:var(--white)}.tab-btn[aria-selected="true"] span{color:#e0b57c}.tab-panel{display:none;padding:48px 52px}.tab-panel.active{display:block}.tab-panel h3{font-size:2.55rem}.tab-panel>p{max-width:700px;color:var(--muted);font-size:1.03rem}.tab-panel ul{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 25px}.tab-panel li{position:relative;padding-left:22px;font-size:.9rem}.tab-panel li:before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+    .spread{background:var(--navy);color:var(--white)}.spread-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:66px;align-items:center}.spread p{color:#c5d0d5;font-size:1.06rem}.chapters{display:grid;grid-template-columns:1fr 1fr;gap:10px 25px;list-style:none;padding:0;margin:30px 0 0}.chapters li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.17);font-size:.87rem;color:#e7ecee}.chapters b{color:#e0b57c;margin-right:8px}.spread-visual{position:relative}.page-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;background:#d7d0c4;box-shadow:0 26px 68px rgba(0,0,0,.42)}.preview-page{min-height:430px;padding:27px 25px;background:#fffdf8;color:#172733}.preview-page small{display:block;color:#9a682f;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.preview-page h3{margin:5px 0 12px;font-size:1.45rem}.preview-page h3 b{color:#a66d2f;font-family:Manrope,sans-serif;font-size:.65rem;vertical-align:middle;margin-right:4px}.preview-page p{color:#52606a;font-size:.68rem;line-height:1.5;margin:0 0 12px}.preview-rule{height:2px;margin:13px 0;background:#b48245}.preview-page h4{margin:10px 0 5px;font-size:.78rem}.preview-table{display:grid;grid-template-columns:1fr 1.4fr;margin-top:10px;border:1px solid #aeb5b9}.preview-table span{padding:5px 6px;border-right:1px solid #aeb5b9;border-bottom:1px solid #aeb5b9;font-size:.53rem}.preview-table span:nth-child(2n){border-right:0}.preview-table span:nth-last-child(-n+2){border-bottom:0}.prompt-block{padding:9px;background:#eee4d6;border-left:3px solid #b48245;color:#4e565b;font-size:.56rem;line-height:1.45}.spread-note{position:absolute;right:-14px;bottom:-25px;background:#d6a35f;color:#10202a;padding:15px 18px;max-width:200px;font-weight:800;line-height:1.25;box-shadow:0 12px 30px rgba(0,0,0,.28)}
+    .myths{background:var(--paper-2);overflow:hidden}.myths:before{content:"?";position:absolute;z-index:-1;right:3%;top:-105px;font-family:Spectral,Georgia,serif;font-size:31rem;line-height:1;color:rgba(194,138,69,.08)}.accordion{max-width:940px;margin:auto;border-top:1px solid var(--line);background:color-mix(in srgb,var(--card) 56%,transparent);padding:0 28px;box-shadow:0 16px 44px rgba(13,29,41,.06)}.item{border-bottom:1px solid var(--line)}.question{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 3px;border:0;background:transparent;color:var(--ink);font-family:Spectral,serif;font-size:1.38rem;font-weight:600;text-align:left;cursor:pointer}.question i{font-family:Manrope,sans-serif;font-style:normal;color:var(--gold-2);font-size:1.35rem;transition:transform .2s}.question[aria-expanded="true"] i{transform:rotate(45deg)}.answer{display:none;max-width:840px;padding:0 3px 24px;color:var(--muted)}.answer.open{display:block}
+    .income{background:var(--paper);overflow:hidden}.income:before{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:62%;background:linear-gradient(155deg,transparent 49%,rgba(54,95,84,.09) 49.2%,rgba(54,95,84,.09) 62%,transparent 62.2%),linear-gradient(25deg,transparent 64%,rgba(194,138,69,.1) 64.2%,rgba(194,138,69,.1) 75%,transparent 75.2%)}.method-shell{margin-bottom:34px;background:var(--navy);color:var(--white);box-shadow:var(--shadow);overflow:hidden}.method-top{display:grid;grid-template-columns:.72fr 1.28fr;gap:38px;padding:38px 40px;border-bottom:1px solid rgba(255,255,255,.16)}.method-number{font-family:Spectral,serif;font-size:clamp(4.8rem,10vw,8.5rem);line-height:.78;letter-spacing:-.08em;color:#e0ae6c}.method-number small{display:block;margin:16px 0 0;font-family:Manrope,sans-serif;font-size:.7rem;line-height:1.4;letter-spacing:.13em;text-transform:uppercase;color:#afbbc0}.method-top h3{font-size:clamp(2rem,4vw,3.5rem);margin:0 0 12px}.method-top p{max-width:670px;margin:0;color:#c7d0d5}.method-flow{display:grid;grid-template-columns:repeat(4,1fr)}.method-step{position:relative;padding:30px 25px 32px;border-right:1px solid rgba(255,255,255,.16)}.method-step:last-child{border-right:0}.method-step b{display:block;margin-bottom:11px;color:#e0ae6c;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}.method-step h3{font-family:Manrope,sans-serif;font-size:1.05rem;line-height:1.28;margin-bottom:9px}.method-step p{margin:0;color:#b9c4c9;font-size:.84rem}.method-step:after{content:"→";position:absolute;right:-12px;top:28px;z-index:2;width:24px;height:24px;display:grid;place-items:center;background:var(--gold);color:#10202a;font-weight:900;border-radius:50%}.method-step:last-child:after{display:none}.waterfall{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin:0 0 34px;padding:27px 30px;background:var(--card);border:1px solid var(--line)}.waterfall-label{font-family:Spectral,serif;font-size:1.65rem;color:var(--gold-2);line-height:1.05}.waterfall-track{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.waterfall-track span{padding:8px 11px;background:var(--paper-2);font-size:.75rem;font-weight:800}.waterfall-track i{font-style:normal;color:var(--gold-2);font-weight:900}.waterfall-note{grid-column:2;margin:-8px 0 0;color:var(--muted);font-size:.74rem}.calc-grid{display:grid;grid-template-columns:1fr .9fr;gap:30px;box-shadow:0 24px 60px rgba(13,29,41,.11)}.calc-copy{padding:38px;background:var(--navy);color:var(--white)}.calc-copy h3{font-size:2.25rem}.calc-copy p{color:#c7d0d5}.calc-copy label{display:block;font-weight:800;margin-top:28px}.calc-copy input{width:100%;accent-color:var(--gold);margin:17px 0}.range-labels{display:flex;justify-content:space-between;color:#aebac0;font-size:.77rem}.calc-output{padding:38px;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}.calc-output .big{font-family:Spectral,serif;font-size:clamp(4rem,9vw,7rem);color:var(--gold-2);line-height:.9;letter-spacing:-.06em}.calc-output h3{margin:14px 0 8px}.calc-output p{margin:0;color:var(--muted)}.calc-output .tiny{margin-top:20px;font-size:.76rem}
+    .offer{background:var(--paper);padding-top:0}.offer-shell{position:relative;overflow:hidden;background:var(--navy);color:var(--white);padding:64px;box-shadow:var(--shadow)}.offer-shell:after{content:"";position:absolute;width:530px;height:530px;border-radius:50%;right:-180px;bottom:-280px;border:1px solid rgba(214,163,95,.3);box-shadow:0 0 0 72px rgba(214,163,95,.05),0 0 0 144px rgba(214,163,95,.025)}.offer-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr minmax(290px,350px);gap:46px;align-items:center}.offer h2{max-width:760px}.offer p{max-width:680px;color:#c8d1d5}.checkout{text-align:left;min-width:260px}.price-label{display:block;margin-bottom:7px;color:#afbbc0;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.price{font-family:Spectral,serif;font-size:4.8rem;line-height:1;color:#e0ae6c;letter-spacing:-.05em}.price sup{font-family:Manrope,sans-serif;font-size:1rem;vertical-align:top;margin-right:3px}.bundle-includes{margin-top:20px;padding:16px;background:rgba(255,253,248,.08);border:1px solid rgba(224,174,108,.52);text-align:left}.bundle-includes strong{display:block;color:#fffdf8;font-size:.91rem;line-height:1.35}.bundle-includes span{display:block;margin-top:5px;color:#bfcbd0;font-size:.73rem;line-height:1.45}.order-total{display:flex;justify-content:space-between;gap:18px;margin:14px 0 0;padding-top:13px;border-top:1px solid rgba(255,255,255,.2);font-size:.85rem}.order-total strong{color:#e0ae6c;font-size:1.05rem}.checkout .button{width:100%;margin-top:15px}.checkout small{display:block;color:#afbbc0;margin-top:10px;text-align:center}.sources{padding:48px 0 120px;border-top:1px solid var(--line)}.sources h2{font-size:2rem}.sources p{max-width:800px;color:var(--muted)}.source-links{display:flex;flex-wrap:wrap;gap:10px 22px}.source-links a{padding:6px 0;border-bottom:1px solid var(--gold);text-decoration:none;font-size:.8rem}
+    .ai-launcher{position:fixed;z-index:42;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;min-height:54px;padding:0 18px;border:1px solid rgba(255,255,255,.22);border-radius:3px;background:var(--navy);color:#fffdf8;box-shadow:0 18px 46px rgba(6,18,26,.34);font-weight:800;cursor:pointer;transition:transform .2s,opacity .2s}.ai-launcher:hover{transform:translateY(-2px)}.ai-launcher[aria-expanded="true"]{opacity:0;pointer-events:none}.ai-launcher svg{width:22px;height:22px;color:#e0ae6c}
+    .ai-guide{position:fixed;z-index:45;right:22px;bottom:22px;width:min(400px,calc(100vw - 28px));height:min(610px,calc(100vh - 44px));display:grid;grid-template-rows:auto 1fr auto;background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 30px 90px rgba(5,17,24,.38);overflow:hidden}.ai-guide[hidden]{display:none}.ai-guide-head{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:17px 18px;background:var(--navy);color:#fffdf8;border-bottom:1px solid rgba(255,255,255,.15)}.ai-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(224,174,108,.55);color:#e0ae6c}.ai-mark svg{width:21px;height:21px}.ai-guide-head strong{display:block;font-family:Spectral,Georgia,serif;font-size:1.18rem;line-height:1.1}.ai-guide-head small{display:block;margin-top:3px;color:#aebbc1;font-size:.67rem;letter-spacing:.06em;text-transform:uppercase}.ai-close{width:36px;height:36px;border:0;background:transparent;color:#fffdf8;font-size:1.45rem;cursor:pointer}.ai-chat{padding:18px;overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(180deg,var(--paper-2),var(--card) 34%)}.ai-message{max-width:88%;margin:0 0 12px;padding:11px 13px;font-size:.86rem;line-height:1.48}.ai-message.guide{background:var(--card);border:1px solid var(--line);border-radius:2px 12px 12px 12px}.ai-message.user{margin-left:auto;background:var(--navy);color:#edf1f2;border-radius:12px 2px 12px 12px}.ai-message p{margin:0}.ai-jump{display:inline-flex;margin-top:10px;padding:7px 9px;border:0;background:var(--gold);color:#10202a;font-size:.72rem;font-weight:800;cursor:pointer}.ai-prompts{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 14px}.ai-prompt{padding:7px 9px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:.7rem;font-weight:800;cursor:pointer}.ai-form{padding:12px;background:var(--card);border-top:1px solid var(--line)}.ai-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}.ai-form input{min-width:0;height:45px;padding:0 12px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink)}.ai-send{width:46px;height:45px;border:0;border-radius:2px;background:var(--gold);color:#10202a;font-weight:900;cursor:pointer}.ai-form small{display:block;margin-top:7px;color:var(--muted);font-size:.64rem}.ai-focus{animation:aiFocus 1.5s ease-out}@keyframes aiFocus{0%,35%{outline:4px solid var(--gold);outline-offset:7px}100%{outline-color:transparent;outline-offset:18px}}
+    .mobile-bar{display:none}:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    @media(max-width:900px){.hero-grid,.section-head,.stakes-grid,.spread-grid,.calc-grid,.offer-grid,.method-top{grid-template-columns:1fr}.hero-grid{padding-top:60px;gap:24px}.book-stage{min-height:500px}.section-head{gap:17px}.map-shell{min-height:680px}.map-intro{max-width:520px}.system-art{width:96%;right:-15%;bottom:-2%}.trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(3){grid-column:1/-1;border-left:1px solid var(--line)}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}.tabs{grid-template-columns:1fr}.tab-list{display:grid;grid-template-columns:1fr 1fr;border-right:0;border-bottom:1px solid var(--line)}.method-flow{grid-template-columns:1fr 1fr}.method-step:nth-child(2){border-right:0}.method-step:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.16)}.offer-shell{padding:46px}.checkout{text-align:left}.checkout .button{width:auto}}
+    @media(max-width:620px){.wrap{width:min(100% - 28px,1180px)}section{padding:70px 0}.hero-grid{padding-top:34px;gap:18px}.hero-grid>div:first-child{display:contents}.hero-grid>div:first-child>.eyebrow{order:1}.hero-grid h1{order:2;font-size:3.05rem}.book-stage{order:3;min-height:335px}.book-cover{width:220px}.hero-copy{order:4;font-size:1rem;margin:8px 0 10px}.outcomes{order:5}.actions{order:6}.micro{order:7}.illustrated-map{padding:42px 0}.map-shell{min-height:590px}.map-intro{left:22px;right:22px;top:28px}.map-intro h2{font-size:2.5rem}.map-intro p{font-size:.9rem}.system-art{width:100%;max-width:none;right:0;bottom:42px}.system-art text{font-size:27px}.map-caption{left:22px;right:auto;bottom:18px}.accordion{padding:0 16px}.outcomes{grid-template-columns:1fr}.actions{align-items:stretch}.button{width:100%}.book-stage{min-height:335px}.book-cover{width:220px}.seal{width:92px;height:92px;font-size:.57rem;right:1px;bottom:42px}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{padding:18px 14px;grid-template-columns:1fr;gap:6px}.trust-item:nth-child(3){grid-column:1/-1;grid-template-columns:auto 1fr}.trust-item b{font-size:1.7rem}.trust-item span{font-size:.64rem}.section-head h2{font-size:2.65rem}.emotion-card{padding:30px;min-height:320px}.emotion-card h3{font-size:2.25rem}.steps{grid-template-columns:1fr}.step{min-height:auto;border-right:0;border-bottom:1px solid var(--line)!important}.step:last-child{border-bottom:0!important}.tabs{display:block}.tab-list{display:flex;flex-wrap:wrap;padding:10px}.tab-btn{width:50%;padding:13px 10px}.tab-panel{padding:28px 22px}.tab-panel h3{font-size:2rem}.tab-panel ul,.chapters{grid-template-columns:1fr}.spread-grid{gap:38px}.page-preview{grid-template-columns:1fr;padding:8px}.preview-page{min-height:auto;padding:24px 22px}.preview-page p{font-size:.72rem}.spread-note{position:static;margin-top:10px;max-width:none}.question{font-size:1.17rem;padding:20px 2px}.method-top{padding:30px 24px;gap:26px}.method-number{font-size:5.2rem}.method-flow{grid-template-columns:1fr}.method-step{border-right:0;border-bottom:1px solid rgba(255,255,255,.16)!important}.method-step:last-child{border-bottom:0!important}.method-step:after{content:"↓";right:22px;top:auto;bottom:-12px}.waterfall{grid-template-columns:1fr;padding:24px}.waterfall-note{grid-column:1;margin:0}.calc-copy,.calc-output{padding:28px}.offer{padding-bottom:92px}.offer-shell{padding:34px 24px}.offer h2{font-size:3rem}.checkout .button{width:100%}.mobile-bar{display:none;position:fixed;z-index:20;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));align-items:center;justify-content:space-between;background:var(--navy);color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 40px rgba(0,0,0,.36);padding:10px 10px 10px 14px}.mobile-bar span{font-size:.72rem}.mobile-bar strong{display:block;font-size:1rem}.mobile-bar.visible{display:flex}.mobile-bar .button{width:auto;min-height:42px;padding:0 14px;font-size:.76rem}.sources{padding-bottom:126px}.ai-launcher{right:14px;bottom:86px;min-height:48px;padding:0 14px;font-size:.78rem}.ai-guide{right:10px;bottom:80px;width:calc(100vw - 20px);height:min(610px,calc(100svh - 96px))}.ai-guide-head{padding:13px 14px}.ai-chat{padding:14px}.ai-form{padding:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.book-cover,.question i,.ai-launcher{transition:none}.system-art .orbit,.system-art .pulse{animation:none}.ai-focus{animation:none;outline:4px solid var(--gold);outline-offset:7px}}
+    @media print{.mobile-bar,.actions,.tabs,.accordion button{display:none!important}.hero{min-height:auto}.hero-grid,.spread-grid,.calc-grid,.offer-grid{display:block}.book-stage{min-height:0}.book-cover{width:250px;margin:20px auto}section{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">A modern blueprint for private control</div>
+        <h1>Own what you build. <em>Protect what you keep.</em></h1>
+        <p class="hero-copy">Turn four complicated worlds—UCC, lawful rights, local AI and blockchain—into one calm, practical system for protecting what you build without falling for dangerous shortcuts.</p>
+        <ul class="outcomes" aria-label="What readers gain">
+          <li>Know what is truly public vs. private</li><li>Organize evidence before you need it</li>
+          <li>Use local AI without surrendering control</li><li>Map a lawful path toward $10K revenue</li>
+        </ul>
+        <div class="actions">
+          <a class="button" href="#inside">Show me the framework <span aria-hidden="true">↓</span></a>
+          <a class="button ghost" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00" target="_blank" rel="noopener">Buy the playbook</a>
+        </div>
+        <div class="micro"><b>$24.98 bundle price</b> · playbook + AI Skills &amp; Prompts Pack · instant digital download</div>
+      </div>
+      <div class="book-stage" aria-label="The Private Rights Playbook cover">
+        <figure class="book-cover" aria-label="Navy and gold cover of The Private Rights Playbook, illustrated with a complete security shield and connected blockchain nodes">
+          <svg class="cover-art" viewBox="0 0 700 980" role="img" aria-labelledby="cover-title cover-desc" preserveAspectRatio="xMidYMid meet">
+            <title id="cover-title">The Private Rights Playbook</title><desc id="cover-desc">A complete gold shield, lock, document and blockchain network on a navy cover.</desc>
+            <defs><linearGradient id="coverNavy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#132b39"/><stop offset="1" stop-color="#07141e"/></linearGradient><linearGradient id="coverGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1d19c"/><stop offset=".5" stop-color="#d09a4f"/><stop offset="1" stop-color="#9e6228"/></linearGradient><pattern id="coverGrid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0v54" fill="none" stroke="#d7a65f" stroke-opacity=".09" stroke-width="1"/></pattern></defs>
+            <rect width="700" height="980" fill="url(#coverNavy)"/><rect width="700" height="980" fill="url(#coverGrid)"/>
+            <g fill="none" stroke="#d4a157" stroke-width="3" opacity=".58"><path d="M45 136l92-50 75 43 83-62M490 68l66 59 96-35M66 744l92-76 93 51M463 718l79-53 113 72"/><path d="M72 135h110l47 49h82M428 132h91l61 70h77M62 811h124l58 58h95M403 823h86l55-55h111"/></g>
+            <g fill="#e4b66f"><circle cx="45" cy="136" r="7"/><circle cx="137" cy="86" r="9"/><circle cx="212" cy="129" r="6"/><circle cx="295" cy="67" r="8"/><circle cx="490" cy="68" r="7"/><circle cx="556" cy="127" r="9"/><circle cx="652" cy="92" r="6"/><circle cx="66" cy="744" r="7"/><circle cx="158" cy="668" r="9"/><circle cx="251" cy="719" r="6"/><circle cx="463" cy="718" r="7"/><circle cx="542" cy="665" r="9"/><circle cx="655" cy="737" r="6"/></g>
+            <g transform="translate(257 66)"><path d="M93 0c45 28 77 35 93 37v85c0 67-39 111-93 139C39 233 0 189 0 122V37C16 35 48 28 93 0z" fill="#102532" stroke="url(#coverGold)" stroke-width="8"/><path d="M62 105V80c0-43 62-43 62 0v25" fill="none" stroke="#e9c17d" stroke-width="10" stroke-linecap="round"/><rect x="46" y="101" width="94" height="76" rx="9" fill="url(#coverGold)"/><circle cx="93" cy="132" r="10" fill="#102532"/><path d="M93 141v18" stroke="#102532" stroke-width="8" stroke-linecap="round"/></g>
+            <text x="350" y="405" text-anchor="middle" fill="#f8f1e5" font-family="Manrope,system-ui,sans-serif" font-size="30" font-weight="800" letter-spacing="5">THE PRIVATE RIGHTS</text>
+            <text x="350" y="484" text-anchor="middle" fill="url(#coverGold)" font-family="Spectral,Georgia,serif" font-size="72" font-weight="700">PLAYBOOK</text>
+            <path d="M192 532h316" stroke="#d5a45f" stroke-width="3"/><path d="M330 532h40" stroke="#f3d39e" stroke-width="8"/>
+            <text x="350" y="590" text-anchor="middle" fill="#e8d6b9" font-family="Manrope,system-ui,sans-serif" font-size="18" font-weight="700" letter-spacing="2">UCC  •  RIGHTS  •  LOCAL AI  •  BLOCKCHAIN</text>
+            <text x="350" y="638" text-anchor="middle" fill="#fff8eb" font-family="Spectral,Georgia,serif" font-size="25">A practical framework for asset</text><text x="350" y="672" text-anchor="middle" fill="#fff8eb" font-family="Spectral,Georgia,serif" font-size="25">protection, privacy and proof</text>
+            <g transform="translate(219 762)" fill="none" stroke="#d9a75f" stroke-width="4"><rect x="0" y="0" width="76" height="94" rx="4"/><path d="M18 24h40M18 42h40M18 60h26"/><path d="M101 48h42M143 48l26-28M143 48l26 28"/><rect x="169" y="4" width="80" height="88" rx="10"/><path d="M193 63l16-41 16 41M199 49h20"/></g>
+            <text x="350" y="918" text-anchor="middle" fill="#d7a65f" font-family="Manrope,system-ui,sans-serif" font-size="14" font-weight="800" letter-spacing="4">PRIVATE • PRACTICAL • VERIFIABLE</text>
+          </svg>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="trust-strip" aria-label="Playbook highlights">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><b>10</b><span>Focused pages—not 200 pages of theory</span></div>
+      <div class="trust-item"><b>4</b><span>Complex systems translated into plain English</span></div>
+      <div class="trust-item"><b>90</b><span>Days mapped from reading to implementation</span></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="illustrated-map" aria-labelledby="map-title">
+      <div class="wrap">
+        <div class="map-shell">
+          <div class="map-intro">
+            <div class="eyebrow" style="color:var(--gold-2)">See the whole system</div>
+            <h2 id="map-title">Your private world, organized around one center.</h2>
+            <p>Four distinct tools orbit one principle: keep authority human, evidence clear and sensitive details under deliberate control.</p>
+          </div>
+          <svg class="system-art" viewBox="0 0 1200 700" role="img" aria-labelledby="system-title system-desc">
+            <title id="system-title">Illustrated map of the four-system playbook</title>
+            <desc id="system-desc">A secure central vault connected to UCC records, lawful rights, local AI and blockchain evidence.</desc>
+            <defs>
+              <linearGradient id="vaultFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183643"/><stop offset="1" stop-color="#0d1d29"/></linearGradient>
+              <linearGradient id="goldFill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e3bd85"/><stop offset="1" stop-color="#b77832"/></linearGradient>
+              <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0d1d29" flood-opacity=".22"/></filter>
+            </defs>
+            <g fill="none" stroke="#c28a45" stroke-width="2" opacity=".44" class="orbit">
+              <ellipse cx="665" cy="380" rx="430" ry="205" stroke-dasharray="7 15"/>
+              <ellipse cx="665" cy="380" rx="300" ry="320" transform="rotate(58 665 380)" stroke-dasharray="3 17"/>
+            </g>
+            <g fill="#c28a45" opacity=".7"><circle cx="254" cy="318" r="6"/><circle cx="817" cy="93" r="6"/><circle cx="1080" cy="399" r="6"/><circle cx="715" cy="681" r="6"/></g>
+            <g filter="url(#softShadow)">
+              <circle cx="665" cy="380" r="142" fill="url(#vaultFill)"/>
+              <circle cx="665" cy="380" r="121" fill="none" stroke="#d8a65f" stroke-width="3"/>
+              <circle cx="665" cy="380" r="88" fill="#102633" stroke="#e4bd82" stroke-width="2" stroke-dasharray="4 9" class="pulse"/>
+              <path d="M624 363v-34c0-56 82-56 82 0v34" fill="none" stroke="#e4bd82" stroke-width="12" stroke-linecap="round"/>
+              <rect x="605" y="356" width="120" height="94" rx="12" fill="url(#goldFill)"/>
+              <circle cx="665" cy="394" r="12" fill="#102633"/><path d="M665 403v22" stroke="#102633" stroke-width="9" stroke-linecap="round"/>
+              <text x="665" y="493" text-anchor="middle" fill="#f7ecd9" font-size="17">PRIVATE CONTROL</text>
+            </g>
+            <g transform="translate(238 352) rotate(-7)" filter="url(#softShadow)">
+              <path d="M0 0h195l30 30v202H0z" fill="#fffaf1" stroke="#c28a45" stroke-width="3"/><path d="M195 0v30h30" fill="none" stroke="#c28a45" stroke-width="3"/>
+              <path d="M32 58h125M32 88h160M32 118h145M32 148h108" stroke="#365f54" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+              <circle cx="164" cy="180" r="28" fill="#c28a45"/><path d="M151 180l9 9 18-21" fill="none" stroke="#fffaf1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="112" y="265" text-anchor="middle" fill="#8b5824" font-size="18">UCC RECORDS</text>
+            </g>
+            <g transform="translate(742 47)" filter="url(#softShadow)">
+              <path d="M106 0c46 32 82 36 106 39v91c0 78-46 128-106 156C46 258 0 208 0 130V39C24 36 60 32 106 0z" fill="#365f54" stroke="#e3bd85" stroke-width="4"/>
+              <path d="M65 132l30 30 63-78" fill="none" stroke="#fffaf1" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="106" y="322" text-anchor="middle" fill="#365f54" font-size="18">LAWFUL RIGHTS</text>
+            </g>
+            <g transform="translate(957 326)" filter="url(#softShadow)">
+              <rect x="28" y="28" width="180" height="180" rx="18" fill="#102633" stroke="#c28a45" stroke-width="4"/>
+              <g stroke="#365f54" stroke-width="9"><path d="M0 65h28M0 105h28M0 145h28M0 185h28M208 65h28M208 105h28M208 145h28M208 185h28M65 0v28M105 0v28M145 0v28M185 0v28M65 208v28M105 208v28M145 208v28M185 208v28"/></g>
+              <path d="M81 153l37-97 37 97M94 121h48M171 62v91" fill="none" stroke="#e3bd85" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="118" y="274" text-anchor="middle" fill="#365f54" font-size="18">LOCAL AI</text>
+            </g>
+            <g transform="translate(626 541)" filter="url(#softShadow)">
+              <g stroke="#8b5824" stroke-width="3"><path d="M0 51l74-42 74 42-74 43z" fill="#e3bd85"/><path d="M0 51v76l74 43V94z" fill="#c28a45"/><path d="M148 51v76l-74 43V94z" fill="#a96828"/><path d="M119 116l74-42 74 42-74 43z" fill="#f0d2a7"/><path d="M119 116v76l74 43v-76z" fill="#d6a35f"/><path d="M267 116v76l-74 43v-76z" fill="#b77832"/></g>
+              <text x="137" y="272" text-anchor="middle" fill="#8b5824" font-size="18">BLOCKCHAIN PROOF</text>
+            </g>
+            <g fill="none" stroke="#c28a45" stroke-width="3" opacity=".6" stroke-dasharray="5 10"><path d="M444 446C515 435 538 413 548 398"/><path d="M829 279c-26 23-39 35-50 47"/><path d="M953 448c-57-3-100-18-148-38"/><path d="M708 534c-3-17-5-27-7-38"/></g>
+          </svg>
+          <div class="map-caption">Illustrated four-system architecture</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stakes">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Confusion is expensive.</h2>
+          <p>When paperwork is scattered and boundaries are blurry, every decision carries more fear. The answer is not a secret phrase. It is a system you can explain, document and defend.</p>
+        </div>
+        <div class="stakes-grid">
+          <article class="emotion-card">
+            <h3>Imagine knowing exactly where the proof lives.</h3>
+            <p>No frantic search for a signed document. No wondering what an AI changed. No private file accidentally placed in public view. Just a clear chain from decision to record to review.</p>
+          </article>
+          <div class="relief-stack">
+            <article class="relief"><small>From exposure</small><h3>Control what leaves your hands.</h3><p>Separate private originals from public evidence and disclose only what a lawful process actually requires.</p></article>
+            <article class="relief"><small>From uncertainty</small><h3>Know which tool does what.</h3><p>See where the UCC, trusts, AI and blockchain help—and where each one stops.</p></article>
+            <article class="relief"><small>From wishful thinking</small><h3>Build income around real value.</h3><p>Package useful work, price it clearly and follow revenue math instead of income hype.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="transformation">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>By page 10, you’ll have a sequence.</h2>
+          <p>Not another folder of disconnected ideas. A practical order of operations that moves from understanding to protection, then toward income and reinvestment.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-num">01</div><h3>Understand</h3><p>Separate lawful rights and real commercial rules from myths that can create costly mistakes.</p></article>
+          <article class="step"><div class="step-num">02</div><h3>Organize</h3><p>Map documents, authority, public records, private originals and clear chains of custody.</p></article>
+          <article class="step"><div class="step-num">03</div><h3>Protect</h3><p>Use local AI, controlled access, encryption and document hashes without giving up human judgment.</p></article>
+          <article class="step"><div class="step-num">04</div><h3>Build</h3><p>Turn useful operations work into an ethical offer, then direct cash through a disciplined waterfall.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars" id="inside">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Four systems.<br>One clean architecture.</h2>
+          <p>Tap each pillar to see its role. The guide stays strict about boundaries—because a tool becomes useful when you know what it can and cannot do.</p>
+        </div>
+        <div class="tabs">
+          <div class="tab-list" role="tablist" aria-label="Four systems">
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-ucc" id="tab-ucc">UCC <span>01</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rights" id="tab-rights">Lawful rights <span>02</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai">Local AI <span>03</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-chain" id="tab-chain">Blockchain <span>04</span></button>
+          </div>
+          <div>
+            <article class="tab-panel active" id="panel-ucc" role="tabpanel" aria-labelledby="tab-ucc"><h3>Commercial law, not a loophole.</h3><p>Understand where the UCC actually applies: sales, instruments, bank transactions, securities and secured transactions. Learn why a filing gives notice of a real security interest—it does not create secret money, erase debt or cancel public law.</p><ul><li>Article-by-article orientation</li><li>Real collateral and real obligations</li><li>Filing limits made plain</li><li>State-law variation flagged</li></ul></article>
+            <article class="tab-panel" id="panel-rights" role="tabpanel" aria-labelledby="tab-rights"><h3>Rights that survive contact with reality.</h3><p>Frame privacy, property, due process, contract and religious exercise as enforceable rights with facts, procedures and jurisdiction—not identity labels that promise exemption from ordinary law.</p><ul><li>Public vs. private records</li><li>Minimum necessary disclosure</li><li>Due process and documentation</li><li>Lawful compliance boundaries</li></ul></article>
+            <article class="tab-panel" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai"><h3>Private assistance, human authority.</h3><p>Run an AI model locally to classify, compare, summarize and organize documents. Keep originals untouched, require source citations and route every high-consequence decision to a qualified human.</p><ul><li>Offline document workflow</li><li>Prompt pattern included</li><li>Redaction and version control</li><li>No autonomous money movement</li></ul></article>
+            <article class="tab-panel" id="panel-chain" role="tabpanel" aria-labelledby="tab-chain"><h3>Prove integrity without publishing your life.</h3><p>Hash a final document locally, anchor only the hash when useful and keep the private original encrypted off-chain. The guide separates timestamp evidence from claims about ownership, authority, consent or legal validity.</p><ul><li>Hash-first record design</li><li>Off-chain private storage</li><li>Chain-of-custody register</li><li>Tokenization risks explained</li></ul></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spread">
+      <div class="wrap spread-grid">
+        <div>
+          <h2>Practical on purpose.</h2>
+          <p>Every page answers four questions: what is the rule, what can the tool do, where does risk live and what is the next lawful step?</p>
+          <ol class="chapters"><li><b>01</b> Four-system map</li><li><b>02</b> Public vs. private</li><li><b>03</b> Trust history</li><li><b>04</b> Pure & ecclesiastical claims</li><li><b>05</b> Waterfall method</li><li><b>06</b> Local AI workflow</li><li><b>07</b> Blockchain integrity</li><li><b>08</b> $10K revenue math</li><li><b>09</b> Investment sequence</li><li><b>10</b> 90-day implementation</li></ol>
+        </div>
+        <div class="spread-visual" aria-label="Sharp preview of the Waterfall Method and Local AI workflow pages">
+          <div class="page-preview">
+            <article class="preview-page"><small>The Private Rights Playbook</small><h3><b>06</b> The Waterfall Method</h3><p>A cash-allocation sequence for clarity—not a scheme to hide money.</p><div class="preview-rule"></div><h4>Assign every dollar in order</h4><div class="preview-table"><span>1 · Tax & compliance</span><span>Estimated taxes, filing, insurance</span><span>2 · Operations</span><span>Payroll, software, delivery</span><span>3 · Safety reserve</span><span>Emergency fund and deductibles</span><span>4 · Growth</span><span>Marketing, tools and education</span></div><h4>Three controls that make it real</h4><p>Trigger: define when funds move. Authority: separate who proposes, approves and executes. Evidence: attach invoices and statements.</p></article>
+            <article class="preview-page"><small>The Private Rights Playbook</small><h3><b>07</b> Local AI for Private Paperwork</h3><p>A human-supervised workflow that keeps sensitive files close.</p><div class="preview-rule"></div><h4>Recommended architecture</h4><p>Offline workspace • local model • approved retrieval folder • human review log</p><h4>High-value tasks</h4><p>Extract dates, compare drafts, generate a records schedule and redact copies while preserving originals.</p><h4>Prompt pattern</h4><div class="prompt-block"><b>SCOPE → SOURCES → TASK → LIMITS → OUTPUT</b><br>Use only the attached signed agreement. Extract dates and obligations. If a fact is absent, write NOT FOUND.</div><h4>Controls</h4><p>Encrypt storage, patch software, test restores and keep final decisions with an authorized human.</p></article>
+          </div><div class="spread-note">Action tables, red flags, prompts & checklists</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="myths">
+      <div class="wrap">
+        <div class="section-head"><h2>Hard questions.<br>Straight answers.</h2><p>Open each question for the distinction that can keep a useful tool from becoming a costly mistake.</p></div>
+        <div class="accordion">
+          <div class="item"><button class="question" aria-expanded="false">Can a UCC filing erase debt or create ownership?<i aria-hidden="true">+</i></button><div class="answer">No. A financing statement generally gives public notice of a claimed security interest arising from an actual secured transaction. It does not create the underlying agreement, turn a person into collateral, erase a lawful debt or create immunity.</div></div>
+          <div class="item"><button class="question" aria-expanded="false">Does a “pure” or ecclesiastical trust avoid tax and courts?<i aria-hidden="true">+</i></button><div class="answer">The label does not control the result. Authorities examine the real arrangement: purpose, assets, control, beneficiaries, fiduciary conduct, tax classification and governing law. Religious purpose may matter, but it is not a blanket exemption.</div></div>
+          <div class="item"><button class="question" aria-expanded="false">Can blockchain make a document legally valid?<i aria-hidden="true">+</i></button><div class="answer">A blockchain timestamp can support proof that a matching file existed and has not changed. It does not prove truth, consent, signer authority, title or enforceability by itself.</div></div>
+          <div class="item"><button class="question" aria-expanded="false">Can a local AI model safely handle private records?<i aria-hidden="true">+</i></button><div class="answer">It can reduce cloud exposure, but local does not automatically mean secure. You still need encrypted storage, patching, access controls, backups, source-grounded prompts and human review. Never let the model replace licensed advice or final approval.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="income" id="10k-method">
+      <div class="wrap">
+        <div class="section-head"><h2>The $10K-a-month method.</h2><p>A visible, repeatable path from one useful service to a $10,000 gross monthly target—built on delivery and documented value, never promises of secret money or guaranteed income.</p></div>
+        <div class="method-shell">
+          <div class="method-top">
+            <div class="method-number">2 × 4<small>projects per week × four weeks</small></div>
+            <div><h3>One clear offer. Eight completed projects.</h3><p>Start with a bounded service you can deliver well: a records-organization setup, a private local-AI office workflow, a document-integrity pack or an operations binder. At an average package price of $1,250, eight completed projects gross $10,000.</p></div>
+          </div>
+          <div class="method-flow" aria-label="Four steps in the ten-thousand-dollar monthly method">
+            <article class="method-step"><b>Step 1 · Package</b><h3>Sell a defined result</h3><p>Name the deliverables, timeline, exclusions and fixed package price. Do not market legal, tax or investment advice.</p></article>
+            <article class="method-step"><b>Step 2 · Prospect</b><h3>Create a weekly pipeline</h3><p>Focus outreach on organizations already burdened by scattered records, repetitive paperwork or weak version control.</p></article>
+            <article class="method-step"><b>Step 3 · Deliver</b><h3>Use one documented process</h3><p>Intake, inventory, organize, verify, hand off and obtain written acceptance. Keep private source files off-chain.</p></article>
+            <article class="method-step"><b>Step 4 · Repeat</b><h3>Complete two per week</h3><p>Collect feedback, referrals and proof of process—then improve the same offer instead of chasing a new one every week.</p></article>
+          </div>
+        </div>
+        <div class="waterfall">
+          <div class="waterfall-label">The cash<br>waterfall</div>
+          <div class="waterfall-track"><span>Gross revenue</span><i>→</i><span>Tax reserve</span><i>→</i><span>Delivery costs</span><i>→</i><span>Owner pay + reserve</span><i>→</i><span>Due-diligenced assets</span></div>
+          <p class="waterfall-note">Set tax and allocation percentages with qualified professionals for your entity, location and actual numbers. Never invest money needed for taxes, obligations or operating reserves.</p>
+        </div>
+        <div class="calc-grid">
+          <div class="calc-copy"><h3>Test your package math</h3><p>Move the slider to see how many completed projects would gross $10,000 in a month at your chosen average package price.</p><label for="package">Average package: <output id="packageValue">$1,250</output></label><input id="package" type="range" min="500" max="5000" step="250" value="1250"><div class="range-labels"><span>$500</span><span>$5,000</span></div></div>
+          <div class="calc-output" aria-live="polite"><div class="big" id="projects">8</div><h3>completed projects per month</h3><p id="modelLine">8 × $1,250 = $10,000 gross</p><p class="tiny">Illustrative math only. Revenue, demand, expenses, taxes and profit are not guaranteed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="offer">
+      <div class="wrap">
+        <div class="offer-shell">
+          <div class="offer-grid">
+            <div><h2>Trade uncertainty for a plan you can explain.</h2><p>Get the complete 10-page playbook—four-system framework, trust reality check, public/private map, waterfall method, local-AI prompt pattern, blockchain custody workflow, revenue models and 90-day plan—plus the AI Skills &amp; Prompts Pack.</p></div>
+            <div class="checkout">
+              <span class="price-label">Complete digital bundle</span>
+              <div class="price"><sup>$</sup><span>24.98</span></div>
+              <div class="bundle-includes">
+                <strong>Both products included in one purchase.</strong>
+                <span>The Private Rights Playbook + 18 copy-ready AI skills and prompts.</span>
+              </div>
+              <div class="order-total"><span>One-time total</span><strong>$24.98</strong></div>
+              <a class="button" id="order-button" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00" target="_blank" rel="noopener">Get both products</a>
+              <small>Instant digital download · one checkout</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources">
+      <div class="wrap"><h2>Primary references, not secret-law claims.</h2><p>This educational guide is not legal, tax or investment advice. State law varies, and high-consequence decisions deserve review by a licensed attorney, CPA and regulated financial professional.</p><div class="source-links"><a href="https://www.law.cornell.edu/wex/Uniform_Commercial_Code" target="_blank" rel="noopener">Cornell LII: Uniform Commercial Code</a><a href="https://www.irs.gov/instructions/i1041" target="_blank" rel="noopener">IRS: Form 1041 instructions</a><a href="https://www.irs.gov/forms-pubs/about-form-1041" target="_blank" rel="noopener">IRS: About Form 1041</a><a href="https://nvlpubs.nist.gov/nistpubs/cswp/nist.cswp.01142020.pdf" target="_blank" rel="noopener">NIST: Blockchain overview</a></div></div>
+    </section>
+  </main>
+
+  <button class="ai-launcher" type="button" aria-controls="playbook-guide" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Z" stroke="currentColor" stroke-width="1.8"/><path d="M10 12h4M12 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    Ask the guide
+  </button>
+
+  <aside class="ai-guide" id="playbook-guide" role="dialog" aria-label="Interactive playbook guide" hidden>
+    <div class="ai-guide-head">
+      <span class="ai-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4.6" stroke="currentColor" stroke-width="1.8"/></svg></span>
+      <div><strong>Ask the Playbook</strong><small>Interactive page guide</small></div>
+      <button class="ai-close" type="button" aria-label="Close guide">×</button>
+    </div>
+    <div class="ai-chat" id="ai-chat" role="log" aria-live="polite" aria-relevant="additions">
+      <div class="ai-message guide"><p>I can explain the four-system framework, test your $10K package math, or take you to the right section. What do you want to understand?</p></div>
+      <div class="ai-prompts" aria-label="Suggested questions">
+        <button class="ai-prompt" type="button">How does local AI protect privacy?</button>
+        <button class="ai-prompt" type="button">Show me the $10K method</button>
+        <button class="ai-prompt" type="button">What can blockchain prove?</button>
+      </div>
+    </div>
+    <form class="ai-form" id="ai-form">
+      <div class="ai-input-row"><input id="ai-input" type="text" autocomplete="off" placeholder="Ask about UCC, trusts, AI, income…" aria-label="Ask the playbook guide"><button class="ai-send" type="submit" aria-label="Send question">→</button></div>
+      <small>Educational guidance from this page—not legal, tax or investment advice.</small>
+    </form>
+  </aside>
+
+  <div class="mobile-bar" role="region" aria-label="Playbook bundle access"><span><strong>$24.98</strong>Playbook + AI prompts pack</span><a class="button" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00" target="_blank" rel="noopener">Get both</a></div>
+
+  <script>
+    (function(){
+      var tabs=document.querySelectorAll('.tab-btn'),panels=document.querySelectorAll('.tab-panel');
+      tabs.forEach(function(tab){tab.addEventListener('click',function(){tabs.forEach(function(t){t.setAttribute('aria-selected','false')});panels.forEach(function(p){p.classList.remove('active')});tab.setAttribute('aria-selected','true');var panel=document.getElementById(tab.getAttribute('aria-controls'));if(panel)panel.classList.add('active')})});
+      document.querySelectorAll('.question').forEach(function(q){q.addEventListener('click',function(){var open=q.getAttribute('aria-expanded')==='true';q.setAttribute('aria-expanded',String(!open));q.nextElementSibling.classList.toggle('open',!open)})});
+      var slider=document.getElementById('package'),value=document.getElementById('packageValue'),projects=document.getElementById('projects'),line=document.getElementById('modelLine');
+      function money(n){return '$'+Number(n).toLocaleString('en-US')}function update(){var price=Number(slider.value),count=Math.ceil(10000/price),gross=count*price;value.textContent=money(price);projects.textContent=count;line.textContent=count+' × '+money(price)+' = '+money(gross)+' gross'}
+      slider.addEventListener('input',update);update();
+
+
+      var mobileBar=document.querySelector('.mobile-bar'),hero=document.querySelector('.hero');
+      if('IntersectionObserver' in window&&mobileBar&&hero){new IntersectionObserver(function(entries){mobileBar.classList.toggle('visible',!entries[0].isIntersecting)},{threshold:.08}).observe(hero)}
+
+      var aiLauncher=document.querySelector('.ai-launcher'),aiGuide=document.getElementById('playbook-guide'),aiClose=document.querySelector('.ai-close'),aiForm=document.getElementById('ai-form'),aiInput=document.getElementById('ai-input'),aiChat=document.getElementById('ai-chat');
+      function openGuide(){aiGuide.hidden=false;aiLauncher.setAttribute('aria-expanded','true');setTimeout(function(){aiInput.focus()},30)}
+      function closeGuide(){aiGuide.hidden=true;aiLauncher.setAttribute('aria-expanded','false');aiLauncher.focus()}
+      function focusSection(target){if(!target)return;document.querySelectorAll('.ai-focus').forEach(function(el){el.classList.remove('ai-focus')});target.classList.add('ai-focus');target.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){target.classList.remove('ai-focus')},1700)}
+      function findTarget(target){return target.charAt(0)==='#'?document.getElementById(target.slice(1)):document.querySelector(target)}
+      function jumpTo(target,tabId,questionIndex){return function(){closeGuide();if(tabId){var tab=document.getElementById(tabId);if(tab)tab.click()}if(typeof questionIndex==='number'){var questions=document.querySelectorAll('.question'),q=questions[questionIndex];if(q){q.setAttribute('aria-expanded','true');q.nextElementSibling.classList.add('open')}}setTimeout(function(){focusSection(findTarget(target))},80)}}
+      function addMessage(text,type,label,action){var box=document.createElement('div');box.className='ai-message '+type;var p=document.createElement('p');p.textContent=text;box.appendChild(p);if(label&&action){var button=document.createElement('button');button.type='button';button.className='ai-jump';button.textContent=label;button.addEventListener('click',action);box.appendChild(button)}aiChat.appendChild(box);aiChat.scrollTop=aiChat.scrollHeight}
+      function guideReply(raw){var q=raw.toLowerCase(),amount=q.match(/(?:^|[^\d])\$?([0-9]{3,4})(?!\d)/),reply,action,label;
+        if(amount&&(/package|price|project|charge|math|client/.test(q))){var chosen=Math.max(500,Math.min(5000,Math.round(Number(amount[1])/250)*250)),count=Math.ceil(10000/chosen),gross=count*chosen;slider.value=chosen;update();reply='At '+money(chosen)+' per completed project, you would need '+count+' projects to reach '+money(gross)+' gross. The calculator is set to your number; expenses and profit will vary.';label='Open the calculator';action=jumpTo('#10k-method');}
+        else if(/local ai|artificial intelligence|offline ai|private ai|document ai|ai protect/.test(q)){reply='Local AI can classify, compare, summarize and organize private paperwork without sending every source file to a cloud service. The playbook keeps originals untouched, requires source-grounded output and leaves final authority with a person.';label='Open the Local AI pillar';action=jumpTo('#inside','tab-ai');}
+        else if(/blockchain|hash|timestamp|on-chain/.test(q)){reply='Blockchain can help prove that a matching file existed by a certain time and has not changed. It does not prove the document is true, authorized or legally enforceable; private originals stay encrypted off-chain.';label='Open the Blockchain pillar';action=jumpTo('#inside','tab-chain');}
+        else if(/\bucc\b|commercial code|secured transaction|financing statement/.test(q)){reply='The UCC governs defined commercial transactions. A filing can give notice of a real security interest, but it does not erase debt, create secret money or place someone outside public law.';label='Open the UCC pillar';action=jumpTo('#inside','tab-ucc');}
+        else if(/trust|ecclesiastical|pure trust|religious/.test(q)){reply='Trust labels do not decide legal or tax treatment. Purpose, assets, control, beneficiaries, fiduciary conduct, tax classification and governing law all matter. The page includes a direct reality check on “pure” and ecclesiastical claims.';label='Read the trust answer';action=jumpTo('.myths',null,1);}
+        else if(/rights|public|private|government|intrusion|disclosure/.test(q)){reply='The framework separates private originals from records that must be disclosed or filed. Rights are protected through facts, jurisdiction, procedure and minimum-necessary disclosure—not identity labels or blanket exemptions.';label='Open the Rights pillar';action=jumpTo('#inside','tab-rights');}
+        else if(/10k|10,000|income|revenue|earn|client|service offer/.test(q)){reply='The model is eight completed projects per month at an average package price of $1,250: two per week for four weeks. It is gross-revenue math, not a guarantee, and it depends on a defined service, real demand and consistent delivery.';label='Explore the $10K method';action=jumpTo('#10k-method');}
+        else if(/waterfall|allocate|allocation|invest/.test(q)){reply='The waterfall routes gross revenue in order: tax reserve, delivery costs, owner pay and safety reserve, then due-diligenced assets. Percentages should be set with qualified professionals using your actual obligations.';label='See the cash waterfall';action=jumpTo('.waterfall');}
+        else if(/price|cost|buy|purchase|order|book/.test(q)){reply='The $24.98 one-time bundle includes The Private Rights Playbook and the AI Skills & Prompts Pack in one checkout. The offer section summarizes what is included.';label='See the offer';action=jumpTo('#offer');}
+        else if(/inside|chapter|page|include|framework|four system/.test(q)){reply='The ten chapters cover the four-system map, public versus private records, trust history and claims, the waterfall method, local AI, blockchain integrity, $10K revenue math, investing sequence and a 90-day implementation plan.';label='See every chapter';action=jumpTo('.spread');}
+        else if(/hello|hi\b|hey|help|what can/.test(q)){reply='Ask me about UCC, rights, trusts, local AI, blockchain, the waterfall, pricing or the $10K method. I can answer from the playbook and move you to the matching section.';}
+        else{reply='I can help with the topics covered here: UCC, lawful rights, trusts, local AI, blockchain proof, the cash waterfall, pricing and the $10K revenue model. Try naming one of those topics.';}
+        addMessage(reply,'guide',label,action);
+      }
+      if(aiLauncher&&aiGuide){aiLauncher.addEventListener('click',openGuide);aiClose.addEventListener('click',closeGuide);aiForm.addEventListener('submit',function(event){event.preventDefault();var text=aiInput.value.trim();if(!text)return;addMessage(text,'user');aiInput.value='';guideReply(text)});document.querySelectorAll('.ai-prompt').forEach(function(prompt){prompt.addEventListener('click',function(){addMessage(prompt.textContent,'user');guideReply(prompt.textContent)})});document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!aiGuide.hidden)closeGuide()})}
+    })();
+  </script>
+</body>
+</html>
