@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Private Asset Operating System — Founders Program | $3,999 Application</title>
+<meta name="description" content="Apply for a founding spot in The Private Asset Operating System — Founders Program. 12 weeks of live implementation built on the Private Money Rights Playbook. $3,999. 8 founding spots. Application only — no payment today.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b12; --bg2:#0b1120; --panel:#0e1626; --panel2:#111c33;
+  --line:rgba(120,160,255,.16); --line-gold:rgba(212,169,78,.35);
+  --ink:#eef2f8; --muted:#9fb0c3; --dim:#6b7d94;
+  --gold:#d4a94e; --gold2:#f0cd7e; --cyan:#4fd7e8; --green:#43d68a;
+  --radius:18px; --shadow:0 24px 70px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(900px 500px at 85% -10%,rgba(212,169,78,.14),transparent 60%),
+  radial-gradient(800px 500px at -10% 20%,rgba(79,215,232,.08),transparent 60%),
+  linear-gradient(180deg,var(--bg),var(--bg2) 55%,var(--bg))}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  linear-gradient(90deg,rgba(140,170,255,.045) 1px,transparent 1px),
+  linear-gradient(rgba(140,170,255,.045) 1px,transparent 1px);background-size:54px 54px;
+  mask-image:linear-gradient(black 0%,transparent 78%)}
+a{color:inherit} img{max-width:100%}
+.wrap{width:min(1120px,calc(100% - 36px));margin-inline:auto}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.08;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,7vw,4.6rem);font-weight:700}
+h2{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700}
+h3{font-size:1.18rem;font-weight:600}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.eyebrow:before{content:"";width:30px;height:2px;background:var(--gold)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+header.site{position:sticky;top:0;z-index:40;background:rgba(7,11,18,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:.95rem;letter-spacing:.04em;text-decoration:none}
+.brand span{color:var(--gold)}
+.nav a.cta{font-size:.85rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 24px;border:0;border-radius:12px;text-decoration:none;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#14100a;font-weight:800;cursor:pointer;box-shadow:0 14px 34px rgba(212,169,78,.28);transition:transform .18s,box-shadow .18s;font-size:.98rem}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(212,169,78,.38)}
+.btn.ghost{background:rgba(255,255,255,.03);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--line-gold)}
+.btn.small{min-height:42px;padding:0 17px;font-size:.86rem;border-radius:10px}
+.hero{padding:64px 0 30px;text-align:left}
+.hero h1 em{font-style:normal;background:linear-gradient(92deg,var(--gold2),var(--gold) 55%,#b98734);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.hero-sub{max-width:720px;color:var(--muted);font-size:clamp(1.02rem,2vw,1.22rem);margin:22px 0 8px}
+.hero-sub b{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px}
+.chip{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;padding:8px 15px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.chip b{color:var(--gold2);font-size:1rem}
+.chip.hot{border-color:var(--line-gold);color:var(--gold2)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.micro{margin-top:15px;color:var(--dim);font-size:.82rem}
+.micro b{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:42px 0 6px}
+.stat{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:18px 16px;text-align:center}
+.stat .n{font-family:"Space Grotesk";font-size:1.7rem;font-weight:700;color:var(--gold2)}
+.stat .l{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:3px}
+section{padding:56px 0 8px}
+.sec-head{max-width:760px;margin-bottom:30px}
+.sec-head p{color:var(--muted);margin:14px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,var(--line-gold),transparent)}
+.card .icon{font-size:1.5rem;margin-bottom:12px}
+.card p{color:var(--muted);font-size:.94rem;margin:9px 0 0}
+.card .tag{display:inline-block;margin-top:13px;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.list{list-style:none;margin:14px 0 0;padding:0}
+.list li{padding:9px 0 9px 28px;position:relative;color:var(--muted);border-bottom:1px dashed rgba(140,170,255,.09)}
+.list li:last-child{border-bottom:0}
+.list li b{color:var(--ink)}
+.list.yes li:before{content:"✓";position:absolute;left:2px;color:var(--green);font-weight:800}
+.list.no li:before{content:"✕";position:absolute;left:2px;color:#e0655a;font-weight:800}
+.calc{background:linear-gradient(180deg,#131f3a,var(--panel));border:1px solid var(--line-gold);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:end}
+label.flabel{display:block;font-size:.74rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+input[type=number],input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;background:#0a1220;border:1px solid var(--line);border-radius:11px;color:var(--ink);padding:13px 14px;font:inherit;font-size:.97rem;outline:none;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+input[type=range]{width:100%;accent-color:var(--gold)}
+.calc-out{text-align:center;background:rgba(212,169,78,.07);border:1px dashed var(--line-gold);border-radius:14px;padding:16px 10px}
+.calc-out .big{font-family:"Space Grotesk";font-size:2.1rem;font-weight:700;color:var(--gold2)}
+.calc-out .small{font-size:.78rem;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px 20px}
+.step .num{font-family:"Space Grotesk";font-size:.8rem;font-weight:700;color:#0b0f16;background:linear-gradient(135deg,var(--gold2),var(--gold));display:inline-flex;width:34px;height:34px;border-radius:10px;align-items:center;justify-content:center;margin-bottom:13px}
+.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+.spots{display:grid;grid-template-columns:repeat(8,1fr);gap:9px;margin-top:6px}
+.spot{border:1px solid var(--line-gold);background:rgba(212,169,78,.06);border-radius:13px;padding:13px 6px;text-align:center}
+.spot .no{font-family:"Space Grotesk";font-weight:700;color:var(--gold2)}
+.spot .st{font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--green);font-weight:800;margin-top:2px}
+.note{border:1px solid var(--line);background:rgba(79,215,232,.05);border-radius:var(--radius);padding:20px 22px;color:var(--muted);font-size:.94rem}
+.note b{color:var(--ink)}
+.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin-bottom:10px;overflow:hidden}
+.faq-q{width:100%;text-align:left;background:none;border:0;color:var(--ink);font:inherit;font-weight:700;padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;gap:14px;align-items:center}
+.faq-q .arr{color:var(--gold);transition:transform .2s}
+.faq-item.open .faq-q .arr{transform:rotate(45deg)}
+.faq-a{display:none;padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+.faq-item.open .faq-a{display:block}
+.apply-box{background:linear-gradient(180deg,#14213c,var(--panel));border:1px solid var(--line-gold);border-radius:24px;padding:32px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-grid .full{grid-column:1/-1}
+textarea{min-height:104px;resize:vertical}
+.check{display:flex;gap:11px;align-items:flex-start;color:var(--muted);font-size:.87rem}
+.check input{width:19px;height:19px;margin-top:2px;accent-color:var(--gold);flex:none}
+.err{color:#ff9c92;font-size:.85rem;min-height:1.2em}
+.success{display:none;border:1px solid rgba(67,214,138,.45);background:rgba(67,214,138,.07);border-radius:16px;padding:22px;margin-top:18px}
+.success.show{display:block}
+.success pre{white-space:pre-wrap;background:#0a1220;border:1px solid var(--line);border-radius:11px;padding:14px;font-size:.85rem;color:var(--muted);max-height:230px;overflow:auto}
+.price-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;border:1px dashed var(--line-gold);border-radius:16px;padding:18px 20px;margin-bottom:24px;background:rgba(212,169,78,.05)}
+.price-row .amt{font-family:"Space Grotesk";font-size:2rem;font-weight:700;color:var(--gold2)}
+.price-row .per{color:var(--muted);font-size:.9rem}
+footer{padding:52px 0 110px;color:var(--dim);font-size:.82rem}
+footer a{color:var(--muted)}
+.disclaimer{border-top:1px solid var(--line);padding-top:20px;margin-top:8px}
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(7,11,18,.9);backdrop-filter:blur(14px);border-top:1px solid var(--line-gold);padding:11px 16px calc(11px + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;gap:12px}
+.mobile-bar .p{font-family:"Space Grotesk";font-weight:700;color:var(--gold2);font-size:1.15rem}
+.mobile-bar .s{font-size:.72rem;color:var(--dim)}
+@media(max-width:860px){
+  .grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}
+  .calc-grid{grid-template-columns:1fr}.spots{grid-template-columns:repeat(4,1fr)}.mobile-bar{display:flex}
+}
+@media(max-width:560px){
+  .grid,.two,.form-grid{grid-template-columns:1fr}.hero{padding-top:44px}
+  .apply-box{padding:23px 18px}.nav a.cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="https://privatemoneyrightsplaybook.xyz/">PRIVATE MONEY RIGHTS <span>PLAYBOOK</span></a>
+    <a class="btn small cta" href="#apply">Apply for a Founding Spot</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow"><span class="dot"></span> Founding Cohort — Applications Open</span>
+      <h1>The Private Asset <em>Operating System</em></h1>
+      <p class="hero-sub">The <b>Founders Program</b> is the 12-week, live implementation version of the Private Money Rights Playbook — UCC, trusts, private records, local AI and the $10,000-a-Month Blueprint, built <b>with you, step by step</b>, not just read about.</p>
+      <div class="chips">
+        <div class="chip hot">Program price: <b>$3,999</b> one-time</div>
+        <div class="chip">or <b>$1,333/mo × 3</b> — financing available</div>
+        <div class="chip"><b>8</b> founding spots only</div>
+        <div class="chip"><b>12 weeks</b> of live build sessions</div>
+        <div class="chip">Application only — <b>no payment today</b></div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#apply">Apply for a Founding Spot →</a>
+        <a class="btn ghost" href="#inside">See What's Inside</a>
+      </div>
+      <p class="micro">This is a <b>pre-sell</b>. Nobody is charged from this page. If your application is accepted, you get a private call first — and only then a secure payment link. <b>If the cohort doesn't form, no one pays anything.</b></p>
+      <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="l">Weeks Live</div></div>
+        <div class="stat"><div class="n">8</div><div class="l">Founding Spots</div></div>
+        <div class="stat"><div class="n">1-on-1</div><div class="l">Roadmap Call</div></div>
+        <div class="stat"><div class="n">Lifetime</div><div class="l">Materials Access</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSIDE -->
+  <section id="inside">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What's Inside</span>
+        <h2>Everything in the Playbook — implemented, live.</h2>
+        <p>Reading is step one. Founders get the guided build: your records, your structure, your income offer — set up in the room, week by week.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">📘</div><h3>The Full Playbook Library</h3><p>The Private Money Rights Playbook + AI Skills &amp; Prompts Pack + UCC Talk24 Toolkit — lifetime access for every Founder, including the $10,000-a-Month Blueprint.</p><span class="tag">Lifetime Access</span></article>
+        <article class="card"><div class="icon">🛠️</div><h3>12 Weeks of Live Build Sessions</h3><p>One live implementation session per week. Bring your paperwork, your questions and your offer — leave each week with the next piece actually done.</p><span class="tag">Live • Weekly</span></article>
+        <article class="card"><div class="icon">🗺️</div><h3>Your 1-on-1 Roadmap Call</h3><p>A private call to map your starting point — records, structure, income goal — and set your personal order of operations for the 12 weeks.</p><span class="tag">Private</span></article>
+        <article class="card"><div class="icon">💰</div><h3>The $10,000-a-Month Blueprint Track</h3><p>The Playbook's income method, implemented: package real local work, price it clearly, and run the revenue math on your own offer — honestly, with real delivery behind it.</p><span class="tag">Income Method</span></article>
+        <article class="card"><div class="icon">👥</div><h3>Private Founders Community</h3><p>A small room — 8 founders maximum — sharing builds, wins and paperwork wins (and mistakes) with people on the same path.</p><span class="tag">8 People Max</span></article>
+        <article class="card"><div class="icon">🏅</div><h3>Numbered Founding Member Pass</h3><p>Each Founder receives a numbered digital Founding Member pass (1 of 8) as an access pass and collectible marking the founding cohort.</p><span class="tag">Perk — Not an Investment</span></article>
+      </div>
+      <div class="note" style="margin-top:16px"><b>Straight talk on the pass:</b> the Founding Member pass is an access perk and a collectible — nothing more. It carries <b>no promise of profit, resale value, or royalties</b>, and you never need a crypto wallet for this program. Program payment is by card, through a secure payment link sent after your call.</div>
+    </div>
+  </section>
+
+  <!-- MATH -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Run Your Own Math</span>
+        <h2>The Blueprint is arithmetic, not hype.</h2>
+        <p>The $10,000-a-month figure is a gross-revenue target built on selling real work at real prices. Move the numbers and see what your version actually takes.</p>
+      </div>
+      <div class="calc">
+        <div class="calc-grid">
+          <div>
+            <label class="flabel" for="goalRange">Monthly gross goal: <span id="goalVal" style="color:var(--gold2)">$10,000</span></label>
+            <input type="range" id="goalRange" min="2000" max="30000" step="500" value="10000">
+          </div>
+          <div>
+            <label class="flabel" for="priceInput">Your offer price ($)</label>
+            <input type="number" id="priceInput" min="25" step="25" value="500">
+          </div>
+          <div class="calc-out">
+            <div class="big" id="salesNeeded">20</div>
+            <div class="small">sales per month needed<br>at that price to hit the goal</div>
+          </div>
+        </div>
+        <p class="micro" style="margin-top:16px">Illustration only — gross revenue before expenses and taxes, based on your own inputs. Not a promise or guarantee of income. In the Founders Program we build the actual offer these numbers stand on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCING -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Financing Options</span>
+        <h2>$3,999 doesn't have to be one check.</h2>
+        <p>Three ways to take a Founding Spot — all arranged on your application call, after you're accepted. No payment is taken from this page.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">💳</div><h3>Pay in Full — $3,999</h3><p>One card payment through your secure payment link once you're accepted. Done — your numbered Founding Spot is locked and nothing else is owed.</p><span class="tag">Simplest</span></article>
+        <article class="card"><div class="icon">📆</div><h3>Monthly Financing at Checkout</h3><p>Buy-now-pay-later options (such as Affirm or Klarna, when available on the payment link) can split $3,999 into monthly payments — for example roughly <b style="color:var(--ink)">$335/mo over 12 months</b>. Approval and exact terms are set by the financing provider at checkout, based on the buyer — not by us.</p><span class="tag">Subject to Provider Approval</span></article>
+        <article class="card"><div class="icon">✂️</div><h3>Founders Split-Pay — 3 × $1,333</h3><p>Our own no-interest split: <b style="color:var(--ink)">$1,333 to lock your spot, then $1,333 in 30 days and $1,333 in 60 days</b> — same $3,999 total, no financing company involved. Arranged on your call, with the schedule confirmed in writing before you pay.</p><span class="tag">No Interest • Same Total</span></article>
+      </div>
+      <div class="note" style="margin-top:16px"><b>Why offer all three?</b> Full-pay buyers are done in one tap. Financed buyers get a monthly number they can say yes to. And split-pay keeps the door open for a strong applicant the financing providers pass on. <b>Choose your route in the application below</b> so we come to your call ready.</div>
+    </div>
+  </section>
+
+  <!-- FOR / NOT FOR -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Fit Check</span>
+        <h2>Eight spots means fit matters.</h2>
+      </div>
+      <div class="two">
+        <article class="card">
+          <h3>This is for you if…</h3>
+          <ul class="list yes">
+            <li>You've read (or are ready to read) the Playbook and want it <b>implemented, not just understood</b></li>
+            <li>You want your records, structure and paperwork <b>organized the lawful way</b></li>
+            <li>You're building <b>real income from real work</b> and want the math and the offer built with you</li>
+            <li>You can show up for <b>one live session a week for 12 weeks</b></li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>This is not for you if…</h3>
+          <ul class="list no">
+            <li>You want <b>magic phrases</b> that erase debts or taxes — this program teaches lawful process, not shortcuts that backfire</li>
+            <li>You expect income <b>without doing the work</b> or delivering anything real</li>
+            <li>You want a <b>crypto or investment play</b> — there is none here</li>
+            <li>$3,999 would put your household in a hole — <b>don't apply</b>; start with the $24.98 Playbook instead</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How the Pre-Sell Works</span>
+        <h2>Apply first. Pay only if you're in.</h2>
+      </div>
+      <div class="steps">
+        <article class="step"><div class="num">1</div><h3>Apply below</h3><p>Two minutes. Tell us where you're starting from and what you're building.</p></article>
+        <article class="step"><div class="num">2</div><h3>Private call</h3><p>Accepted applicants get a 1-on-1 call. Straight answers on fit, timing and payment — including whether a payment plan makes sense.</p></article>
+        <article class="step"><div class="num">3</div><h3>Secure your spot</h3><p>If it's a fit, you receive a secure payment link — pay the $3,999 in full, use monthly financing at checkout if offered, or start the 3 × $1,333 split-pay. Your numbered founding spot is locked when the first payment lands.</p></article>
+        <article class="step"><div class="num">4</div><h3>Build for 12 weeks</h3><p>The cohort start date is announced to accepted Founders. If the cohort doesn't form, nobody is charged — full stop.</p></article>
+      </div>
+
+      <h3 style="margin:34px 0 14px;font-family:'Space Grotesk'">Founding spots</h3>
+      <div class="spots" id="spots"></div>
+      <p class="micro">All 8 spots are open while applications are reviewed. This grid is updated as Founders are accepted and paid.</p>
+
+      <div class="note" style="margin-top:22px"><b>Founder referral benefit:</b> Founders who refer a new paying customer to the Playbook offers can earn a <b>40% referral commission in dollars</b> — that's about <b>$1,600 on a $3,999 enrollment</b> — paid on actual paid sales, with the exact terms confirmed in writing on your call. Optional, and never a reason by itself to join.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Questions</span>
+        <h2>Before you apply.</h2>
+      </div>
+      <div id="faq">
+        <div class="faq-item"><button class="faq-q" type="button">Why is this application-only?<span class="arr">+</span></button><div class="faq-a">Eight spots, twelve weeks, live work. The call makes sure the program fits your situation before any money moves — and this pre-sell is how we confirm real demand before building the full cohort calendar.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Is any income guaranteed?<span class="arr">+</span></button><div class="faq-a">No — and anyone who guarantees you income is lying to you. The $10,000-a-Month Blueprint is a gross-revenue target and a method built on real, delivered work. Your results depend on your offer, your market and your effort.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">Do I need a crypto wallet or an NFT?<span class="arr">+</span></button><div class="faq-a">No. Payment is by card. The numbered Founding Member pass is a digital access pass / collectible perk delivered to Founders — it is not an investment, and no profit, resale value or royalties are promised with it.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">What financing is available?<span class="arr">+</span></button><div class="faq-a">Three routes, all arranged on your call after acceptance: pay in full ($3,999 by card); monthly financing through buy-now-pay-later providers such as Affirm or Klarna when they appear on the payment link (approval and terms are the provider's, based on the buyer — roughly $335/mo over 12 months is a typical shape); or our own Founders Split-Pay — 3 payments of $1,333 over 60 days, no interest, same $3,999 total. Pick your preference in the application.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">When does the cohort start?<span class="arr">+</span></button><div class="faq-a">The start date is announced to accepted Founders once the founding cohort forms. If it doesn't form, no payment is ever taken.</div></div>
+        <div class="faq-item"><button class="faq-q" type="button">What if I'm not ready for $3,999?<span class="arr">+</span></button><div class="faq-a">Start with the book. The <a href="https://privatemoneyrightsplaybook.xyz/">Private Money Rights Playbook + AI Skills Pack is $24.98</a> and contains the full Blueprint chapter. Founders will still be here when you're ready.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Application</span>
+        <h2>Apply for a Founding Spot.</h2>
+        <p>Two minutes. Submitting opens your email app with the application addressed to us — just press send there, and we'll reply to schedule your call.</p>
+      </div>
+      <div class="apply-box">
+        <div class="price-row">
+          <div><span class="amt">$3,999</span> <span class="per">one-time — only if accepted, after your call &nbsp;•&nbsp; or <b style="color:var(--gold2)">3 × $1,333</b> &nbsp;•&nbsp; or monthly financing at checkout</span></div>
+          <div class="per">Today: <b style="color:var(--green)">$0 — application only</b></div>
+        </div>
+        <form id="applyForm" novalidate>
+          <div class="form-grid">
+            <div><label class="flabel" for="fName">Full name *</label><input type="text" id="fName" autocomplete="name" required></div>
+            <div><label class="flabel" for="fEmail">Email *</label><input type="email" id="fEmail" autocomplete="email" required></div>
+            <div><label class="flabel" for="fPhone">Phone</label><input type="tel" id="fPhone" autocomplete="tel"></div>
+            <div><label class="flabel" for="fBought">Already have the Playbook?</label>
+              <select id="fBought"><option>Yes — I have the Playbook</option><option>Not yet</option><option>I have the UCC Talk24 Toolkit</option></select></div>
+            <div class="full"><label class="flabel" for="fGoal">What are you building, and what's your income goal? *</label><textarea id="fGoal" required placeholder="Example: I run a handyman business and want to add a $500/month recurring offer…"></textarea></div>
+            <div class="full"><label class="flabel" for="fWhy">Why do you want a Founding Spot?</label><textarea id="fWhy" placeholder="Where are you stuck right now — paperwork, structure, income, all of it?"></textarea></div>
+            <div><label class="flabel" for="fReady">Investment readiness *</label>
+              <select id="fReady" required>
+                <option value="">Choose one…</option>
+                <option>Ready to invest $3,999 in full if accepted</option>
+                <option>Interested — want monthly financing (Affirm/Klarna style) if accepted</option>
+                <option>Interested — want the Founders Split-Pay: 3 × $1,333</option>
+                <option>Serious, but timing depends on the cohort start date</option>
+                <option>Just researching for now</option>
+              </select></div>
+            <div><label class="flabel" for="fTime">Best time for your call</label><input type="text" id="fTime" placeholder="Example: Weekday evenings (ET)"></div>
+            <div class="full check"><input type="checkbox" id="fAgree"><label for="fAgree">I understand this is an application, not a purchase. No payment is taken today, no income is guaranteed, and if I'm accepted I'll get a private call before any payment link is sent. *</label></div>
+          </div>
+          <p class="err" id="formErr"></p>
+          <button class="btn" type="submit" style="width:100%;margin-top:6px">Submit My Application →</button>
+          <p class="micro">Your application opens in your own email app, addressed to <b>capital7lllc@gmail.com</b> — nothing is sent until you press send there. Prefer Messenger? Copy your answers after submitting and paste them to the UCC Talk24 Page.</p>
+        </form>
+        <div class="success" id="successBox">
+          <h3 style="color:var(--green)">✓ Application ready</h3>
+          <p style="color:var(--muted);margin:8px 0">Your email app should have opened with everything filled in — just press <b style="color:var(--ink)">Send</b>. If it didn't open, copy the text below and email it to <b style="color:var(--ink)">capital7lllc@gmail.com</b>.</p>
+          <pre id="appSummary"></pre>
+          <button class="btn ghost small" type="button" id="copyBtn">Copy My Application</button>
+          <span id="copyMsg" style="font-size:.85rem;color:var(--green);margin-left:10px"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="https://privatemoneyrightsplaybook.xyz/">← Back to the Private Money Rights Playbook ($24.98 bundle)</a></p>
+    <div class="disclaimer">
+      <p><b>Educational material, not advice.</b> The Private Asset Operating System — Founders Program and the Private Money Rights Playbook are educational products about commercial law concepts, record-keeping, trusts, private AI workflows and building income from real work. They are not legal, tax, accounting or financial advice, and they do not create an attorney–client relationship. Consult licensed professionals about your specific situation, and verify any filing or legal position with primary sources before acting.</p>
+      <p><b>Earnings disclaimer.</b> No income, revenue or savings outcome is promised or guaranteed. Dollar figures — including "$10,000-a-Month" — are targets and illustrations based on stated assumptions and your own inputs, not representations of what you will earn.</p>
+      <p>© 2026 Capital 7 LLC. Founding Member passes are access/collectible perks only and are not securities or investments; no profit, resale value or royalties are promised.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <div><div class="p">$3,999</div><div class="s">Founders Program • 8 spots • $0 today</div></div>
+  <a class="btn small" href="#apply">Apply →</a>
+</div>
+
+<script>
+// Spots grid — all 8 open during the application window
+(function(){
+  var box=document.getElementById('spots'), html='';
+  for(var i=1;i<=8;i++){ html+='<div class="spot"><div class="no">F-0'+i+'</div><div class="st">Open</div></div>'; }
+  box.innerHTML=html;
+})();
+// Blueprint math calculator
+(function(){
+  var r=document.getElementById('goalRange'), p=document.getElementById('priceInput'),
+      gv=document.getElementById('goalVal'), out=document.getElementById('salesNeeded');
+  function fmt(n){return '$'+n.toLocaleString('en-US');}
+  function calc(){
+    var goal=parseFloat(r.value)||0, price=parseFloat(p.value)||0;
+    gv.textContent=fmt(goal);
+    out.textContent = price>0 ? Math.ceil(goal/price).toLocaleString('en-US') : '—';
+  }
+  r.addEventListener('input',calc); p.addEventListener('input',calc); calc();
+})();
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!open) item.classList.add('open');
+  });
+});
+// Application form -> mailto with prefilled body + copyable summary
+(function(){
+  var form=document.getElementById('applyForm'), err=document.getElementById('formErr');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('fName').value.trim(),
+        email=document.getElementById('fEmail').value.trim(),
+        phone=document.getElementById('fPhone').value.trim(),
+        bought=document.getElementById('fBought').value,
+        goal=document.getElementById('fGoal').value.trim(),
+        why=document.getElementById('fWhy').value.trim(),
+        ready=document.getElementById('fReady').value,
+        time=document.getElementById('fTime').value.trim(),
+        agree=document.getElementById('fAgree').checked;
+    if(!name||!email||!goal||!ready){ err.textContent='Please fill in name, email, your goal, and investment readiness.'; return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='That email doesn\'t look right — check it and try again.'; return; }
+    if(!agree){ err.textContent='Please check the understanding box so we know we\'re on the same page.'; return; }
+    err.textContent='';
+    var lines=[
+      'FOUNDERS PROGRAM APPLICATION — $3,999',
+      '----------------------------------------',
+      'Name: '+name,
+      'Email: '+email,
+      'Phone: '+(phone||'(not given)'),
+      'Has the Playbook: '+bought,
+      'Building / income goal: '+goal,
+      'Why a Founding Spot: '+(why||'(not given)'),
+      'Investment readiness: '+ready,
+      'Best time for a call: '+(time||'(flexible)')
+    ];
+    var body=lines.join('\n');
+    try{ localStorage.setItem('foundersApplication', JSON.stringify({name:name,email:email,when:Date.now()})); }catch(_){}
+    document.getElementById('appSummary').textContent=body;
+    document.getElementById('successBox').classList.add('show');
+    var subject=encodeURIComponent('Founders Program Application — '+name);
+    window.location.href='mailto:capital7lllc@gmail.com?subject='+subject+'&body='+encodeURIComponent(body);
+    document.getElementById('successBox').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var txt=document.getElementById('appSummary').textContent;
+    function done(){ document.getElementById('copyMsg').textContent='Copied ✓'; }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,done); }
+    else{
+      var ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta);
+      ta.select(); try{document.execCommand('copy');}catch(_){} document.body.removeChild(ta); done();
+    }
+  });
+})();
+</script>
+</body>
+</html>
