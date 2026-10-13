@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Using the Program: How the Playbook and AI Skills Pack Work With Local AI</title>
+<meta name="description" content="A practical workflow for using the Private Money Rights Playbook and AI Skills & Prompts Pack with a local AI model: install the model, load the prompts, study UCC and trust terms, draft documents, and organize filing paperwork privately.">
+<link rel="canonical" href="https://privatemoneyrightsplaybook.xyz/ai-skills-pack-local-ai.html">
+<link rel="icon" href="data:,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using the Program: How the Playbook and AI Skills Pack Work With Local AI">
+<meta property="og:description" content="One private local model plus a structured prompt pack: learn the terms, draft carefully, build checklists, and turn scattered study into a repeatable routine.">
+<meta property="og:url" content="https://privatemoneyrightsplaybook.xyz/ai-skills-pack-local-ai.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Article",
+ "headline":"Using the Program: How the Playbook and AI Skills Pack Work With Local AI",
+ "description":"How to combine the Private Money Rights Playbook, the AI Skills and Prompts Pack, and a local AI model for private study, drafting, checklists, and document organization.",
+ "author":{"@type":"Person","name":"Madison Hoskins"},
+ "publisher":{"@type":"Organization","name":"UCC Talk24"},
+ "datePublished":"2026-10-13",
+ "dateModified":"2026-10-13",
+ "mainEntityOfPage":"https://privatemoneyrightsplaybook.xyz/ai-skills-pack-local-ai.html"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"FAQPage",
+ "mainEntity":[
+  {"@type":"Question","name":"Do I need a powerful computer to use the AI Skills Pack with a local model?","acceptedAnswer":{"@type":"Answer","text":"No. The workflows are prompt-based, so a smaller local model that runs comfortably on your machine can handle explanations, summaries, outlines, checklists, and first drafts. A more capable model and computer can improve difficult reasoning and speed, but they are not prerequisites for beginning."}},
+  {"@type":"Question","name":"What is the difference between the Playbook and the AI Skills Pack?","acceptedAnswer":{"@type":"Answer","text":"The Playbook supplies the subject-matter framework: UCC, trusts, private records, local AI, and the business-building material. The AI Skills and Prompts Pack supplies reusable instructions that tell an AI model how to help you study, explain, organize, and draft around that material."}},
+  {"@type":"Question","name":"Can a local AI replace checking the UCC or asking a lawyer?","acceptedAnswer":{"@type":"Answer","text":"No. Use the local model to learn vocabulary, compare explanations, prepare questions, and organize work. Check operative rules in the current statute and official filing system, and consult a licensed attorney for advice about a specific transaction or dispute."}},
+  {"@type":"Question","name":"Why use the prompts locally instead of in a cloud chatbot?","acceptedAnswer":{"@type":"Answer","text":"The same prompts can organize work in either setting, but local use keeps source excerpts, drafts, and study notes on your machine and avoids a recurring AI subscription for routine work. That privacy and continuity are especially valuable when the subject involves agreements, filings, and financial records."}},
+  {"@type":"Question","name":"What should my first session with the program look like?","acceptedAnswer":{"@type":"Answer","text":"Install a modest model, choose one Playbook topic, and run one explanation prompt and one checklist prompt. Save the source, the AI output, and your verification notes together. A short completed session teaches the workflow better than trying to build an entire library in one sitting."}}
+ ]
+}
+</script>
+<style>
+:root{
+ --bg:#070b12;--bg2:#0b1120;--panel:#0e1626;--panel2:#111c33;
+ --line:rgba(120,160,255,.16);--line-gold:rgba(212,169,78,.35);
+ --ink:#eef2f8;--muted:#a9bccd;--dim:#7288a0;
+ --gold:#d4a94e;--gold2:#f0cd7e;--cyan:#4fd7e8;--green:#43d68a;--red:#e0655a;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2) 40%,var(--bg));color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.72;overflow-x:hidden}
+a{color:var(--gold2)} a:hover{color:var(--gold)}
+.wrap{width:min(820px,calc(100% - 36px));margin-inline:auto}
+header.site{position:sticky;top:0;z-index:40;background:rgba(7,11,18,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{width:min(1120px,calc(100% - 36px));margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:.95rem;letter-spacing:.04em;text-decoration:none;color:var(--ink)}
+.brand span{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 21px;border:0;border-radius:12px;text-decoration:none;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#14100a;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(212,169,78,.25);font-size:.94rem}
+.btn.small{min-height:40px;padding:0 16px;font-size:.85rem;border-radius:10px}
+.btn.ghost{background:rgba(255,255,255,.03);color:var(--ink);border:1px solid var(--line);box-shadow:none}
+article{padding:52px 0 10px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold2);font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.eyebrow:before{content:"";width:30px;height:2px;background:var(--gold)}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.14;margin:0}
+h1{font-size:clamp(2.1rem,5.6vw,3.4rem);font-weight:700;margin-top:16px}
+h2{font-size:clamp(1.55rem,3.6vw,2.15rem);font-weight:700;margin:44px 0 6px}
+h3{font-size:1.16rem;font-weight:600;margin:26px 0 4px}
+p{color:var(--muted);margin:12px 0}
+p b,li b{color:var(--ink)}
+.byline{color:var(--dim);font-size:.86rem;margin-top:16px}
+.lede{font-size:1.13rem;color:#c9d6e4}
+.toc,.callout,.cta-box,.mistake{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:26px 0}
+.toc h3{margin-top:0}
+.toc ol{margin:10px 0 0;padding-left:20px;color:var(--muted)}
+.toc a{text-decoration:none}
+ol.steps,ul.plain{color:var(--muted);padding-left:22px}
+ol.steps li,ul.plain li{margin:10px 0}
+.step-note{font-size:.92rem}
+.callout{border-color:var(--line-gold)}
+.callout .k{font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2)}
+.mistake{border-left:4px solid var(--red)}
+.mistake h3{margin-top:0;color:#ffb3ab}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.95rem}
+th,td{border:1px solid var(--line);padding:11px 13px;text-align:left;color:var(--muted)}
+th{color:var(--ink);background:var(--panel2);font-family:"Space Grotesk"}
+.sec{color:var(--cyan);font-weight:700;white-space:nowrap}
+.cta-box{border-color:var(--line-gold);text-align:left}
+.cta-box h3{margin-top:0;font-size:1.35rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.faq h3{color:var(--ink)}
+footer{padding:44px 0 110px;color:var(--dim);font-size:.82rem}
+.disclaimer{border-top:1px solid var(--line);padding-top:18px}
+.mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(7,11,18,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line-gold);padding:11px 16px calc(11px + env(safe-area-inset-bottom));display:none;align-items:center;justify-content:space-between;gap:12px}
+.mobile-bar .s{font-size:.78rem;color:var(--muted)}
+.mobile-bar .s b{color:var(--gold2)}
+@media(max-width:640px){.mobile-bar{display:flex}.nav a.btn{display:none}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a class="brand" href="https://privatemoneyrightsplaybook.xyz/">PRIVATE MONEY RIGHTS <span>PLAYBOOK</span></a>
+    <a class="btn small" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">Get the Playbook — $24.98</a>
+  </div>
+</header>
+
+<main>
+<article>
+ <div class="wrap">
+  <span class="eyebrow">The Program • Practical Workflows</span>
+  <h1>Using the Program: How the Playbook and AI Skills Pack Work With Local AI</h1>
+  <p class="byline">By Madison Hoskins • UCC Talk24 • Updated October 13, 2026 • Educational guide — not legal advice</p>
+  <p class="lede">A local AI model by itself is a blank assistant. The program gives it a curriculum, a vocabulary, and repeatable jobs. The <b>Private Money Rights Playbook</b> supplies the framework; the <b>AI Skills &amp; Prompts Pack</b> supplies structured instructions; your local model does the explaining, organizing, and drafting on your own machine.</p>
+
+  <div class="toc">
+    <h3>In this guide</h3>
+    <ol>
+      <li><a href="#pieces">How the three pieces fit together</a></li>
+      <li><a href="#setup">Set up the workflow in five steps</a></li>
+      <li><a href="#workflows">Four workflows you will actually use</a></li>
+      <li><a href="#benefits">The benefit stack</a></li>
+      <li><a href="#routine">A study routine that compounds</a></li>
+      <li><a href="#faq">Program workflow FAQ</a></li>
+    </ol>
+  </div>
+
+  <h2 id="pieces">How the three pieces fit together</h2>
+  <p>Think of the setup as a desk with three layers. The <b>Playbook</b> is the map: UCC concepts, trusts, private records, local AI, and a business-building framework in one operating manual. The <b>AI Skills Pack</b> is the set of work orders: prompts designed to make a model explain, question, summarize, compare, and organize instead of wandering into generic chat. The <b>local model</b> is the private workstation where those work orders are carried out.</p>
+  <p>This division matters because a prompt cannot create missing subject-matter structure, and a book cannot interrogate your understanding the way a model can. Together, the reader moves from passive reading to an active loop: read a section, ask for a plain-English explanation, test the explanation against the source, create a checklist, and file the result in a growing local library.</p>
+
+  <h2 id="setup">Set up the workflow in five steps</h2>
+  <ol class="steps">
+    <li><b>Install a local runner and a modest model.</b> Use LM Studio for a visual setup or Ollama for a lean one. A 7B or 8B class Llama or Qwen model is enough to learn the workflow. Our <a href="sovereign-local-ai.html">sovereign local AI guide</a> walks through the reasoning and hardware.</li>
+    <li><b>Create one project folder.</b> Keep the Playbook, the Skills Pack, source documents, prompts, drafts, and “verified” notes in a structure you can back up. Clear labels beat a desktop full of untitled chats.</li>
+    <li><b>Open the relevant Playbook section first.</b> Read enough to know the topic and the questions you are trying to answer. The model works better when it is anchored to a defined section instead of an unlimited subject.</li>
+    <li><b>Load the matching skill prompt.</b> Paste or load the prompt, provide the excerpt or facts it calls for, and tell the model to separate source language, explanation, uncertainty, and items requiring verification.</li>
+    <li><b>Save output as a draft, then verify it.</b> Check names, defined terms, dates, and citations against the Playbook, the statute, or the official filing source. Move only the checked version into your final folder.</li>
+  </ol>
+
+  <h2 id="workflows">Four workflows you will actually use</h2>
+  <h3>1. Turn UCC and trust terms into plain English</h3>
+  <p>Ask the model to define a term, use it in a concrete example, contrast it with a nearby term, and quiz you afterward. “Secured party,” “debtor,” “collateral,” “trustee,” and “beneficiary” stop being floating vocabulary when each definition is tied to parties, property, and an event. If the explanation conflicts with the text in front of you, the text wins and the discrepancy becomes a study note.</p>
+  <h3>2. Draft letters and notices without starting from a blank page</h3>
+  <p>Give the local model the purpose, recipient, facts, deadline, and tone. Ask for a concise draft plus a list of missing facts and statements that require verification. Then edit it yourself. Local drafting is particularly useful for private correspondence because the underlying facts and prior drafts can remain in your project folder instead of being pasted into a cloud account.</p>
+  <h3>3. Organize filing paperwork and checklists</h3>
+  <p>Use skills prompts to convert a guide into an action list: documents needed, exact names to confirm, office to check, deadline to calendar, and proof to save. For the filing sequence, work alongside the <a href="how-to-file-a-ucc-1.html">UCC-1 filing guide</a>, protect the renewal window described in the <a href="ucc-3-continuation-statement.html">UCC-3 continuation guide</a>, and confirm the official destination through the <a href="ucc-search.html">UCC search hub</a>. The model organizes the work; the official source controls it.</p>
+  <h3>4. Build a study and research routine</h3>
+  <p>End each session by asking for a five-question review, a one-paragraph summary in your own words, and a list of unresolved questions for next time. Save those outputs with the date and source. Over weeks, the folder becomes a personalized reference system rather than a pile of disconnected conversations.</p>
+
+  <div class="cta-box">
+    <h3>Get the Playbook and the Skills Pack together</h3>
+    <p>The bundle pairs the <b>Private Money Rights Playbook</b> with the <b>AI Skills &amp; Prompts Pack</b> for one payment — no separate AI subscription is required to use the prompts with a local model. Add the <b>UCC Talk24 Toolkit</b> when you want the filing checklist, Articles 1–9 lookup, endorsement stamp generator, and document tools in the same workflow.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">Get the Playbook Bundle — $24.98</a>
+      <a class="btn ghost" href="https://madisonshalom72.github.io/ucc-talk24-toolkit/">Open the Toolkit — $9.99/mo</a>
+    </div>
+    <p style="font-size:.9rem">Want the setup built live with you? The <a href="https://privatemoneyrightsplaybook.xyz/founders.html"><b>Founders Program</b></a> is 12 weeks of guided implementation — application open now, 8 spots.</p>
+  </div>
+
+  <h2 id="benefits">The benefit stack</h2>
+  <ul class="plain">
+    <li><b>One-time learning assets.</b> The Playbook and Skills Pack are bought as a bundle rather than rented as another AI seat. The local runner and many models add no monthly AI fee.</li>
+    <li><b>Private by default.</b> Source excerpts, drafts, and notes can remain in a local project folder under your control.</li>
+    <li><b>Skills compound.</b> A prompt used once becomes a template. A verified glossary becomes context for the next topic. A checklist refined after one filing makes the next review faster.</li>
+    <li><b>The model becomes more useful as your library improves.</b> The weights do not magically learn from your folder, but better sources, prompts, examples, and notes produce better sessions.</li>
+  </ul>
+  <p>The Playbook's <b>$10,000-a-Month Blueprint</b> belongs in the same disciplined frame: it is an educational gross-revenue illustration for studying how an offer and workflow can be structured — not a promise or guarantee of income. The value of the program is the reusable knowledge and process, whether the reader applies it to study, organization, content, or a business project.</p>
+
+  <h2 id="routine">A study routine that compounds</h2>
+  <p>Use a short, repeatable session: <b>20 minutes reading, 15 minutes questioning the model, 10 minutes verifying and filing notes.</b> Pick one concept per session. Ask what it means, where it applies, what it does not do, and what fact would change the answer. The <a href="local-ai-vs-cloud-ai.html">Local AI vs. Cloud AI comparison</a> shows when a bigger hosted model is worth using.</p>
+  <p>The discipline is the point. AI can make weak research faster, but it can also make careful research dramatically easier to sustain. The program is designed for the second outcome: private questions, structured prompts, saved drafts, and verification before anything becomes a document you rely on.</p>
+
+  <h2 id="faq">Program workflow FAQ</h2>
+  <div class="faq">
+    <h3>Do I need a powerful computer to use the AI Skills Pack with a local model?</h3>
+    <p>No. The workflows are prompt-based. A smaller model that runs comfortably on your machine can handle explanations, summaries, outlines, checklists, and first drafts. Better hardware can improve speed and harder reasoning, but it is not a prerequisite.</p>
+    <h3>What is the difference between the Playbook and the AI Skills Pack?</h3>
+    <p>The Playbook supplies the subject-matter framework. The Skills Pack supplies reusable instructions that tell a model how to help you study, explain, organize, and draft around that material.</p>
+    <h3>Can a local AI replace checking the UCC or asking a lawyer?</h3>
+    <p>No. Use it to learn vocabulary, compare explanations, prepare questions, and organize work. Check operative rules in the current statute and official filing system, and consult a licensed attorney for a specific transaction or dispute.</p>
+    <h3>Why use the prompts locally instead of in a cloud chatbot?</h3>
+    <p>Local use keeps source excerpts, drafts, and study notes on your machine and avoids a recurring AI subscription for routine work. That matters when the subject involves agreements, filings, and financial records.</p>
+    <h3>What should my first session with the program look like?</h3>
+    <p>Install a modest model, choose one Playbook topic, and run one explanation prompt and one checklist prompt. Save the source, output, and verification notes together. One short completed session teaches the workflow better than building the whole library at once.</p>
+  </div>
+
+  <div class="callout">
+    <span class="k">Bottom line</span>
+    <p style="margin-top:8px">The Playbook gives you the map, the Skills Pack gives the model its assignments, and local AI gives you a private place to do the work. That combination turns AI from a novelty chat window into a study and paperwork system you can reuse every week.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://privatemoneyrightsplaybook.xyz/founders.html">Apply for the Founders Program →</a>
+      <a class="btn ghost" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">Get the Playbook Bundle — $24.98</a>
+    </div>
+  </div>
+
+ </div>
+</article>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p><a href="https://privatemoneyrightsplaybook.xyz/">Private Money Rights Playbook</a> • <a href="https://privatemoneyrightsplaybook.xyz/founders.html">Founders Program</a> • <a href="https://madisonshalom72.github.io/ucc-talk24-toolkit/">UCC Talk24 Toolkit</a></p>
+  <div class="disclaimer">
+   <p><b>Educational material, not legal advice.</b> The Playbook, AI Skills &amp; Prompts Pack, and any AI output are educational tools, not legal, tax, or financial advice and not a substitute for the current statute, official filing instructions, or a licensed attorney. AI can be wrong. Verify every material statement before relying on it, and consult qualified counsel for transactions that matter.</p>
+   <p>© 2026 Capital 7 LLC • UCC Talk24</p>
+  </div>
+ </div>
+</footer>
+
+<div class="mobile-bar">
+  <div class="s"><b>$24.98</b> — Playbook + AI Skills Pack</div>
+  <a class="btn small" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">Get it →</a>
+</div>
+
+</body>
+</html>
