@@ -259,7 +259,7 @@ footer .fine{max-width:640px;margin-top:14px;font-size:12.5px;color:#a07f8a}
   background:linear-gradient(180deg,#ff6f96,#f43f6e);color:#fff;text-decoration:none;font-weight:700;
   font-family:var(--font);font-size:14px;border-radius:8px;padding:11px 18px;border:2px solid #050505;white-space:nowrap;
 }
-@media (max-width:819px){.mobile-cta{display:flex}}
+@media (max-width:1080px){.mobile-cta{display:flex}}
 
 /* ---------- stage layout: desktop positions ---------- */
 .w-main{left:36px;top:56px}
@@ -272,11 +272,16 @@ footer .fine{max-width:640px;margin-top:14px;font-size:12.5px;color:#a07f8a}
   .stage{min-height:820px}
   .w-math{top:352px}
 }
-/* ---------- stage layout: stacked on small screens ---------- */
-@media (max-width:819px){
+/* ---------- stage layout: stacked below desktop width ----------
+   The absolute collage needs ~1100px of stage width: PRIVATE_BY_DEFAULT
+   ends at 384px (left:64 + 320 wide) while THE_MATH starts at stage-716px
+   (right:36 + 680 wide). Below ~1100px they physically overlap and
+   THE_MATH (later in the DOM) paints over PRIVATE_BY_DEFAULT — so stack
+   every window in reading order instead. Supersedes the <=1080px collage
+   tweaks above (badge hidden / stage min-height) wherever they conflict. */
+@media (max-width:1080px){
   .stage{min-height:0;display:flex;flex-direction:column;gap:18px;padding:52px 16px 40px;overflow:visible}
-  .win{position:static;width:100%;max-width:100%}
-  .win.w-main,.win.w-old,.win.w-priv,.win.w-math{width:100%}
+  .stage .win{position:static;flex:none;width:100%;max-width:100%;left:auto;right:auto;top:auto}
   .w-badge{display:block}
   .stage-hint{display:none}
   .wordmark{font-size:64px}
@@ -344,6 +349,22 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
   animation:scanMove 3.4s linear infinite;
 }
 @keyframes scanMove{from{transform:translateY(-32px)}to{transform:translateY(120px)}}
+.hero-ticker{
+  margin-top:16px;overflow:hidden;max-width:100%;padding:11px 0;
+  border:2px solid #050505;border-radius:10px;
+  background:
+    radial-gradient(rgba(255,139,171,.22) 1.3px, transparent 1.4px) 0 0/16px 16px,
+    linear-gradient(180deg,#1c1c20,#0a0a0c);
+  box-shadow:7px 8px 0 rgba(0,0,0,.5);
+}
+.hero-ticker-track{display:flex;width:max-content;animation:heroTickerMove 24s linear infinite}
+.hero-ticker-seq{
+  flex:none;white-space:nowrap;padding-right:10px;
+  font-family:var(--mono);font-size:14.5px;font-weight:700;letter-spacing:.2em;color:var(--pink-hi);
+}
+.hero-ticker-seq i{font-style:normal;color:var(--accent);padding:0 6px}
+@keyframes heroTickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:640px){.hero-ticker-seq{font-size:12.5px;letter-spacing:.14em}}
 .ticker{
   margin-top:18px;overflow:hidden;padding:9px 0;
   border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);
@@ -362,6 +383,7 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
 }
 @media (prefers-reduced-motion: reduce){
   .ticker-track{animation:none}
+  .hero-ticker-track{animation:none}
   .gfx-status .scan{display:none}
   .caret{animation:none}
   .js .stage{animation:none}
@@ -490,6 +512,13 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
 
     <span class="stage-hint" aria-hidden="true">drag the windows · double-click a title bar to reset</span>
   </header>
+
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="hero-ticker-track">
+      <span class="hero-ticker-seq">+LLAMA <i>&#10022;</i> NO SUBSCRIPTION <i>&#10022;</i> +QWEN <i>&#10022;</i> RUNS ON YOUR MACHINE <i>&#10022;</i> +MISTRAL <i>&#10022;</i> YOUR DATA STAYS HOME <i>&#10022;</i> +GEMMA <i>&#10022;</i> $19.95 ONE-TIME <i>&#10022;</i> NO ACCOUNT <i>&#10022;</i> NO TRACKING <i>&#10022;</i> WORKS OFFLINE <i>&#10022;</i> </span>
+      <span class="hero-ticker-seq">+LLAMA <i>&#10022;</i> NO SUBSCRIPTION <i>&#10022;</i> +QWEN <i>&#10022;</i> RUNS ON YOUR MACHINE <i>&#10022;</i> +MISTRAL <i>&#10022;</i> YOUR DATA STAYS HOME <i>&#10022;</i> +GEMMA <i>&#10022;</i> $19.95 ONE-TIME <i>&#10022;</i> NO ACCOUNT <i>&#10022;</i> NO TRACKING <i>&#10022;</i> WORKS OFFLINE <i>&#10022;</i> </span>
+    </div>
+  </div>
 
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
@@ -639,7 +668,7 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var stacked = window.matchMedia('(max-width: 819px)');
+  var stacked = window.matchMedia('(max-width: 1080px)');
 
   /* ---------- draggable windows ---------- */
   var stage = document.getElementById('stage');
@@ -741,7 +770,7 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
   var dctx = ditherCv ? ditherCv.getContext('2d') : null;
   function drawDither(t) {
     if (!dctx) return;
-    var W = ditherCv.width, H = ditherCv.height, pitch = 10;
+    var W = 440, H = 110, pitch = 10;   /* logical space; fitCanvas scales to the real pixels */
     dctx.clearRect(0, 0, W, H);
     var cx = W / 2 + Math.sin(t * 0.0004) * 62;
     var cy = H / 2 + Math.cos(t * 0.00053) * 13;
@@ -801,7 +830,7 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
   }
   function drawLife() {
     if (!lctx || !grid) return;
-    lctx.clearRect(0, 0, lifeCv.width, lifeCv.height);
+    lctx.clearRect(0, 0, LC * CELL, LR * CELL);
     lctx.fillStyle = '#160309';
     for (var y = 0; y < LR; y++) {
       for (var x = 0; x < LC; x++) {
@@ -823,6 +852,35 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
     drawLife();
   }
 
+  /* --- crisp canvas sizing: back each canvas at its displayed size x DPR
+         (capped at 2) and draw in fixed logical coordinates, so the motion
+         stays sharp and animates identically on phones and tablets --- */
+  function fitCanvas(cv, ctx, lw, lh) {
+    if (!cv || !ctx) return;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var cssW = cv.clientWidth || lw;
+    var bw = Math.max(1, Math.round(cssW * dpr));
+    var bh = Math.max(1, Math.round(cssW * (lh / lw) * dpr));
+    if (cv.width !== bw || cv.height !== bh) { cv.width = bw; cv.height = bh; }
+    ctx.setTransform(bw / lw, 0, 0, bh / lh, 0, 0);
+  }
+  function fitCanvases() {
+    fitCanvas(ditherCv, dctx, 440, 110);
+    fitCanvas(lifeCv, lctx, LC * CELL, LR * CELL);
+  }
+  var fitTimer = null;
+  window.addEventListener('resize', function () {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(function () {
+      fitCanvases();
+      if (reduceMotion.matches) {
+        drawDither(1400);
+        if (lctx) { drawLife(); }
+      }
+    }, 160);
+  });
+  window.addEventListener('load', fitCanvases);
+
   /* --- visibility gates: per-tile observers + tab-hidden --- */
   var animOn = { dither: false, life: false, status: false };
   function watch(el, key) {
@@ -838,6 +896,7 @@ table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);w
   watch(statusTile, 'status');
 
   /* --- one shared rAF loop drives both canvases --- */
+  fitCanvases();
   if (lctx) { seedLife(); }
   if (reduceMotion.matches) {
     drawDither(1400);            /* single static frame */
