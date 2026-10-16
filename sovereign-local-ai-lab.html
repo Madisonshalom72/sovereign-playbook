@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign Local AI — We Took the AI Off Their Servers</title>
+<meta name="description" content="Sovereign Local AI is a 16-page guide to running private, local AI on your own computer. $19.95 one-time — no subscription, no account, your documents never leave your machine.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0409;
+  --bg2:#180610;
+  --pink:#ff8fab;
+  --pink-hi:#ffc2d1;
+  --pink-soft:#f6d3dc;
+  --panel:#f3d9df;
+  --panel-2:#ecd0d8;
+  --ink:#160309;
+  --chrome:#0a0a0c;
+  --paper:#fff5f7;
+  --muted:#c9a3ae;
+  --accent:#ff4d7e;
+  --accent-2:#ff8fab;
+  --line:rgba(255,139,171,.28);
+  --shadow:10px 12px 0 rgba(0,0,0,.55);
+  --glow:0 0 42px rgba(255,77,126,.28);
+  --font:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html:focus-within{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--paper);
+  background:
+    radial-gradient(1100px 620px at 85% -10%, rgba(255,77,126,.20), transparent 60%),
+    radial-gradient(900px 700px at -10% 30%, rgba(255,139,171,.12), transparent 55%),
+    linear-gradient(180deg, var(--bg2), var(--bg) 40%, #07030a);
+  overflow-x:hidden;
+  line-height:1.55;
+}
+::selection{background:var(--accent);color:#fff}
+a{color:var(--pink-hi)}
+a:focus-visible, button:focus-visible, .win-bar:focus-visible{
+  outline:3px solid var(--pink-hi);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- top strip ---------- */
+.topstrip{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 0 4px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.topstrip .brand{color:var(--paper);font-weight:700}
+.topstrip nav{display:flex;gap:18px;flex-wrap:wrap}
+.topstrip nav a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line);padding-bottom:1px;transition:color .2s,border-color .2s}
+.topstrip nav a:hover{color:var(--pink-hi);border-color:var(--pink-hi)}
+
+/* ---------- hero stage ---------- */
+.stage{
+  position:relative;
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  min-height:760px;
+  overflow:hidden;
+  background:
+    radial-gradient(rgba(255,139,171,.20) 1.4px, transparent 1.5px) 0 0/22px 22px,
+    radial-gradient(rgba(255,139,171,.10) 1.4px, transparent 1.5px) 11px 11px/22px 22px,
+    radial-gradient(760px 480px at 70% 0%, rgba(255,77,126,.22), transparent 60%),
+    linear-gradient(160deg,#2a0a18 0%, #16040d 55%, #0c0409 100%);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35), inset 0 -120px 160px rgba(0,0,0,.45);
+}
+.js .stage{background-position:0 0, 11px 11px, 0 0, 0 0}
+.stage-tag{
+  position:absolute;top:14px;left:16px;z-index:3;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-hi);
+  background:rgba(10,3,7,.55);border:1px solid var(--line);border-radius:999px;padding:5px 11px;backdrop-filter:blur(3px);
+}
+.stage-hint{
+  position:absolute;right:16px;bottom:12px;z-index:3;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ---------- retro windows ---------- */
+.win{
+  position:absolute;
+  width:340px;max-width:calc(100% - 32px);
+  background:linear-gradient(180deg, var(--panel), var(--panel-2));
+  color:var(--ink);
+  border:2px solid #050505;
+  border-radius:10px;
+  box-shadow:var(--shadow), var(--glow);
+  overflow:hidden;
+}
+.win-bar{
+  display:flex;align-items:center;gap:10px;
+  background:linear-gradient(180deg,#1b1b1f,#050506);
+  color:#ffe9ef;
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;
+  padding:8px 12px;
+  cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none;
+}
+.win-bar:active{cursor:grabbing}
+.win-bar .dots{display:inline-flex;gap:6px;margin-left:auto}
+.win-bar .dots i{width:10px;height:10px;border-radius:50%;background:#3a3a40;display:block}
+.win-bar .dots i:first-child{background:var(--accent)}
+.win-body{padding:18px 18px 20px}
+.win h3{margin:0}
+.wordmark{
+  font-size:88px;line-height:.9;font-weight:700;letter-spacing:-.03em;margin:2px 0 8px;
+  background:linear-gradient(92deg,#160309 20%, #a31340 55%, #160309 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.win .lede{font-size:16px;margin:0 0 14px;color:#3d1420}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  border:1.5px solid #160309;border-radius:6px;padding:3px 8px;background:#fff0f3;
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.chip:hover{transform:translateY(-2px) rotate(-1deg);background:#ffd9e2;box-shadow:3px 3px 0 rgba(22,3,9,.85)}
+.win.dim{filter:saturate(.45) brightness(.92)}
+.win.dim .win-body p{text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:rgba(163,19,64,.75)}
+.win.w-main{width:430px;z-index:5}
+.win.w-old{width:300px}
+.win.w-priv{width:320px}
+.win.w-badge{width:308px;background:linear-gradient(180deg,#1c1c20,#0a0a0c);color:var(--pink-hi);border-color:#000}
+.win.w-badge .win-body{font-family:var(--mono);font-size:12.5px;line-height:1.7;padding:14px 16px}
+.win.w-badge .price{color:#fff;font-size:15px}
+.win.is-drag{box-shadow:16px 20px 0 rgba(0,0,0,.5), 0 0 60px rgba(255,77,126,.4)}
+.win{transition:box-shadow .25s ease}
+
+/* ---------- chart window ---------- */
+.win.w-math{width:min(680px, calc(100% - 32px))}
+.win.w-math .win-body{padding:20px 22px 16px}
+.chart-title{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#7a1030;margin:0 0 4px}
+.chart-h{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:0 0 16px}
+.row{display:grid;grid-template-columns:150px 1fr 118px;gap:12px;align-items:center;padding:9px 0;border-top:1.5px dashed rgba(22,3,9,.3)}
+.row:first-of-type{border-top:0}
+.row .name{font-weight:700;font-size:15px}
+.row .name small{display:block;font-family:var(--mono);font-weight:500;font-size:11px;color:#7a4a58;letter-spacing:.04em}
+.row.hero-row .name{color:#a31340}
+.track{height:20px;background:rgba(22,3,9,.10);border:1.5px solid rgba(22,3,9,.55);border-radius:5px;overflow:hidden}
+.fill{
+  height:100%;width:var(--w);
+  background:repeating-linear-gradient(45deg,#3a3a40 0 8px,#232328 8px 16px);
+  border-radius:3px;
+}
+.row.hero-row .fill{background:linear-gradient(90deg,var(--accent),#ff8fab);box-shadow:0 0 14px rgba(255,77,126,.65)}
+.js .fill{width:0;transition:width 1.15s cubic-bezier(.22,.9,.28,1)}
+.js .fill.grown{width:var(--w)}
+.fig{font-family:var(--mono);text-align:right}
+.fig b{display:block;font-size:16px}
+.fig span{font-size:11.5px;color:#7a1030;font-weight:700;letter-spacing:.05em}
+.chart-note{font-size:12.5px;color:#5c2b39;margin:14px 0 2px;border-top:1.5px solid rgba(22,3,9,.4);padding-top:10px}
+
+/* ---------- headline block ---------- */
+.headline-block{padding:74px 0 10px;text-align:left}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin:0 0 14px}
+h1{
+  font-size:clamp(44px, 8.4vw, 104px);
+  line-height:.98;font-weight:700;letter-spacing:-.028em;margin:0 0 20px;text-wrap:balance;
+}
+h1 .hl{
+  background:linear-gradient(94deg,var(--pink-hi),var(--accent) 60%,var(--pink));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:none;
+}
+.subhead{font-size:clamp(17px,2.3vw,21px);color:#f3dbe1;max-width:760px;margin:0 0 28px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:16px;
+  border-radius:10px;padding:15px 26px;border:2px solid #050505;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-primary{
+  background:linear-gradient(180deg,#ff6f96,#f43f6e);color:#fff;
+  box-shadow:6px 6px 0 rgba(0,0,0,.6), 0 0 34px rgba(255,77,126,.35);
+}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 rgba(0,0,0,.6), 0 0 44px rgba(255,77,126,.5)}
+.btn-primary:active{transform:translate(2px,2px);box-shadow:3px 3px 0 rgba(0,0,0,.6)}
+.btn-ghost{background:rgba(255,245,247,.06);color:var(--paper);border-color:var(--line);backdrop-filter:blur(3px)}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink-hi);transform:translateY(-2px)}
+.cta-fine{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em}
+
+/* ---------- sections ---------- */
+section.block{padding:64px 0 8px}
+.sec-tag{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin:0 0 10px}
+h2{font-size:clamp(30px,4.6vw,46px);line-height:1.05;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+.cols{columns:2;column-gap:38px;max-width:980px}
+.cols p{break-inside:avoid;margin:0 0 16px;color:#eed7dd;font-size:16.5px}
+.cols p b, .cols p strong{color:#fff}
+@media (max-width:720px){.cols{columns:1}}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+@media (max-width:940px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+.card{
+  background:linear-gradient(180deg,var(--panel),var(--panel-2));
+  color:var(--ink);border:2px solid #050505;border-radius:10px;overflow:hidden;
+  box-shadow:7px 8px 0 rgba(0,0,0,.5);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:9px 13px 0 rgba(0,0,0,.5), 0 0 30px rgba(255,77,126,.22)}
+.card .win-bar{cursor:default}
+.card .win-body{padding:15px 17px 17px}
+.card h3{font-size:17.5px;margin:0 0 6px}
+.card p{margin:0;font-size:14.5px;color:#45202d}
+
+/* ---------- FAQ + final CTA ---------- */
+.faq{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:880px){.faq{grid-template-columns:1fr}}
+.faq .q{
+  border:1px solid var(--line);border-radius:12px;padding:20px;
+  background:linear-gradient(180deg, rgba(255,139,171,.09), rgba(255,139,171,.03));
+}
+.faq h3{margin:0 0 8px;font-size:17px;color:#fff}
+.faq p{margin:0;color:#ecd3da;font-size:15px}
+.final-cta{
+  margin:56px 0 10px;border:2px solid #050505;border-radius:14px;overflow:hidden;
+  background:linear-gradient(120deg,#ff6f96,#f43f6e 55%,#c21847);
+  box-shadow:10px 12px 0 rgba(0,0,0,.55), var(--glow);color:#fff;
+}
+.final-cta .inner{padding:34px 30px;display:flex;gap:22px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.final-cta h2{margin:0 0 6px;color:#fff}
+.final-cta p{margin:0;color:#ffe3ea;max-width:560px}
+.final-cta .btn-primary{background:#160309;color:#fff;border-color:#050505;box-shadow:6px 6px 0 rgba(0,0,0,.45)}
+.final-cta .btn-primary:hover{box-shadow:9px 9px 0 rgba(0,0,0,.45)}
+
+/* ---------- footer ---------- */
+footer{padding:52px 0 96px;color:var(--muted);font-size:13.5px}
+footer .cols-f{display:flex;gap:26px;flex-wrap:wrap;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+footer a{color:var(--pink-hi);text-decoration:none;border-bottom:1px dotted var(--line)}
+footer a:hover{border-color:var(--pink-hi)}
+footer .fine{max-width:640px;margin-top:14px;font-size:12.5px;color:#a07f8a}
+
+/* ---------- reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,.9,.3,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- sticky mobile CTA ---------- */
+.mobile-cta{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:rgba(12,4,9,.92);backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  align-items:center;justify-content:space-between;gap:12px;
+  font-family:var(--mono);font-size:12.5px;color:var(--paper);
+}
+.mobile-cta b{display:block;font-family:var(--font);font-size:14px}
+.mobile-cta a{
+  background:linear-gradient(180deg,#ff6f96,#f43f6e);color:#fff;text-decoration:none;font-weight:700;
+  font-family:var(--font);font-size:14px;border-radius:8px;padding:11px 18px;border:2px solid #050505;white-space:nowrap;
+}
+@media (max-width:819px){.mobile-cta{display:flex}}
+
+/* ---------- stage layout: desktop positions ---------- */
+.w-main{left:36px;top:56px}
+.w-old{right:44px;top:34px}
+.w-priv{left:64px;top:392px}
+.w-math{right:36px;top:308px}
+.w-badge{left:408px;top:600px}
+@media (max-width:1080px){
+  .w-badge{display:none}
+  .stage{min-height:820px}
+  .w-math{top:352px}
+}
+/* ---------- stage layout: stacked on small screens ---------- */
+@media (max-width:819px){
+  .stage{min-height:0;display:flex;flex-direction:column;gap:18px;padding:52px 16px 40px;overflow:visible}
+  .win{position:static;width:100%;max-width:100%}
+  .win.w-main,.win.w-old,.win.w-priv,.win.w-math{width:100%}
+  .w-badge{display:block}
+  .stage-hint{display:none}
+  .wordmark{font-size:64px}
+  .row{grid-template-columns:1fr;gap:6px}
+  .fig{text-align:left}
+  .fig b{display:inline;margin-right:8px}
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
+  .js .reveal{opacity:1;transform:none}
+  .js .fill{width:var(--w)}
+}
+</style>
+</head>
+<body>
+<style>
+/* --- additions: static windows, ownership window, advantage table --- */
+.win.static{position:relative;width:100%;max-width:100%;left:auto;top:auto;right:auto}
+.w-own{left:486px;top:40px;width:282px;z-index:4}
+@media (max-width:1080px){.w-own{left:auto;right:44px;top:222px}}
+.adv-lede{font-size:clamp(19px,2.6vw,25px);line-height:1.4;font-weight:600;color:#2a0a16;margin:2px 0 6px}
+.adv-lede em{font-style:normal;color:#a31340}
+.adv-sub{font-size:15.5px;color:#4a1f2d;margin:0 0 18px;max-width:820px}
+.table-wrap{border:2px solid #050505;border-radius:8px;overflow:hidden}
+table.adv{border-collapse:collapse;width:100%;font-size:14.5px;background:#fff7f9}
+table.adv caption{text-align:left;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#7a1030;padding:10px 14px;background:#f9e3e9;border-bottom:2px solid #050505}
+table.adv th, table.adv td{padding:11px 14px;text-align:left;vertical-align:top;border-top:1px solid rgba(22,3,9,.18)}
+table.adv thead th{border-top:0;background:#160309;color:#ffe9ef;font-size:14px}
+table.adv thead th.us{background:linear-gradient(180deg,#ff6f96,#e83a68);color:#fff}
+table.adv tbody th{font-weight:700;color:#2a0a16;width:23%}
+table.adv td.them{color:#5c4450;width:31%}
+table.adv td.us{font-weight:600;color:#7a0e2e;background:rgba(255,139,171,.13);width:46%}
+.concession{margin:16px 0 0;font-size:14.5px;color:#4a1f2d;border-left:4px solid var(--accent);padding:4px 0 4px 14px}
+.concession b{color:#a31340}
+@media (max-width:640px){
+  table.adv thead{display:none}
+  table.adv, table.adv tbody, table.adv tr, table.adv th, table.adv td{display:block;width:100%}
+  table.adv tbody th{background:#f9e3e9;border-top:2px solid #050505}
+  table.adv td.them, table.adv td.us{width:100%}
+  table.adv td.them::before{content:"Cloud lab AI: ";font-weight:700;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  table.adv td.us::before{content:"Sovereign Local AI: ";font-weight:700;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="wrap">
+  <div class="topstrip">
+    <span class="brand">▲ SOVEREIGN LOCAL AI</span>
+    <nav aria-label="Sovereign Local AI pages">
+      <a href="#advantage">The advantage</a>
+      <a href="#inside">What&rsquo;s inside</a>
+      <a href="https://privatemoneyrightsplaybook.xyz/sovereign-local-ai.html">Full breakdown</a>
+      <a href="https://privatemoneyrightsplaybook.xyz/links.html">All offers</a>
+    </nav>
+  </div>
+
+  <header class="stage" id="stage" aria-label="Interactive window playground: drag the windows to explore the idea">
+    <span class="stage-tag">sovereign_local_ai.sys — running locally</span>
+
+    <section class="win w-main" aria-label="Local AI window">
+      <div class="win-bar" data-drag aria-label="Drag handle for the Local AI window">LOCAL_AI <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <p class="wordmark" aria-hidden="true">LOCAL</p>
+        <h2 class="lede" style="font-size:16px;font-weight:500">Large language models that live on <b>your</b> computer.</h2>
+        <div class="chips" aria-label="Open model families covered in the guide">
+          <span class="chip">+llama</span><span class="chip">+qwen</span><span class="chip">+mistral</span><span class="chip">+gemma</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win w-old dim" aria-label="The old way window">
+      <div class="win-bar" data-drag aria-label="Drag handle for the old way window">THE_OLD_WAY <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <p style="margin:0 0 12px;font-size:15px">Chat subscriptions — rented by the month, billed forever, reading everything you paste.</p>
+        <div class="chips" aria-label="Subscription chat services">
+          <span class="chip">+chatgpt</span><span class="chip">+claude</span><span class="chip">+gemini</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win w-own" aria-label="Ownership window">
+      <div class="win-bar" data-drag aria-label="Drag handle for the ownership window">OWNERSHIP <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <div class="chips" aria-label="What you own with local AI">
+          <span class="chip">+your machine</span><span class="chip">+your data</span><span class="chip">+your rules</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win w-priv" aria-label="Private by default window">
+      <div class="win-bar" data-drag aria-label="Drag handle for the private by default window">PRIVATE_BY_DEFAULT <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <p style="margin:0 0 12px;font-size:15px">Your documents never leave your machine. No cloud, no upload, no audience.</p>
+        <div class="chips" aria-label="Privacy properties of local AI">
+          <span class="chip">+no account</span><span class="chip">+no tracking</span><span class="chip">+works offline</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="win w-math" aria-label="Cost comparison window">
+      <div class="win-bar" data-drag aria-label="Drag handle for the cost comparison window">THE_MATH <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body">
+        <p class="chart-title">Two-year cost of AI</p>
+        <h2 class="chart-h">What two years of AI costs you</h2>
+        <div class="row hero-row">
+          <div class="name">Sovereign Local AI<small>ONE-TIME · YOUR MACHINE</small></div>
+          <div class="track"><div class="fill" style="--w:4.2%"></div></div>
+          <div class="fig"><b data-count="19.95" data-decimals="2">$19.95</b><span>1.0x — you own it</span></div>
+        </div>
+        <div class="row">
+          <div class="name">ChatGPT Plus<small>$20 / MONTH</small></div>
+          <div class="track"><div class="fill" style="--w:100%"></div></div>
+          <div class="fig"><b data-count="480" data-decimals="0">$480</b><span>24.1x</span></div>
+        </div>
+        <div class="row">
+          <div class="name">Claude Pro<small>$20 / MONTH</small></div>
+          <div class="track"><div class="fill" style="--w:100%"></div></div>
+          <div class="fig"><b data-count="480" data-decimals="0">$480</b><span>24.1x</span></div>
+        </div>
+        <div class="row">
+          <div class="name">Google AI Pro<small>$19.99 / MONTH</small></div>
+          <div class="track"><div class="fill" style="--w:99.9%"></div></div>
+          <div class="fig"><b data-count="479.76" data-decimals="2">$479.76</b><span>24.0x</span></div>
+        </div>
+        <p class="chart-note">Cloud prices are the standard monthly rates as of October 2026 — and they keep billing every month after that. Local AI runs free, open models on hardware you already own. One-time means one-time.</p>
+      </div>
+    </section>
+
+    <section class="win w-badge" aria-label="Product badge">
+      <div class="win-body">
+        Sovereign Local AI · Version 1.0<br>
+        &copy;2026 · A Private Money Rights Playbook guide<br>
+        <span class="price">$19.95 one-time</span> · 16 pages · PDF
+      </div>
+    </section>
+
+    <span class="stage-hint" aria-hidden="true">drag the windows · double-click a title bar to reset</span>
+  </header>
+
+  <div class="headline-block">
+    <p class="kicker">A 16-page field guide · PDF · Instant delivery</p>
+    <h1>WE TOOK THE AI <span class="hl">OFF THEIR SERVERS.</span></h1>
+    <p class="subhead">Everyone else rents you intelligence by the month — on their machines, under their rules, reading your documents. <b>Sovereign Local AI</b> puts a real AI on your own computer: private, offline-capable, and yours. Pay once. Own it outright.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">Get Sovereign Local AI — $19.95</a>
+      <a class="btn btn-ghost" href="https://privatemoneyrightsplaybook.xyz/sovereign-local-ai.html">Read the full guide breakdown</a>
+    </div>
+    <p class="cta-fine" style="margin-top:14px">ONE-TIME PAYMENT · NO SUBSCRIPTION · THE MODELS THEMSELVES ARE FREE AND OPEN</p>
+  </div>
+
+  <main>
+    <section class="block reveal" id="not-sub" aria-labelledby="not-sub-h">
+      <p class="sec-tag">[ 01 — The flip ]</p>
+      <h2 id="not-sub-h">Not a subscription.</h2>
+      <div class="cols">
+        <p>Cloud AI is a <b>rental that never ends</b>. Twenty dollars a month sounds small until you do the math on the chart above — and the meter never stops. Worse, the rent buys you a front-row seat in someone else&rsquo;s building: your prompts, your contracts, your private paperwork all travel to their servers, where their terms can change, their prices can rise, and your account can be suspended whenever their system decides it should be.</p>
+        <p>The flip is simple: <b>own the tool instead of renting the service</b>. Modern open models — the Llama family, Qwen, Mistral, Gemma — are free, downloadable, and strong enough for real work. Loaded onto a computer you already own with free software like Ollama or LM Studio, they answer, draft, summarize and organize with the internet unplugged. This guide walks the whole setup, start to finish, in plain English.</p>
+        <p>That is what <b>sovereign</b> means here. Not a slogan — a setup. Your machine runs the model. Your documents stay in your house. Your rules decide what it learns and what it works on. Nobody can raise your price, read your files, or switch you off, because there is no &ldquo;they&rdquo; in the loop anymore. Just you and a tool you own, like a truck or a press — bought once, used for years.</p>
+      </div>
+    </section>
+
+    <section class="block reveal" id="advantage" aria-labelledby="advantage-h">
+      <p class="sec-tag">[ 02 — Head to head ]</p>
+      <h2 id="advantage-h">The advantage they can&rsquo;t sell you</h2>
+      <article class="win static">
+        <div class="win-bar">SOVEREIGN_VS_CLOUD_LAB <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <p class="adv-lede">TypeSafe took the opposite <em>research</em> direction. We took the opposite <em>ownership</em> direction. Their smartest model still lives on their servers — <em>yours lives on your machine.</em></p>
+          <p class="adv-sub">Cloud labs — TypeSafe included — are building genuinely impressive AI. But every one of them sells you the same arrangement: the intelligence stays in their building, and you pay rent to visit it. Sovereign Local AI is the other arrangement, and the difference is not a feature list. It is an address.</p>
+          <div class="table-wrap">
+            <table class="adv">
+              <caption>Head to head — cloud lab AI vs Sovereign Local AI</caption>
+              <thead>
+                <tr><th scope="col">Question</th><th scope="col">Cloud lab AI (like TypeSafe)</th><th scope="col" class="us">Sovereign Local AI</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Where the model runs</th><td class="them">Their servers</td><td class="us">Your computer</td></tr>
+                <tr><th scope="row">Where your documents go</th><td class="them">Sent to their cloud</td><td class="us">Never leave your machine</td></tr>
+                <tr><th scope="row">Cost model</th><td class="them">Pay per use / subscription, forever</td><td class="us">$19.95 once, then $0 per task</td></tr>
+                <tr><th scope="row">Works offline</th><td class="them">No</td><td class="us">Yes</td></tr>
+                <tr><th scope="row">Account needed</th><td class="them">Yes — and they can suspend it</td><td class="us">No account, nobody can switch you off</td></tr>
+                <tr><th scope="row">Customize it on YOUR documents</th><td class="them">No — a general model for everyone</td><td class="us">Yes — system prompt, your private document library, your workflows (the guide shows all three levels)</td></tr>
+                <tr><th scope="row">Built for sovereign/UCC paperwork</th><td class="them">General-purpose</td><td class="us">Trained workflows for UCC terms, filing checklists, letters and deadlines</td></tr>
+                <tr><th scope="row">If the company disappears</th><td class="them">Your AI disappears with it</td><td class="us">Your AI keeps running — you own the machine and the model files</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="concession"><b>Full credit:</b> their research is real, and a frontier cloud model is stronger on raw benchmarks. The question is who owns the machine it runs on.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="block reveal" id="inside" aria-labelledby="inside-h">
+      <p class="sec-tag">[ 03 — Inside the guide ]</p>
+      <h2 id="inside-h">What&rsquo;s inside the 16 pages</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="win-bar">THE_LLAMA_STORY <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>How open AI got this good</h3><p>The whole Llama story, plus the other open families worth knowing — Qwen, Mistral and Gemma — and how to pick between them without a computer-science degree.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">LOCAL_VS_CLOUD <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>The honest comparison</h3><p>Local vs cloud on privacy, cost and control — including where the cloud still wins, and the hybrid approach most people actually end up running.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">HARDWARE_PICKER <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>Will your machine run it?</h3><p>A plain hardware picker that matches model size to your RAM, so you know exactly what your current computer can handle before you download anything.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">SETUP_15_MIN <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>Running in about 15 minutes</h3><p>Step-by-step setup with Ollama (exact commands included) and the point-and-click LM Studio route — two doors into the same local AI.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">TRAIN_IT_YOURS <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>&ldquo;Train&rdquo; it at three levels</h3><p>Level 1: a copy-paste system prompt that makes it your UCC assistant. Level 2: a private document library (RAG) built from your own files. Level 3: an honest note on LoRA fine-tuning — what it is and what it isn&rsquo;t.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">UCC_WORKFLOWS <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>Workflows that earn their keep</h3><p>Plain-English explanations of UCC terms, filing checklists, letter drafting, and deadline / continuation tracking — run privately, on your own paperwork.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">PROMPT_PACK_10 <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>10-prompt copy-paste pack</h3><p>Ten ready prompts for real problem-solving and paperwork work — paste them in, swap your details, and go.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">SEVEN_DAY_PLAN <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>The 7-day setup plan</h3><p>A day-by-day path from zero to a local AI that knows your documents and your workflows — plus verification and troubleshooting for when something misbehaves.</p></div>
+        </article>
+        <article class="card">
+          <div class="win-bar">PROBLEM_SOLVING <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><h3>Five thinking frameworks</h3><p>Five problem-solving frameworks for getting sharper answers out of any local model — first principles, inversion, and more, in plain language.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="block reveal" aria-labelledby="faq-h">
+      <p class="sec-tag">[ 04 — Fair questions ]</p>
+      <h2 id="faq-h">Before you ask</h2>
+      <div class="faq">
+        <div class="q"><h3>Do I need a powerful computer?</h3><p>Probably not. The guide&rsquo;s hardware picker matches model size to the RAM you already have — capable models run on ordinary machines, and bigger models are there if your hardware grows into them.</p></div>
+        <div class="q"><h3>Is it hard to set up?</h3><p>No — about 15 minutes with Ollama, following exact step-by-step instructions, or point-and-click with LM Studio. The 7-day plan then layers on the document library and workflows at an easy pace.</p></div>
+        <div class="q"><h3>What does &ldquo;one-time&rdquo; actually mean?</h3><p>You pay $19.95 once. The PDF is yours to keep, and the models and software it teaches are free and open — there is no monthly bill, no per-task meter, and nothing that expires.</p></div>
+      </div>
+      <div class="final-cta">
+        <div class="inner">
+          <div>
+            <h2>Your machine. Your model. Your rules.</h2>
+            <p>Download the guide, run the 15-minute setup, and talk to an AI that answers to you — tonight, offline, in private.</p>
+          </div>
+          <a class="btn btn-primary" href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">Get Sovereign Local AI — $19.95</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="cols-f">
+      <div>
+        <b style="color:#fff">Sovereign Local AI</b> — a Private Money Rights Playbook guide.<br>
+        16 pages · PDF · $19.95 one-time
+      </div>
+      <nav aria-label="Footer">
+        <a href="https://privatemoneyrightsplaybook.xyz/sovereign-local-ai.html">Read the full guide breakdown</a> ·
+        <a href="https://privatemoneyrightsplaybook.xyz/links.html">All offers — Playbook + more</a> ·
+        <a href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">Get the guide</a>
+      </nav>
+    </div>
+    <p class="fine">Educational product. This guide teaches software setup and general problem-solving with publicly available open-source AI models; it is not legal advice and makes no income guarantees. Model names (Llama, Qwen, Mistral, Gemma) and product names (ChatGPT, Claude, Google AI Pro, TypeSafe) belong to their respective owners and are referenced for comparison only. Cloud subscription prices shown are the standard monthly rates as of October 2026.</p>
+  </footer>
+</div>
+
+<div class="mobile-cta" role="region" aria-label="Buy Sovereign Local AI">
+  <span><b>Sovereign Local AI</b>$19.95 one-time · no subscription</span>
+  <a href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">Get it</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var stacked = window.matchMedia('(max-width: 819px)');
+
+  /* ---------- draggable windows ---------- */
+  var stage = document.getElementById('stage');
+  var zTop = 20;
+  if (stage) {
+    stage.querySelectorAll('.win').forEach(function (win) {
+      var bar = win.querySelector('[data-drag]');
+      if (!bar) return;
+      var sx = 0, sy = 0, ox = 0, oy = 0, dragging = false;
+
+      bar.addEventListener('pointerdown', function (e) {
+        if (stacked.matches || e.button > 0) return;
+        var sr = stage.getBoundingClientRect();
+        var wr = win.getBoundingClientRect();
+        win.style.left = (wr.left - sr.left) + 'px';
+        win.style.top = (wr.top - sr.top) + 'px';
+        win.style.right = 'auto';
+        win.style.bottom = 'auto';
+        win.style.zIndex = ++zTop;
+        sx = e.clientX; sy = e.clientY;
+        ox = wr.left - sr.left; oy = wr.top - sr.top;
+        dragging = true;
+        win.classList.add('is-drag');
+        try { bar.setPointerCapture(e.pointerId); } catch (err) {}
+        e.preventDefault();
+      });
+      bar.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        var sr = stage.getBoundingClientRect();
+        var nx = ox + (e.clientX - sx);
+        var ny = oy + (e.clientY - sy);
+        nx = Math.max(0, Math.min(nx, sr.width - win.offsetWidth));
+        ny = Math.max(0, Math.min(ny, sr.height - win.offsetHeight));
+        win.style.left = nx + 'px';
+        win.style.top = ny + 'px';
+      });
+      function endDrag() { dragging = false; win.classList.remove('is-drag'); }
+      bar.addEventListener('pointerup', endDrag);
+      bar.addEventListener('pointercancel', endDrag);
+      bar.addEventListener('dblclick', function () {
+        win.style.left = ''; win.style.top = ''; win.style.right = ''; win.style.bottom = '';
+      });
+    });
+  }
+
+  /* ---------- count-up ---------- */
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    if (isNaN(target)) return;
+    function fmt(v) { return '$' + v.toFixed(decimals); }
+    if (reduceMotion.matches) { el.textContent = fmt(target); return; }
+    var start = null, dur = 1150;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(target * eased);
+      if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- reveal + chart growth on scroll ---------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  var mathWin = document.querySelector('.w-math');
+  function growChart() {
+    if (!mathWin || mathWin.dataset.grown) return;
+    mathWin.dataset.grown = '1';
+    mathWin.querySelectorAll('.fill').forEach(function (f) { f.classList.add('grown'); });
+    mathWin.querySelectorAll('[data-count]').forEach(countUp);
+  }
+  if ('IntersectionObserver' in window) {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { ro.observe(el); });
+
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { growChart(); co.disconnect(); }
+      });
+    }, { threshold: 0.25 });
+    if (mathWin) co.observe(mathWin);
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+    growChart();
+  }
+})();
+</script>
+</body>
+</html>
