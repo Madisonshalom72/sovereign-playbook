@@ -43,9 +43,105 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.book-cover,.question i,.ai-launcher{transition:none}.system-art .orbit,.system-art .pulse{animation:none}.ai-focus{animation:none;outline:4px solid var(--gold);outline-offset:7px}}
     @media print{.mobile-bar,.actions,.tabs,.accordion button{display:none!important}.hero{min-height:auto}.hero-grid,.spread-grid,.calc-grid,.offer-grid{display:block}.book-stage{min-height:0}.book-cover{width:250px;margin:20px auto}section{break-inside:avoid}}
   </style>
+
+  <style id="motion-upgrade">
+    /* ===== Motion-graphics upgrade (additive; original styles untouched) ===== */
+    .ic-spin,.ic-blink,.ic-swing,.ic-bar,.ic-drop,.ic-slide,.ic-block-a,.ic-block-b{transform-box:fill-box;transform-origin:center}
+    /* Hero: drifting grid + canvas dither field + animated gold line-work */
+    .hero:before{animation:gridDrift 26s linear infinite}
+    @keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:56px 0,0 56px}}
+    #hero-field{position:absolute;inset:0;z-index:0;width:100%;height:100%;pointer-events:none}
+    .hero-rings{position:absolute;z-index:0;top:-90px;right:-150px;width:600px;height:600px;pointer-events:none;opacity:.85}
+    .hero-rings .ring-rot{transform-box:fill-box;transform-origin:center;animation:icSpin 46s linear infinite}
+    .hero-rings .ring-rot.rev{animation:icSpinRev 32s linear infinite}
+    .hero-rings .ring-shield{stroke-dasharray:1;stroke-dashoffset:1;animation:shieldDraw 2.4s ease .3s forwards,shieldGlow 6s ease-in-out 2.8s infinite}
+    .hero-rings .ring-dot{animation:pulseDot 3.6s ease-in-out infinite}
+    @keyframes icSpin{to{transform:rotate(360deg)}}
+    @keyframes icSpinRev{to{transform:rotate(-360deg)}}
+    @keyframes shieldDraw{to{stroke-dashoffset:0}}
+    @keyframes shieldGlow{0%,100%{filter:drop-shadow(0 0 0 rgba(232,192,122,0))}50%{filter:drop-shadow(0 0 9px rgba(232,192,122,.75))}}
+    @keyframes pulseDot{0%,100%{opacity:.45}50%{opacity:1}}
+    .hero-grid{position:relative;z-index:1}
+    /* Rotating ticker */
+    .ticker{background:var(--navy-2);color:#eadfc6;border-bottom:1px solid rgba(194,138,69,.4);overflow:hidden;height:42px;display:flex;align-items:center;position:relative}
+    .ticker-track{display:flex;width:max-content;white-space:nowrap;animation:tickMove 38s linear infinite;will-change:transform}
+    .ticker-set{display:flex;align-items:center}
+    .ticker-set span{padding:0 20px;font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    .ticker-set i{color:var(--gold);font-style:normal;font-size:.62rem}
+    @keyframes tickMove{to{transform:translateX(-50%)}}
+    /* Book cover: float + travelling sheen + breathing glow (cover art itself untouched) */
+    .book-cover{overflow:hidden;animation:bookFloat 7.5s ease-in-out infinite}
+    .book-cover:before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(115deg,transparent 32%,rgba(255,236,190,.16) 46%,rgba(255,236,190,.34) 50%,rgba(255,236,190,.16) 54%,transparent 68%);transform:translateX(-130%);animation:sheenSweep 6.5s ease-in-out infinite}
+    @keyframes bookFloat{0%,100%{transform:translateY(0);box-shadow:0 38px 90px rgba(0,0,0,.62),0 0 0 rgba(224,175,112,0)}50%{transform:translateY(-10px);box-shadow:0 48px 100px rgba(0,0,0,.66),0 0 42px rgba(224,175,112,.22)}}
+    @keyframes sheenSweep{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+    /* Four-system map: each motif animates its own subject */
+    .ucc-lines{stroke-dasharray:7 9;animation:icMarch 1.1s linear infinite}
+    .draw-check{stroke-dasharray:1;stroke-dashoffset:1;animation:icDrawLoop 5.5s ease-in-out infinite}
+    .ai-trace{stroke-dasharray:.14 .09;animation:traceFlow 2.6s linear infinite}
+    .chain-bob{transform-box:fill-box;animation:bobY 5.2s ease-in-out infinite}
+    @keyframes icMarch{to{stroke-dashoffset:-16}}
+    @keyframes traceFlow{to{stroke-dashoffset:-1}}
+    @keyframes icDrawLoop{0%{stroke-dashoffset:1}42%,100%{stroke-dashoffset:0}}
+    @keyframes bobY{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    /* Pillar tabs: distinct animated icon per system */
+    .tab-btn{justify-content:flex-start;gap:12px}
+    .tab-btn span{margin-left:auto}
+    .tab-ic{width:26px;height:26px;flex:none;color:var(--gold-2)}
+    .tab-btn[aria-selected="true"] .tab-ic{color:#e0b57c}
+    .ic-march{animation:icMarch 1.2s linear infinite}
+    .ic-swing{animation:icSwing 4.6s ease-in-out infinite;transform-origin:50% 0}
+    @keyframes icSwing{0%,100%{transform:rotate(3.5deg)}50%{transform:rotate(-3.5deg)}}
+    .ic-blink{animation:icBlink 4.2s ease-in-out infinite}
+    @keyframes icBlink{0%,88%,100%{transform:scaleY(1)}93%{transform:scaleY(.2)}}
+    .ic-block-a{animation:blockA 3.8s ease-in-out infinite}
+    .ic-block-b{animation:blockB 3.8s ease-in-out infinite}
+    @keyframes blockA{0%,100%{transform:translateX(0)}50%{transform:translateX(1.6px)}}
+    @keyframes blockB{0%,100%{transform:translateX(0)}50%{transform:translateX(-1.6px)}}
+    /* Chapters: plain list becomes visual cards with per-chapter animated icons */
+    .chapters li{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,253,248,.05);border:1px solid rgba(255,255,255,.13)}
+    .ch-icon{width:36px;height:36px;flex:none;display:grid;place-items:center;border:1px solid rgba(224,174,108,.45);color:#e0b57c;background:rgba(13,29,41,.35)}
+    .ch-icon svg{width:21px;height:21px}
+    .ic-drop{animation:icDrop 2.8s ease-in infinite}
+    .ic-drop.d2{animation-delay:1.4s}
+    @keyframes icDrop{0%{transform:translateY(-2.5px);opacity:0}35%{opacity:1}75%,100%{transform:translateY(2.5px);opacity:0}}
+    .ic-bar{transform-origin:50% 100%;animation:icBarGrow 3.6s ease-in-out infinite}
+    .ic-bar.b2{animation-delay:.35s}.ic-bar.b3{animation-delay:.7s}
+    @keyframes icBarGrow{0%,100%{transform:scaleY(.72)}50%{transform:scaleY(1)}}
+    .ic-slide{animation:icSlide 3.4s ease-in-out infinite}
+    @keyframes icSlide{0%,100%{transform:translate(0,0)}50%{transform:translate(1.8px,-1.8px)}}
+    .ic-checkdraw{stroke-dasharray:1;stroke-dashoffset:1;animation:icDrawLoop 6s ease-in-out infinite}
+    /* Waterfall cascade + offer price glow */
+    .waterfall-track span{animation:fallGlow 3.8s ease-in-out infinite}
+    .waterfall-track span:nth-of-type(2){animation-delay:.35s}.waterfall-track span:nth-of-type(3){animation-delay:.7s}.waterfall-track span:nth-of-type(4){animation-delay:1.05s}.waterfall-track span:nth-of-type(5){animation-delay:1.4s}
+    @keyframes fallGlow{0%,100%{background:var(--paper-2)}50%{background:rgba(194,138,69,.28)}}
+    .price{animation:priceGlow 5.5s ease-in-out infinite}
+    @keyframes priceGlow{0%,100%{text-shadow:0 0 0 rgba(224,174,108,0)}50%{text-shadow:0 0 26px rgba(224,174,108,.45)}}
+    .relief,.step{transition:transform .35s ease,box-shadow .35s ease}
+    .relief:hover{transform:translateY(-4px)}
+    /* Scroll reveal (armed by JS only, so no-JS still shows everything) */
+    .js [data-rv]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+    .js [data-rv].in{opacity:1;transform:none}
+    @media(max-width:620px){.hero-rings{width:380px;height:380px;right:-170px;top:-70px;opacity:.5}.ticker{height:38px}.ticker-set span{font-size:.64rem;padding:0 14px}}
+    @media(prefers-reduced-motion:reduce){
+      .hero:before,.hero-rings .ring-rot,.hero-rings .ring-rot.rev,.hero-rings .ring-dot,.ticker-track,.book-cover,.book-cover:before,
+      .ucc-lines,.draw-check,.ai-trace,.chain-bob,.ic-march,.ic-swing,.ic-blink,.ic-block-a,.ic-block-b,.ic-spin,
+      .ic-drop,.ic-bar,.ic-slide,.ic-checkdraw,.waterfall-track span,.price{animation:none!important}
+      .hero-rings .ring-shield{animation:none!important;stroke-dashoffset:0}
+      .ic-checkdraw,.draw-check{stroke-dashoffset:0}
+      .js [data-rv]{opacity:1;transform:none;transition:none}
+    }
+  </style>
 </head>
 <body>
   <header class="hero">
+    <canvas id="hero-field" aria-hidden="true"></canvas>
+    <svg class="hero-rings" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+      <circle class="ring-rot" cx="300" cy="300" r="248" fill="none" stroke="#c28a45" stroke-width="1.5" stroke-dasharray="3 14" opacity=".55"/>
+      <circle class="ring-rot rev" cx="300" cy="300" r="196" fill="none" stroke="#e0b57c" stroke-width="1" stroke-dasharray="2 10" opacity=".4"/>
+      <circle cx="300" cy="300" r="150" fill="none" stroke="#c28a45" stroke-width="1" opacity=".35"/>
+      <path class="ring-shield" pathLength="1" d="M300 218c26 16 44 20 53 21v49c0 38-22 64-53 80-31-16-53-42-53-80v-49c9-1 27-5 53-21z" fill="none" stroke="#e8c07a" stroke-width="2.5"/>
+      <circle class="ring-dot" cx="300" cy="300" r="4" fill="#e8c07a"/>
+    </svg>
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow">A modern blueprint for private control</div>
@@ -82,19 +178,20 @@
       </div>
     </div>
   </header>
+  <div class="ticker" role="marquee" aria-label="Playbook highlights"><div class="ticker-track" id="ticker-track"><div class="ticker-set"><span>$24.98 bundle — Playbook + AI Skills &amp; Prompts Pack</span><i aria-hidden="true">◆</i><span>Instant digital download</span><i aria-hidden="true">◆</i><span>10 focused pages — not 200 pages of theory</span><i aria-hidden="true">◆</i><span>UCC · Rights · Local AI · Blockchain</span><i aria-hidden="true">◆</i><span>Four complex systems translated into plain English</span><i aria-hidden="true">◆</i><span>90 days mapped from reading to implementation</span><i aria-hidden="true">◆</i><span>Educational guide — not legal, tax or investment advice</span><i aria-hidden="true">◆</i></div><div class="ticker-set" aria-hidden="true"><span>$24.98 bundle — Playbook + AI Skills &amp; Prompts Pack</span><i aria-hidden="true">◆</i><span>Instant digital download</span><i aria-hidden="true">◆</i><span>10 focused pages — not 200 pages of theory</span><i aria-hidden="true">◆</i><span>UCC · Rights · Local AI · Blockchain</span><i aria-hidden="true">◆</i><span>Four complex systems translated into plain English</span><i aria-hidden="true">◆</i><span>90 days mapped from reading to implementation</span><i aria-hidden="true">◆</i><span>Educational guide — not legal, tax or investment advice</span><i aria-hidden="true">◆</i></div></div></div>
 
   <div class="trust-strip" aria-label="Playbook highlights">
     <div class="wrap trust-grid">
-      <div class="trust-item"><b>10</b><span>Focused pages—not 200 pages of theory</span></div>
-      <div class="trust-item"><b>4</b><span>Complex systems translated into plain English</span></div>
-      <div class="trust-item"><b>90</b><span>Days mapped from reading to implementation</span></div>
+      <div class="trust-item" data-rv><b class="trust-num">10</b><span>Focused pages—not 200 pages of theory</span></div>
+      <div class="trust-item" data-rv><b class="trust-num">4</b><span>Complex systems translated into plain English</span></div>
+      <div class="trust-item" data-rv><b class="trust-num">90</b><span>Days mapped from reading to implementation</span></div>
     </div>
   </div>
 
   <main>
     <section class="illustrated-map" aria-labelledby="map-title">
       <div class="wrap">
-        <div class="map-shell">
+        <div class="map-shell" data-rv>
           <div class="map-intro">
             <div class="eyebrow" style="color:var(--gold-2)">See the whole system</div>
             <h2 id="map-title">Your private world, organized around one center.</h2>
@@ -122,25 +219,25 @@
               <circle cx="665" cy="394" r="12" fill="#102633"/><path d="M665 403v22" stroke="#102633" stroke-width="9" stroke-linecap="round"/>
               <text x="665" y="493" text-anchor="middle" fill="#f7ecd9" font-size="17">PRIVATE CONTROL</text>
             </g>
-            <g transform="translate(238 352) rotate(-7)" filter="url(#softShadow)">
+            <g class="motif motif-ucc" transform="translate(238 352) rotate(-7)" filter="url(#softShadow)">
               <path d="M0 0h195l30 30v202H0z" fill="#fffaf1" stroke="#c28a45" stroke-width="3"/><path d="M195 0v30h30" fill="none" stroke="#c28a45" stroke-width="3"/>
-              <path d="M32 58h125M32 88h160M32 118h145M32 148h108" stroke="#365f54" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+              <path class="ucc-lines" d="M32 58h125M32 88h160M32 118h145M32 148h108" stroke="#365f54" stroke-width="8" stroke-linecap="round" opacity=".7"/>
               <circle cx="164" cy="180" r="28" fill="#c28a45"/><path d="M151 180l9 9 18-21" fill="none" stroke="#fffaf1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="112" y="265" text-anchor="middle" fill="#8b5824" font-size="18">UCC RECORDS</text>
             </g>
-            <g transform="translate(742 47)" filter="url(#softShadow)">
+            <g class="motif motif-rights" transform="translate(742 47)" filter="url(#softShadow)">
               <path d="M106 0c46 32 82 36 106 39v91c0 78-46 128-106 156C46 258 0 208 0 130V39C24 36 60 32 106 0z" fill="#365f54" stroke="#e3bd85" stroke-width="4"/>
-              <path d="M65 132l30 30 63-78" fill="none" stroke="#fffaf1" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="draw-check" pathLength="1" d="M65 132l30 30 63-78" fill="none" stroke="#fffaf1" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="106" y="322" text-anchor="middle" fill="#365f54" font-size="18">LAWFUL RIGHTS</text>
             </g>
-            <g transform="translate(957 326)" filter="url(#softShadow)">
+            <g class="motif motif-ai" transform="translate(957 326)" filter="url(#softShadow)">
               <rect x="28" y="28" width="180" height="180" rx="18" fill="#102633" stroke="#c28a45" stroke-width="4"/>
               <g stroke="#365f54" stroke-width="9"><path d="M0 65h28M0 105h28M0 145h28M0 185h28M208 65h28M208 105h28M208 145h28M208 185h28M65 0v28M105 0v28M145 0v28M185 0v28M65 208v28M105 208v28M145 208v28M185 208v28"/></g>
-              <path d="M81 153l37-97 37 97M94 121h48M171 62v91" fill="none" stroke="#e3bd85" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+              <path class="ai-trace" pathLength="1" d="M81 153l37-97 37 97M94 121h48M171 62v91" fill="none" stroke="#e3bd85" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="118" y="274" text-anchor="middle" fill="#365f54" font-size="18">LOCAL AI</text>
             </g>
-            <g transform="translate(626 541)" filter="url(#softShadow)">
-              <g stroke="#8b5824" stroke-width="3"><path d="M0 51l74-42 74 42-74 43z" fill="#e3bd85"/><path d="M0 51v76l74 43V94z" fill="#c28a45"/><path d="M148 51v76l-74 43V94z" fill="#a96828"/><path d="M119 116l74-42 74 42-74 43z" fill="#f0d2a7"/><path d="M119 116v76l74 43v-76z" fill="#d6a35f"/><path d="M267 116v76l-74 43v-76z" fill="#b77832"/></g>
+            <g class="motif motif-chain" transform="translate(626 541)" filter="url(#softShadow)">
+              <g class="chain-bob" stroke="#8b5824" stroke-width="3"><path d="M0 51l74-42 74 42-74 43z" fill="#e3bd85"/><path d="M0 51v76l74 43V94z" fill="#c28a45"/><path d="M148 51v76l-74 43V94z" fill="#a96828"/><path d="M119 116l74-42 74 42-74 43z" fill="#f0d2a7"/><path d="M119 116v76l74 43v-76z" fill="#d6a35f"/><path d="M267 116v76l-74 43v-76z" fill="#b77832"/></g>
               <text x="137" y="272" text-anchor="middle" fill="#8b5824" font-size="18">BLOCKCHAIN PROOF</text>
             </g>
             <g fill="none" stroke="#c28a45" stroke-width="3" opacity=".6" stroke-dasharray="5 10"><path d="M444 446C515 435 538 413 548 398"/><path d="M829 279c-26 23-39 35-50 47"/><path d="M953 448c-57-3-100-18-148-38"/><path d="M708 534c-3-17-5-27-7-38"/></g>
@@ -152,19 +249,19 @@
 
     <section class="stakes">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head" data-rv>
           <h2>Confusion is expensive.</h2>
           <p>When paperwork is scattered and boundaries are blurry, every decision carries more fear. The answer is not a secret phrase. It is a system you can explain, document and defend.</p>
         </div>
         <div class="stakes-grid">
-          <article class="emotion-card">
+          <article class="emotion-card" data-rv>
             <h3>Imagine knowing exactly where the proof lives.</h3>
             <p>No frantic search for a signed document. No wondering what an AI changed. No private file accidentally placed in public view. Just a clear chain from decision to record to review.</p>
           </article>
           <div class="relief-stack">
-            <article class="relief"><small>From exposure</small><h3>Control what leaves your hands.</h3><p>Separate private originals from public evidence and disclose only what a lawful process actually requires.</p></article>
-            <article class="relief"><small>From uncertainty</small><h3>Know which tool does what.</h3><p>See where the UCC, trusts, AI and blockchain help—and where each one stops.</p></article>
-            <article class="relief"><small>From wishful thinking</small><h3>Build income around real value.</h3><p>Package useful work, price it clearly and follow revenue math instead of income hype.</p></article>
+            <article class="relief" data-rv><small>From exposure</small><h3>Control what leaves your hands.</h3><p>Separate private originals from public evidence and disclose only what a lawful process actually requires.</p></article>
+            <article class="relief" data-rv><small>From uncertainty</small><h3>Know which tool does what.</h3><p>See where the UCC, trusts, AI and blockchain help—and where each one stops.</p></article>
+            <article class="relief" data-rv><small>From wishful thinking</small><h3>Build income around real value.</h3><p>Package useful work, price it clearly and follow revenue math instead of income hype.</p></article>
           </div>
         </div>
       </div>
@@ -172,31 +269,31 @@
 
     <section class="transformation">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head" data-rv>
           <h2>By page 10, you’ll have a sequence.</h2>
           <p>Not another folder of disconnected ideas. A practical order of operations that moves from understanding to protection, then toward income and reinvestment.</p>
         </div>
-        <div class="steps">
-          <article class="step"><div class="step-num">01</div><h3>Understand</h3><p>Separate lawful rights and real commercial rules from myths that can create costly mistakes.</p></article>
-          <article class="step"><div class="step-num">02</div><h3>Organize</h3><p>Map documents, authority, public records, private originals and clear chains of custody.</p></article>
-          <article class="step"><div class="step-num">03</div><h3>Protect</h3><p>Use local AI, controlled access, encryption and document hashes without giving up human judgment.</p></article>
-          <article class="step"><div class="step-num">04</div><h3>Build</h3><p>Turn useful operations work into an ethical offer, then direct cash through a disciplined waterfall.</p></article>
+        <div class="steps" data-rv>
+          <article class="step" data-rv><div class="step-num">01</div><h3>Understand</h3><p>Separate lawful rights and real commercial rules from myths that can create costly mistakes.</p></article>
+          <article class="step" data-rv><div class="step-num">02</div><h3>Organize</h3><p>Map documents, authority, public records, private originals and clear chains of custody.</p></article>
+          <article class="step" data-rv><div class="step-num">03</div><h3>Protect</h3><p>Use local AI, controlled access, encryption and document hashes without giving up human judgment.</p></article>
+          <article class="step" data-rv><div class="step-num">04</div><h3>Build</h3><p>Turn useful operations work into an ethical offer, then direct cash through a disciplined waterfall.</p></article>
         </div>
       </div>
     </section>
 
     <section class="pillars" id="inside">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head" data-rv>
           <h2>Four systems.<br>One clean architecture.</h2>
           <p>Tap each pillar to see its role. The guide stays strict about boundaries—because a tool becomes useful when you know what it can and cannot do.</p>
         </div>
-        <div class="tabs">
+        <div class="tabs" data-rv>
           <div class="tab-list" role="tablist" aria-label="Four systems">
-            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-ucc" id="tab-ucc">UCC <span>01</span></button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rights" id="tab-rights">Lawful rights <span>02</span></button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai">Local AI <span>03</span></button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-chain" id="tab-chain">Blockchain <span>04</span></button>
+            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-ucc" id="tab-ucc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="ic-march" stroke-dasharray="4 4" d="M7 3.5h7L18 7.5V20.5H7z"/><path d="M14 3.5v4h4M9.5 12h6M9.5 15.5h6"/></svg>UCC <span>01</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-rights" id="tab-rights"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g class="ic-swing"><path d="M12 4v2.5M5 6.5h14M12 6.5V20M8.5 20.5h7"/><path d="M5 6.5 2.8 11.5a3.36 3.36 0 0 0 4.4 0L5 6.5ZM19 6.5l-2.2 5a3.36 3.36 0 0 0 4.4 0L19 6.5Z"/></g></svg>Lawful rights <span>02</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 2.5V7M14 2.5V7M10 17v4.5M14 17v4.5M2.5 10H7M2.5 14H7M17 10h4.5M17 14h4.5"/><circle class="ic-blink" cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg>Local AI <span>03</span></button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-chain" id="tab-chain"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect class="ic-block-a" x="3" y="8" width="7.5" height="7.5" rx="1.5"/><rect class="ic-block-b" x="13.5" y="8" width="7.5" height="7.5" rx="1.5"/><path d="M10.5 11.75h3"/></svg>Blockchain <span>04</span></button>
           </div>
           <div>
             <article class="tab-panel active" id="panel-ucc" role="tabpanel" aria-labelledby="tab-ucc"><h3>Commercial law, not a loophole.</h3><p>Understand where the UCC actually applies: sales, instruments, bank transactions, securities and secured transactions. Learn why a filing gives notice of a real security interest—it does not create secret money, erase debt or cancel public law.</p><ul><li>Article-by-article orientation</li><li>Real collateral and real obligations</li><li>Filing limits made plain</li><li>State-law variation flagged</li></ul></article>
@@ -213,10 +310,10 @@
         <div>
           <h2>Practical on purpose.</h2>
           <p>Every page answers four questions: what is the rule, what can the tool do, where does risk live and what is the next lawful step?</p>
-          <ol class="chapters"><li><b>01</b> Four-system map</li><li><b>02</b> Public vs. private</li><li><b>03</b> Trust history</li><li><b>04</b> Pure & ecclesiastical claims</li><li><b>05</b> Waterfall method</li><li><b>06</b> Local AI workflow</li><li><b>07</b> Blockchain integrity</li><li><b>08</b> $10,000/month blueprint math</li><li><b>09</b> Investment sequence</li><li><b>10</b> 90-day implementation</li></ol>
+          <ol class="chapters"><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.2"/><circle class="ic-spin" cx="12" cy="12" r="8.2" stroke-dasharray="3 5"/><circle cx="12" cy="3.8" r="1.4" fill="currentColor" stroke="none"/><circle cx="20.2" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="20.2" r="1.4" fill="currentColor" stroke="none"/><circle cx="3.8" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><b>01</b> Four-system map</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z"/><circle class="ic-blink" cx="12" cy="12" r="2.8"/></svg></span><b>02</b> Public vs. private</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="ic-march" stroke-dasharray="4 4" d="M2.5 14 12 5.5 21.5 14"/><path d="M4.5 20.5v-6M9.2 20.5v-6M14.8 20.5v-6M19.5 20.5v-6M2.5 20.5h19"/></svg></span><b>03</b> Trust history</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g class="ic-swing"><path d="M12 2.5v3M10 4h4"/></g><path d="M6.5 21.5v-7L12 9l5.5 5.5v7M10 21.5v-4a2 2 0 0 1 4 0v4"/></svg></span><b>04</b> Pure & ecclesiastical claims</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3.5h6.5v5H14v5h7"/><circle class="ic-drop" cx="6" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle class="ic-drop d2" cx="11.5" cy="17.5" r="1.3" fill="currentColor" stroke="none"/></svg></span><b>05</b> Waterfall method</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="5" cy="5" r="2.2"/><circle cx="19" cy="12" r="2.2"/><circle cx="5" cy="19" r="2.2"/><path class="ic-march" stroke-dasharray="4 4" d="M7 6.5 16.8 10.5M16.8 13.5 7 17.5"/></svg></span><b>06</b> Local AI workflow</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="ic-march" stroke-dasharray="5 4" d="M9.5 3.5 7.5 20.5M16.5 3.5l-2 17M4 8.5h17M3 15.5h17"/></svg></span><b>07</b> Blockchain integrity</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 20.5h17"/><rect class="ic-bar" x="6" y="11" width="3" height="9.5"/><rect class="ic-bar b2" x="11" y="5" width="3" height="15.5"/><rect class="ic-bar b3" x="16" y="8.5" width="3" height="12"/></svg></span><b>08</b> $10,000/month blueprint math</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h4.5v-4.5H12V12h4.5V7.5H21"/><path class="ic-slide" d="M5 8.5 9.5 4M7.2 4h2.3v2.3"/></svg></span><b>09</b> Investment sequence</li><li data-rv><span class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path class="ic-checkdraw" pathLength="1" d="m8.5 15.5 2.4 2.4 4.6-4.9"/></svg></span><b>10</b> 90-day implementation</li></ol>
         </div>
         <div class="spread-visual" aria-label="Sharp preview of the Waterfall Method and Local AI workflow pages">
-          <div class="page-preview">
+          <div class="page-preview" data-rv>
             <article class="preview-page"><small>The Private Money Rights Playbook</small><h3><b>06</b> The Waterfall Method</h3><p>A cash-allocation sequence for clarity—not a scheme to hide money.</p><div class="preview-rule"></div><h4>Assign every dollar in order</h4><div class="preview-table"><span>1 · Tax & compliance</span><span>Estimated taxes, filing, insurance</span><span>2 · Operations</span><span>Payroll, software, delivery</span><span>3 · Safety reserve</span><span>Emergency fund and deductibles</span><span>4 · Growth</span><span>Marketing, tools and education</span></div><h4>Three controls that make it real</h4><p>Trigger: define when funds move. Authority: separate who proposes, approves and executes. Evidence: attach invoices and statements.</p></article>
             <article class="preview-page"><small>The Private Money Rights Playbook</small><h3><b>07</b> Local AI for Private Paperwork</h3><p>A human-supervised workflow that keeps sensitive files close.</p><div class="preview-rule"></div><h4>Recommended architecture</h4><p>Offline workspace • local model • approved retrieval folder • human review log</p><h4>High-value tasks</h4><p>Extract dates, compare drafts, generate a records schedule and redact copies while preserving originals.</p><h4>Prompt pattern</h4><div class="prompt-block"><b>SCOPE → SOURCES → TASK → LIMITS → OUTPUT</b><br>Use only the attached signed agreement. Extract dates and obligations. If a fact is absent, write NOT FOUND.</div><h4>Controls</h4><p>Encrypt storage, patch software, test restores and keep final decisions with an authorized human.</p></article>
           </div><div class="spread-note">Action tables, red flags, prompts & checklists</div>
@@ -226,7 +323,7 @@
 
     <section class="myths">
       <div class="wrap">
-        <div class="section-head"><h2>Hard questions.<br>Straight answers.</h2><p>Open each question for the distinction that can keep a useful tool from becoming a costly mistake.</p></div>
+        <div class="section-head" data-rv><h2>Hard questions.<br>Straight answers.</h2><p>Open each question for the distinction that can keep a useful tool from becoming a costly mistake.</p></div>
         <div class="accordion">
           <div class="item"><button class="question" aria-expanded="false">Can a UCC filing erase debt or create ownership?<i aria-hidden="true">+</i></button><div class="answer">No. A financing statement generally gives public notice of a claimed security interest arising from an actual secured transaction. It does not create the underlying agreement, turn a person into collateral, erase a lawful debt or create immunity.</div></div>
           <div class="item"><button class="question" aria-expanded="false">Does a “pure” or ecclesiastical trust avoid tax and courts?<i aria-hidden="true">+</i></button><div class="answer">The label does not control the result. Authorities examine the real arrangement: purpose, assets, control, beneficiaries, fiduciary conduct, tax classification and governing law. Religious purpose may matter, but it is not a blanket exemption.</div></div>
@@ -238,25 +335,25 @@
 
     <section class="income" id="10k-method">
       <div class="wrap">
-        <div class="section-head"><h2>The $10,000-a-Month Blueprint.</h2><p>A visible, repeatable path from one useful service to a $10,000 gross monthly target—built on delivery and documented value, never promises of secret money or guaranteed income.</p></div>
+        <div class="section-head" data-rv><h2>The $10,000-a-Month Blueprint.</h2><p>A visible, repeatable path from one useful service to a $10,000 gross monthly target—built on delivery and documented value, never promises of secret money or guaranteed income.</p></div>
         <div class="method-shell">
           <div class="method-top">
             <div class="method-number">2 × 4<small>projects per week × four weeks</small></div>
             <div><h3>One clear offer. Eight completed projects.</h3><p>Start with a bounded service you can deliver well: a records-organization setup, a private local-AI office workflow, a document-integrity pack or an operations binder. At an average package price of $1,250, eight completed projects gross $10,000.</p></div>
           </div>
           <div class="method-flow" aria-label="Four steps in the ten-thousand-dollar monthly method">
-            <article class="method-step"><b>Step 1 · Package</b><h3>Sell a defined result</h3><p>Name the deliverables, timeline, exclusions and fixed package price. Do not market legal, tax or investment advice.</p></article>
-            <article class="method-step"><b>Step 2 · Prospect</b><h3>Create a weekly pipeline</h3><p>Focus outreach on organizations already burdened by scattered records, repetitive paperwork or weak version control.</p></article>
-            <article class="method-step"><b>Step 3 · Deliver</b><h3>Use one documented process</h3><p>Intake, inventory, organize, verify, hand off and obtain written acceptance. Keep private source files off-chain.</p></article>
-            <article class="method-step"><b>Step 4 · Repeat</b><h3>Complete two per week</h3><p>Collect feedback, referrals and proof of process—then improve the same offer instead of chasing a new one every week.</p></article>
+            <article class="method-step" data-rv><b>Step 1 · Package</b><h3>Sell a defined result</h3><p>Name the deliverables, timeline, exclusions and fixed package price. Do not market legal, tax or investment advice.</p></article>
+            <article class="method-step" data-rv><b>Step 2 · Prospect</b><h3>Create a weekly pipeline</h3><p>Focus outreach on organizations already burdened by scattered records, repetitive paperwork or weak version control.</p></article>
+            <article class="method-step" data-rv><b>Step 3 · Deliver</b><h3>Use one documented process</h3><p>Intake, inventory, organize, verify, hand off and obtain written acceptance. Keep private source files off-chain.</p></article>
+            <article class="method-step" data-rv><b>Step 4 · Repeat</b><h3>Complete two per week</h3><p>Collect feedback, referrals and proof of process—then improve the same offer instead of chasing a new one every week.</p></article>
           </div>
         </div>
-        <div class="waterfall">
+        <div class="waterfall" data-rv>
           <div class="waterfall-label">The cash<br>waterfall</div>
           <div class="waterfall-track"><span>Gross revenue</span><i>→</i><span>Tax reserve</span><i>→</i><span>Delivery costs</span><i>→</i><span>Owner pay + reserve</span><i>→</i><span>Due-diligenced assets</span></div>
           <p class="waterfall-note">Set tax and allocation percentages with qualified professionals for your entity, location and actual numbers. Never invest money needed for taxes, obligations or operating reserves.</p>
         </div>
-        <div class="calc-grid">
+        <div class="calc-grid" data-rv>
           <div class="calc-copy"><h3>Test your package math</h3><p>Move the slider to see how many completed projects would gross $10,000 in a month at your chosen average package price.</p><label for="package">Average package: <output id="packageValue">$1,250</output></label><input id="package" type="range" min="500" max="5000" step="250" value="1250"><div class="range-labels"><span>$500</span><span>$5,000</span></div></div>
           <div class="calc-output" aria-live="polite"><div class="big" id="projects">8</div><h3>completed projects per month</h3><p id="modelLine">8 × $1,250 = $10,000 gross</p><p class="tiny">Illustrative math only. Revenue, demand, expenses, taxes and profit are not guaranteed.</p></div>
         </div>
@@ -265,7 +362,7 @@
 
     <section class="offer" id="offer">
       <div class="wrap">
-        <div class="offer-shell">
+        <div class="offer-shell" data-rv>
           <div class="offer-grid">
             <div><h2>Trade uncertainty for a plan you can explain.</h2><p>Get the complete 10-page playbook—four-system framework, trust reality check, public/private map, waterfall method, local-AI prompt pattern, blockchain custody workflow, the $10,000-a-month blueprint, revenue models and a 90-day plan—plus the AI Skills &amp; Prompts Pack.</p></div>
             <div class="checkout">
@@ -343,15 +440,87 @@
         else if(/\bucc\b|commercial code|secured transaction|financing statement/.test(q)){reply='The UCC governs defined commercial transactions. A filing can give notice of a real security interest, but it does not erase debt, create secret money or place someone outside public law.';label='Open the UCC pillar';action=jumpTo('#inside','tab-ucc');}
         else if(/trust|ecclesiastical|pure trust|religious/.test(q)){reply='Trust labels do not decide legal or tax treatment. Purpose, assets, control, beneficiaries, fiduciary conduct, tax classification and governing law all matter. The page includes a direct reality check on “pure” and ecclesiastical claims.';label='Read the trust answer';action=jumpTo('.myths',null,1);}
         else if(/rights|public|private|government|intrusion|disclosure/.test(q)){reply='The framework separates private originals from records that must be disclosed or filed. Rights are protected through facts, jurisdiction, procedure and minimum-necessary disclosure—not identity labels or blanket exemptions.';label='Open the Rights pillar';action=jumpTo('#inside','tab-rights');}
-        else if(/10k|10,000|income|revenue|earn|client|service offer/.test(q)){reply='The model is eight completed projects per month at an average package price of $1,250: two per week for four weeks. It is gross-revenue math, not a guarantee, and it depends on a defined service, real demand and consistent delivery.';label='Explore the blueprint';action=jumpTo('#10k-method');}
+        else if(/10k|10,000|income|revenue|earn|client|service offer/.test(q)){reply='The model is eight completed projects per month at an average package price of $1,250: two per week for four weeks. It is gross-revenue math, not a guarantee, and it depends on a defined service, real demand and consistent delivery.';label='Explore the $10K method';action=jumpTo('#10k-method');}
         else if(/waterfall|allocate|allocation|invest/.test(q)){reply='The waterfall routes gross revenue in order: tax reserve, delivery costs, owner pay and safety reserve, then due-diligenced assets. Percentages should be set with qualified professionals using your actual obligations.';label='See the cash waterfall';action=jumpTo('.waterfall');}
-        else if(/price|cost|buy|purchase|order|book/.test(q)){reply='The $24.98 one-time bundle includes The Private Money Rights Playbook and the AI Skills & Prompts Pack in one checkout. The offer section summarizes what is included.';label='See the offer';action=jumpTo('#offer');}
+        else if(/price|cost|buy|purchase|order|book/.test(q)){reply='The $24.98 one-time bundle includes The Private Rights Playbook and the AI Skills & Prompts Pack in one checkout. The offer section summarizes what is included.';label='See the offer';action=jumpTo('#offer');}
         else if(/inside|chapter|page|include|framework|four system/.test(q)){reply='The ten chapters cover the four-system map, public versus private records, trust history and claims, the waterfall method, local AI, blockchain integrity, $10K revenue math, investing sequence and a 90-day implementation plan.';label='See every chapter';action=jumpTo('.spread');}
         else if(/hello|hi\b|hey|help|what can/.test(q)){reply='Ask me about UCC, rights, trusts, local AI, blockchain, the waterfall, pricing or the $10K method. I can answer from the playbook and move you to the matching section.';}
         else{reply='I can help with the topics covered here: UCC, lawful rights, trusts, local AI, blockchain proof, the cash waterfall, pricing and the $10K revenue model. Try naming one of those topics.';}
         addMessage(reply,'guide',label,action);
       }
       if(aiLauncher&&aiGuide){aiLauncher.addEventListener('click',openGuide);aiClose.addEventListener('click',closeGuide);aiForm.addEventListener('submit',function(event){event.preventDefault();var text=aiInput.value.trim();if(!text)return;addMessage(text,'user');aiInput.value='';guideReply(text)});document.querySelectorAll('.ai-prompt').forEach(function(prompt){prompt.addEventListener('click',function(){addMessage(prompt.textContent,'user');guideReply(prompt.textContent)})});document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!aiGuide.hidden)closeGuide()})}
+    })();
+  </script>
+  <script>
+    (function(){
+      var motion={ready:false,reduced:false,revealCount:0,observers:0,ticker:false,countUp:false,canvas:false,frames:0};
+      window.__pmMotion=motion;
+      document.documentElement.classList.add('js');
+      try{motion.reduced=!!window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+      var raf=window.requestAnimationFrame?window.requestAnimationFrame.bind(window):function(cb){return setTimeout(function(){cb(Date.now())},16)};
+      var hasIO='IntersectionObserver' in window;
+
+      var track=document.getElementById('ticker-track');
+      if(track)motion.ticker=true;
+
+      var rvEls=document.querySelectorAll('[data-rv]');
+      motion.revealCount=rvEls.length;
+      if(motion.reduced||!hasIO){rvEls.forEach(function(el){el.classList.add('in')})}
+      else{
+        var ro=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target)}})},{threshold:.12});
+        motion.observers++;
+        rvEls.forEach(function(el,i){el.style.transitionDelay=((i%4)*70)+'ms';ro.observe(el)});
+      }
+
+      var nums=document.querySelectorAll('.trust-num');
+      if(nums.length){
+        motion.countUp=true;
+        nums.forEach(function(el){el.setAttribute('data-final',el.textContent.replace(/\D/g,''))});
+        function finalNums(){nums.forEach(function(el){el.textContent=el.getAttribute('data-final')})}
+        if(motion.reduced||!hasIO){finalNums()}
+        else{
+          var started=false;
+          var co=new IntersectionObserver(function(entries){
+            if(started)return;
+            if(!entries.some(function(e){return e.isIntersecting}))return;
+            started=true;co.disconnect();
+            var t0=null;
+            function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1000),e=1-Math.pow(1-p,3);
+              nums.forEach(function(el){el.textContent=String(Math.round(Number(el.getAttribute('data-final'))*e))});
+              if(p<1)raf(step);else finalNums()}
+            raf(step);
+          },{threshold:.4});
+          motion.observers++;
+          nums.forEach(function(el){co.observe(el)});
+        }
+      }
+
+      var cv=document.getElementById('hero-field'),hero=document.querySelector('.hero'),ctx=null;
+      if(cv){try{ctx=cv.getContext('2d')}catch(e){}}
+      if(cv&&ctx){
+        motion.canvas=true;
+        var W=hero?hero.clientWidth:900,H=hero?hero.clientHeight:600;
+        cv.width=W;cv.height=H;
+        function draw(t){
+          ctx.clearRect(0,0,cv.width,cv.height);
+          var gap=26,x,y,s,a;
+          for(x=13;x<cv.width;x+=gap){for(y=13;y<cv.height;y+=gap){
+            s=Math.sin((x+y)/160+t/1400);
+            a=.04+.10*(s*.5+.5);
+            ctx.fillStyle='rgba(224,175,112,'+a.toFixed(3)+')';
+            ctx.beginPath();ctx.arc(x,y,1+1.3*(s*.5+.5),0,6.2832);ctx.fill();
+          }}
+          motion.frames++;
+        }
+        if(motion.reduced){draw(0)}
+        else{
+          var vis=true;
+          if(hasIO&&hero){var vo=new IntersectionObserver(function(en){vis=en[0].isIntersecting},{threshold:0});motion.observers++;vo.observe(hero)}
+          if(document.addEventListener)document.addEventListener('visibilitychange',function(){vis=!document.hidden});
+          (function loop(t){if(vis)draw(t||0);raf(loop)})(0);
+        }
+      }
+      motion.ready=true;
     })();
   </script>
 </body>
