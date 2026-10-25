@@ -84,6 +84,13 @@ a.social .h{color:var(--dim);font-family:Inter,system-ui,sans-serif;font-weight:
 footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;color:var(--dim);font-size:.76rem;line-height:1.6;text-align:center}
 footer p{margin:8px 0}
 footer b{color:var(--muted)}
+.share-btn{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line-gold);background:rgba(212,169,78,.08);color:var(--gold2);font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.08em;cursor:pointer;white-space:nowrap;transition:transform .12s ease,border-color .12s ease,background .12s ease}
+.share-btn:active{transform:scale(.96)}
+.share-btn:hover{border-color:rgba(212,169,78,.65);background:rgba(212,169,78,.14)}
+.offer-card .share-btn{min-height:46px;padding:0 16px;font-size:.82rem}
+.share-toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:#16233f;color:var(--ink);border:1px solid var(--line-gold);border-radius:999px;padding:10px 18px;font-family:Inter,system-ui,sans-serif;font-size:.85rem;font-weight:600;box-shadow:0 14px 34px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;z-index:60;max-width:calc(100% - 32px);text-align:center}
+.share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:380px){.share-btn{padding:0 10px;font-size:.72rem}}
 @media(max-width:380px){a.card .pr{font-size:.82rem;padding:5px 10px}h1{font-size:1.5rem}}
 </style>
 </head>
@@ -99,25 +106,27 @@ footer b{color:var(--muted)}
 
  <h2 class="sec gold">New Release</h2>
  <div class="stack">
-  <a class="card hero-card" href="https://privatemoneyrightsplaybook.xyz/press-release-traveling-vs-driving.html">
+  <a class="card hero-card" id="traveling-press" href="https://privatemoneyrightsplaybook.xyz/press-release-traveling-vs-driving.html">
    <span class="ic">📰</span>
    <span class="tx">
     <span class="t">Traveling vs. Driving — Secrets of the Traffic Game Exposed</span>
     <span class="c">Press release: the new Gold Series book, built on a real case where most charges were dismissed — docket printed inside</span>
    </span>
    <span class="pr">$29.99</span>
+   <button type="button" class="share-btn" data-share="traveling-press" aria-label="Share this offer">↗ SHARE</button>
   </a>
  </div>
 
  <h2 class="sec gold">The Offers</h2>
  <div class="stack">
-  <a class="card hero-card" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">
+  <a class="card hero-card" id="playbook" href="https://buy.stripe.com/4gM00j85k93t4ECbZIa3u00">
    <span class="ic">📘</span>
    <span class="tx">
     <span class="t">Private Money Rights Playbook + AI Skills Pack</span>
     <span class="c">The full system: UCC, trusts, privacy + the $10,000-a-Month Blueprint</span>
    </span>
    <span class="pr">$24.98</span>
+   <button type="button" class="share-btn" data-share="playbook" aria-label="Share this offer">↗ SHARE</button>
   </a>
 
   <article class="offer-card" id="traveling-vs-driving">
@@ -140,6 +149,7 @@ footer b{color:var(--muted)}
     <span class="price"><s>$99</s> $29.99<small>LIMITED TIME</small></span>
     <!-- CHECKOUT: live Whop checkout for Traveling vs. Driving (plan_pte6PfnOa0SNW), wired 2026-10-25 -->
     <a class="buy" href="https://whop.com/checkout/plan_pte6PfnOa0SNW">GET THE BOOK — $29.99</a>
+    <button type="button" class="share-btn" data-share="traveling-vs-driving" aria-label="Share this offer">↗ SHARE</button>
    </div>
   </article>
 
@@ -159,43 +169,48 @@ footer b{color:var(--muted)}
    <div class="offer-foot">
     <span class="price">FREE<small>GOLD SERIES</small></span>
     <a class="buy" href="https://madisonshalom72.github.io/ucc-talk24-toolkit/travelers-id.html">BUILD YOUR ID — FREE</a>
+    <button type="button" class="share-btn" data-share="travelers-id" aria-label="Share this offer">↗ SHARE</button>
    </div>
   </article>
 
-  <a class="card" href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">
+  <a class="card" id="sovereign-local-ai" href="https://whop.com/checkout/plan_1td7Rs0hdEP1s">
    <span class="ic">🤖</span>
    <span class="tx">
     <span class="t">Sovereign Local AI (PDF)</span>
     <span class="c">Run private AI on your own machine — set it up for UCC work in a day</span>
    </span>
    <span class="pr">$19.95</span>
+   <button type="button" class="share-btn" data-share="sovereign-local-ai" aria-label="Share this offer">↗ SHARE</button>
   </a>
 
-  <a class="card" href="https://whop.com/checkout/plan_913F17Rb886u9">
+  <a class="card" id="turn-credit-into-the-bank" href="https://whop.com/checkout/plan_913F17Rb886u9">
    <span class="ic">💳</span>
    <span class="tx">
     <span class="t">Turn Credit Into the Bank — The Credit Stacking Playbook</span>
     <span class="c">The complete five-move system: profile cleanup, the stacking order, 0% APR float rules, deployment rules, and the guardrails</span>
    </span>
    <span class="pr">$19.99</span>
+   <button type="button" class="share-btn" data-share="turn-credit-into-the-bank" aria-label="Share this offer">↗ SHARE</button>
   </a>
 
-  <a class="card" href="https://madisonshalom72.github.io/ucc-talk24-toolkit/">
+  <a class="card" id="ucc-talk24-toolkit" href="https://madisonshalom72.github.io/ucc-talk24-toolkit/">
    <span class="ic">🧰</span>
    <span class="tx">
     <span class="t">UCC Talk24 Toolkit</span>
     <span class="c">Stamps, checklists, generators and the law dictionary — in your browser</span>
    </span>
    <span class="pr">$9.99/mo</span>
+   <button type="button" class="share-btn" data-share="ucc-talk24-toolkit" aria-label="Share this offer">↗ SHARE</button>
   </a>
 
-  <a class="card" href="https://privatemoneyrightsplaybook.xyz/founders.html">
+  <a class="card" id="founders-program" href="https://privatemoneyrightsplaybook.xyz/founders.html">
    <span class="ic">👑</span>
    <span class="tx">
     <span class="t">The Founders Program</span>
     <span class="c">8 spots. 12 weeks live. Apply — $0 today</span>
    </span>
    <span class="pr">$3,999</span>
+   <button type="button" class="share-btn" data-share="founders-program" aria-label="Share this offer">↗ SHARE</button>
   </a>
  </div>
 
@@ -264,5 +279,110 @@ footer b{color:var(--muted)}
  </footer>
 
 </main>
+<div class="share-toast" id="shareToast" role="status" aria-live="polite"></div>
+<script>
+/* Per-section share — native share sheet (with the offer image where file sharing is supported),
+   falling back to copying the section's share-page link. No external libraries. */
+(function(){
+  var SHARES={
+    "traveling-press": {
+        "title": "Traveling vs. Driving — Secrets of the Traffic Game Exposed",
+        "text": "The new Gold Series book, built on a real case where most charges were dismissed — docket printed inside. $29.99, limited time.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-traveling-press.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/press-traveling-vs-driving-holo.jpg"
+    },
+    "playbook": {
+        "title": "Private Money Rights Playbook + AI Skills Pack",
+        "text": "The full system: UCC, trusts, privacy + the $10,000-a-Month Blueprint. $24.98.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-playbook.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/share-img-playbook.jpg"
+    },
+    "traveling-vs-driving": {
+        "title": "Traveling vs. Driving — The Gold Series",
+        "text": "Secrets of the Traffic Game Exposed — jurisdiction, your name, going private, the Traffic Study Course, and the real case: most charges dismissed. $29.99, limited time — THE KEY, the sovereign banking study course, included FREE.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-traveling-vs-driving.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/press-traveling-vs-driving-holo.jpg"
+    },
+    "travelers-id": {
+        "title": "The Traveler's ID — Gold Series",
+        "text": "Are you ready to take your power back? And your sovereignty? Build your Traveler's ID free — your photo, your thumbprint, the ID page + Statement of Capacity & Standing.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-travelers-id.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/travelers-id-cover.jpg"
+    },
+    "sovereign-local-ai": {
+        "title": "Sovereign Local AI (PDF)",
+        "text": "Run private AI on your own machine — set it up for UCC work in a day. $19.95.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-sovereign-local-ai.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/share-img-sovereign-local-ai.jpg"
+    },
+    "turn-credit-into-the-bank": {
+        "title": "Turn Credit Into the Bank — The Credit Stacking Playbook",
+        "text": "The complete five-move system: profile cleanup, the stacking order, 0% APR float rules, deployment rules, and the guardrails. $19.99.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-turn-credit-into-the-bank.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/share-img-turn-credit.jpg"
+    },
+    "ucc-talk24-toolkit": {
+        "title": "UCC Talk24 Toolkit",
+        "text": "Stamps, checklists, generators and the law dictionary — in your browser. $9.99/mo.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-ucc-talk24-toolkit.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/share-img-toolkit.jpg"
+    },
+    "founders-program": {
+        "title": "The Founders Program",
+        "text": "8 spots. 12 weeks live. Apply — $0 today. $3,999.",
+        "url": "https://privatemoneyrightsplaybook.xyz/share-founders-program.html",
+        "img": "https://privatemoneyrightsplaybook.xyz/share-img-founders.jpg"
+    }
+};
+  var toast=document.getElementById('shareToast'),toastTimer=null;
+  function showToast(msg){ if(!toast){return;} toast.textContent=msg; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(function(){ toast.classList.remove('show'); },2600); }
+  function copyLink(url){
+    function done(){ showToast('Link copied — paste it anywhere'); }
+    function fallback(){
+      var ta=document.createElement('textarea');
+      ta.value=url; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); done(); }catch(e){ showToast('Copy this link: '+url); }
+      document.body.removeChild(ta);
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done).catch(fallback); }
+    else{ fallback(); }
+  }
+  function doShare(slug){
+    var s=SHARES[slug]; if(!s){ return; }
+    function plainShare(){
+      if(navigator.share){
+        navigator.share({title:s.title,text:s.text,url:s.url}).catch(function(err){
+          if(err&&err.name==='AbortError'){ return; }
+          copyLink(s.url);
+        });
+      }else{ copyLink(s.url); }
+    }
+    if(navigator.share&&navigator.canShare){
+      fetch(s.img).then(function(r){ return r.blob(); }).then(function(blob){
+        var file=new File([blob],'offer.jpg',{type:blob.type||'image/jpeg'});
+        var withFiles={title:s.title,text:s.text,url:s.url,files:[file]};
+        if(navigator.canShare(withFiles)){
+          navigator.share(withFiles).catch(function(err){
+            if(err&&err.name==='AbortError'){ return; }
+            plainShare();
+          });
+        }else{ plainShare(); }
+      }).catch(function(){ plainShare(); });
+      return;
+    }
+    plainShare();
+  }
+  var btns=document.querySelectorAll('.share-btn');
+  for(var i=0;i<btns.length;i++){
+    (function(b){
+      b.addEventListener('click',function(ev){
+        ev.preventDefault(); ev.stopPropagation();
+        doShare(b.getAttribute('data-share'));
+      });
+    })(btns[i]);
+  }
+})();
+</script>
 </body>
 </html>
