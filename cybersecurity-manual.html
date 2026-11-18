@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="dark light"/>
+<link rel="icon" href="data:,">
+<title>The 5-Wall Framework — America's Manual Against Autonomous AI Attacks | $19.99</title>
+<meta name="description" content="The interactive cybersecurity manual for families and small businesses. 5 walls, Sovereign AI prompt pack, checklists and a 72-hour incident plan. $19.99"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050a0f; --bg2:#08131c; --panel:#0a1826; --panel2:#0d1f33;
+  --line:#1b3a52; --line2:#26506f;
+  --ink:#e8f4ff; --muted:#9db8cc; --dim:#6f8aa0;
+  --cyan:#00e5ff; --cyan-d:#00b8d4; --lime:#a6ff4d; --amber:#ffb020; --red:#ff4d5e; --green:#2ee6a8;
+  --radius:14px;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#eef4f8; --bg2:#e2edf4; --panel:#ffffff; --panel2:#f2f8fc; --line:#c3d6e4; --line2:#9dbfd6; --ink:#0a1c2c; --muted:#3d5a70; --dim:#5d7a90; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+h1,h2,h3{font-family:Archivo,system-ui,sans-serif;line-height:1.02;margin:0}
+.mono{font-family:"IBM Plex Mono",monospace}
+a{color:var(--cyan)}
+button,[role="button"],summary,a.btn{min-height:44px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* ticker */
+.ticker{position:sticky;top:0;z-index:50;background:#020608;border-bottom:1px solid var(--line);overflow:hidden}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:tick 38s linear infinite;padding:8px 0;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:#ffb020}
+.ticker-track span{padding:0 28px}
+.ticker-track b{color:#ff4d5e}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker-track{animation:none}.pulse{animation:none!important}}
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:12px;flex-wrap:wrap}
+.logo{font-family:Archivo;font-weight:900;font-size:20px;letter-spacing:-.02em}
+.logo em{font-style:normal;color:var(--cyan)}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;padding:10px 12px;border-radius:8px}
+.navlinks a:hover{color:var(--ink);background:var(--panel)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cyan);color:#02141a!important;font-weight:800;text-decoration:none;padding:13px 22px;border-radius:10px;border:0;cursor:pointer;font-size:15px;font-family:Archivo}
+.btn:hover{background:var(--lime)}
+.btn.ghost{background:transparent;color:var(--ink)!important;border:1px solid var(--line2)}
+.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)!important}
+/* hero */
+.hero{position:relative;padding:28px 0 56px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.kicker{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);background:var(--panel);padding:7px 12px;border-radius:999px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;color:var(--cyan)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.hero h1{font-size:clamp(42px,7vw,76px);font-weight:900;letter-spacing:-.03em;margin:18px 0 14px;text-transform:uppercase}
+.hero h1 .hl{color:var(--cyan)}
+.hero h1 .hl2{color:var(--lime)}
+.lede{font-size:19px;color:var(--muted);max-width:56ch}
+.price-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:24px 0}
+.price{font-family:Archivo;font-size:44px;font-weight:900}
+.price small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--dim);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat b{font-family:Archivo;font-size:26px;display:block}
+.stat span{font-size:12px;color:var(--muted)}
+/* terminal */
+.terminal{background:#020a10;border:1px solid var(--line2);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.term-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted)}
+.term-body{padding:16px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.9;min-height:300px;color:#bfefff}
+.term-body .r{color:#ff7a86}.term-body .g{color:#2ee6a8}.term-body .y{color:#ffb020}.term-body .c{color:#00e5ff}
+.cursor{display:inline-block;width:9px;height:16px;background:var(--cyan);vertical-align:-2px;animation:pulse 1s infinite}
+.wallviz{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.wallviz button{background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--ink);padding:12px 6px;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:11px;text-align:center}
+.wallviz button.active{border-color:var(--cyan);background:var(--panel2);color:var(--cyan)}
+.wallviz button b{display:block;font-family:Archivo;font-size:20px;margin-bottom:2px}
+/* sections */
+section{padding:64px 0}
+.sec-head{max-width:720px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(30px,4.5vw,46px);font-weight:900;letter-spacing:-.02em;text-transform:uppercase}
+.sec-head p{color:var(--muted);font-size:17px}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase;display:block;margin-bottom:10px}
+/* attack chain */
+.chain{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media(max-width:900px){.chain{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.chain{grid-template-columns:1fr}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;position:relative}
+.step .n{font-family:"IBM Plex Mono",monospace;color:var(--red);font-size:12px;letter-spacing:.1em}
+.step h3{font-size:18px;margin:8px 0 6px}
+.step p{color:var(--muted);font-size:14px;margin:0}
+/* walls explorer */
+.wall-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.wall-tabs button{flex:1;min-width:150px;background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:14px;cursor:pointer;text-align:left;font-family:Archivo;font-weight:700;font-size:15px}
+.wall-tabs button.active{border-color:var(--cyan);background:var(--panel2)}
+.wall-tabs button span{display:block;font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:11px;color:var(--muted);margin-top:3px}
+.wall-panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:800px){.wall-panel{grid-template-columns:1fr}}
+.wall-panel h3{font-size:30px;margin-bottom:8px}
+.wall-panel p{color:var(--muted)}
+.checklist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.checklist li{display:flex;gap:10px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;cursor:pointer;user-select:none}
+.checklist li.done{border-color:var(--green);opacity:.75}
+.checklist li .box{flex:0 0 20px;width:20px;height:20px;border:2px solid var(--line2);border-radius:5px;margin-top:1px;display:grid;place-items:center;color:#02141a;font-size:13px;font-weight:900}
+.checklist li.done .box{background:var(--green);border-color:var(--green)}
+.progress{height:10px;background:var(--bg2);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:14px}
+.progress i{display:block;height:100%;background:var(--cyan);width:0;transition:width .4s}
+/* quiz */
+.quiz{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.quiz-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
+@media(max-width:800px){.quiz-grid{grid-template-columns:1fr}}
+.q{padding:12px 0;border-bottom:1px dashed var(--line)}
+.q p{margin:0 0 8px;font-weight:600;font-size:15px}
+.q .opts{display:flex;gap:8px}
+.q .opts button{flex:1;padding:10px;border-radius:8px;border:1px solid var(--line2);background:var(--bg2);color:var(--ink);cursor:pointer;font-weight:600}
+.q .opts button.sel-y{background:var(--green);color:#02141a;border-color:var(--green)}
+.q .opts button.sel-n{background:var(--red);color:#fff;border-color:var(--red)}
+.gauge{text-align:center}
+.gauge-num{font-family:Archivo;font-size:84px;font-weight:900;line-height:1}
+.gauge-bar{height:14px;border-radius:99px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;margin:14px 0}
+.gauge-bar i{display:block;height:100%;width:0;background:var(--amber);transition:width .5s}
+/* cards */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:900px){.grid3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:560px){.grid3{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card h3{font-size:18px;margin:6px 0 8px}
+.card p{color:var(--muted);font-size:14px;margin:0}
+.badge{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;padding:4px 9px;border-radius:99px;border:1px solid var(--line2)}
+.badge.free{color:var(--green);border-color:var(--green)}
+.badge.paid{color:var(--amber);border-color:var(--amber)}
+.badge.freemium{color:var(--cyan);border-color:var(--cyan)}
+.card a.visit{display:inline-flex;margin-top:14px;font-weight:700;font-size:14px;text-decoration:none;padding:8px 0}
+/* prompts */
+.prompt{background:#020a10;border:1px solid var(--line2);border-radius:var(--radius);padding:18px;color:#d8f6ff}
+@media (prefers-color-scheme: light){.prompt{background:var(--panel)}}
+.prompt h3{font-size:16px;color:var(--ink)}
+.prompt pre{white-space:pre-wrap;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.6;color:var(--muted);margin:10px 0 14px}
+.copybtn{background:var(--panel2);border:1px solid var(--line2);color:var(--ink);border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:700}
+.copybtn:hover{border-color:var(--cyan);color:var(--cyan)}
+/* offer */
+.offer{background:var(--panel);border:2px solid var(--cyan);border-radius:20px;padding:32px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px}
+@media(max-width:800px){.offer{grid-template-columns:1fr}}
+.offer ul{list-style:none;padding:0;margin:16px 0;display:grid;gap:10px}
+.offer li::before{content:"▸ ";color:var(--lime);font-weight:900}
+.bigprice{font-family:Archivo;font-size:72px;font-weight:900;line-height:1}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:12px 0}
+details p{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:34px 0 50px;color:var(--dim);font-size:13px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:var(--lime);color:#0a1a02;font-weight:800;padding:12px 20px;border-radius:10px;z-index:99;transition:transform .3s;font-family:Archivo}
+.toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+<div class="wrap">
+  <nav>
+    <div class="logo">THE <em>5-WALL</em> FRAMEWORK</div>
+    <div class="navlinks">
+      <a href="#walls">The 5 Walls</a><a href="#score">Defense Score</a><a href="#sovereign">Sovereign AI</a><a href="#resources">Resources</a><a href="#get">Get the Manual</a>
+    </div>
+    <a class="btn" href="https://whop.com/checkout/plan_OoKJmiV1Xiady">Get the Manual — $19.99</a>
+  </nav>
+
+  <header class="hero">
+    <canvas id="net"></canvas>
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><span class="dot"></span> THREAT LEVEL: AUTONOMOUS &nbsp;•&nbsp; MANUAL FOR AMERICA</span>
+        <h1>The attacker<br>never sleeps.<br><span class="hl">Now your defense</span><br><span class="hl2">doesn't either.</span></h1>
+        <p class="lede">AI agents are now running real attack chains on their own — recon, exploit, steal — at machine speed, thousands of attempts while you sleep. <strong style="color:var(--ink)">The 5-Wall Framework</strong> is the interactive cybersecurity manual built for families, creators, and small businesses — not corporations.</p>
+        <div class="price-row">
+          <a class="btn" href="https://whop.com/checkout/plan_OoKJmiV1Xiady" style="font-size:17px;padding:16px 26px">Get the Interactive Manual →</a>
+          <div class="price">$19.99<small>ONE-TIME • INTERACTIVE PDF BOOK</small></div>
+        </div>
+        <a class="btn ghost" href="#score">Test your defenses first — free 60-second check ↓</a>
+        <div class="stats">
+          <div class="stat"><b data-count="5">5</b><span>defensive walls, built in order</span></div>
+          <div class="stat"><b data-count="6">6</b><span>copy-ready Sovereign AI prompts</span></div>
+          <div class="stat"><b data-count="72">72</b><span>hour incident plan, fill-in ready</span></div>
+          <div class="stat"><b data-count="20">20</b><span>tick-off actions across the 5 walls</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="terminal" aria-label="Live attack simulation">
+          <div class="term-head"><span>● ● ● &nbsp; LIVE ATTACK SIMULATION</span><span id="termClock">--:--:--</span></div>
+          <div class="term-body" id="term"></div>
+        </div>
+        <div class="wallviz" id="wallviz" role="group" aria-label="Wall status">
+          <button data-w="0" class="active"><b>01</b>IDENTITY</button>
+          <button data-w="1"><b>02</b>VERIFY</button>
+          <button data-w="2"><b>03</b>SPEED</button>
+          <button data-w="3"><b>04</b>SEPARATE</button>
+          <button data-w="4"><b>05</b>RECOVER</button>
+        </div>
+        <p class="mono" style="font-size:12px;color:var(--dim);text-align:center;margin:10px 0 0">Tap a wall above — it loads in the explorer below ↓</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ATTACK CHAIN -->
+  <section style="padding-top:10px">
+    <div class="sec-head"><span class="tag">// How the new attack works</span>
+      <h2>One AI agent. Five moves. Zero humans.</h2>
+      <p>This is the chain reported in the Anthropic disclosure everyone's sharing right now — an AI running an espionage-style operation mostly on its own. Every wall in this manual exists to break one of these moves.</p>
+    </div>
+    <div class="chain">
+      <div class="step"><span class="n">MOVE 01</span><h3>Recon</h3><p>Scans you, your business, your family, your old posts — builds a target map in minutes.</p></div>
+      <div class="step"><span class="n">MOVE 02</span><h3>Probe</h3><p>Tests thousands of doors: reused passwords, unpatched apps, exposed logins.</p></div>
+      <div class="step"><span class="n">MOVE 03</span><h3>Impersonate</h3><p>Cloned voices and video ask your people for money, codes, and access.</p></div>
+      <div class="step"><span class="n">MOVE 04</span><h3>Exploit</h3><p>Uses the first hole it finds — one weak account becomes the way into all of them.</p></div>
+      <div class="step"><span class="n">MOVE 05</span><h3>Extract</h3><p>Copies data, drains accounts, locks files — then does it again tomorrow. It never gets tired.</p></div>
+    </div>
+  </section>
+
+  <!-- WALLS -->
+  <section id="walls">
+    <div class="sec-head"><span class="tag">// The framework — interactive</span>
+      <h2>Build all five walls</h2>
+      <p>Tap each wall. Tick off the actions as you do them — your build progress saves for this session, and it's exactly how the checklists work inside the interactive PDF.</p>
+    </div>
+    <div class="wall-tabs" id="wallTabs"></div>
+    <div class="wall-panel" id="wallPanel"></div>
+  </section>
+
+  <!-- SCORE -->
+  <section id="score">
+    <div class="sec-head"><span class="tag">// 60-second self-assessment</span>
+      <h2>What's your defense score?</h2>
+      <p>Answer honestly. This runs right here on the page — nothing is sent anywhere.</p>
+    </div>
+    <div class="quiz"><div class="quiz-grid">
+      <div id="quizQs"></div>
+      <div class="gauge">
+        <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--dim)">YOUR DEFENSE SCORE</div>
+        <div class="gauge-num" id="gaugeNum">—</div>
+        <div class="gauge-bar"><i id="gaugeBar"></i></div>
+        <p id="gaugeText" style="color:var(--muted)">Answer the questions to see where an autonomous agent gets in first.</p>
+        <a class="btn" href="https://whop.com/checkout/plan_OoKJmiV1Xiady" style="margin-top:8px">Fix it with the manual — $19.99</a>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- INSIDE -->
+  <section>
+    <div class="sec-head"><span class="tag">// Inside the interactive PDF book</span>
+      <h2>A manual, not a pamphlet</h2>
+      <p>Clickable contents, tick-off checklists in every chapter, and fill-in worksheets you complete right inside the PDF.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><span class="badge freemium">WORKSHEETS</span><h3>Account Inventory</h3><p>Map every account that matters — email first, money second — so nothing is protected by luck.</p></div>
+      <div class="card"><span class="badge freemium">WORKSHEETS</span><h3>Family Code Word Planner</h3><p>Set the one rule that stops voice-clone scams cold: no code word, no action. Ever.</p></div>
+      <div class="card"><span class="badge freemium">WORKSHEETS</span><h3>First 72 Hours Plan</h3><p>Your first three moves, written down before you need them: freeze the money, secure email from a clean device, work outward.</p></div>
+      <div class="card"><span class="badge freemium">KEYWORD MAP</span><h3>Built on real search gaps</h3><p>Chapters are titled with the plain-language phrases people actually search — "how to protect yourself from AI scams," "family code word for scams," "what to do if your email gets hacked" — not vendor jargon.</p></div>
+      <div class="card"><span class="badge freemium">PARASITE METHOD</span><h3>Made to travel</h3><p>Every chapter ends with a share-ready summary card, so the framework spreads on big platforms while always pointing back to the full manual.</p></div>
+      <div class="card"><span class="badge freemium">MINDSET</span><h3>Assume breach</h3><p>Assume something gets in. Make it expensive, make it visible, make it recoverable. A human attacker gives up — an AI agent doesn't, so your defense has to be automatic too.</p></div>
+    </div>
+  </section>
+
+  <!-- SOVEREIGN AI -->
+  <section id="sovereign">
+    <div class="sec-head"><span class="tag">// Bonus section — The Sovereign AI</span>
+      <h2>Use AI as your shield, not your landlord</h2>
+      <p>Own your AI and your data instead of renting your mind from the big platforms. The manual ships with a copy-ready prompt pack — try three of them right here. Tap Copy, paste into your AI, fill the brackets.</p>
+    </div>
+    <div class="grid2" id="prompts"></div>
+    <p style="color:var(--muted);margin-top:16px">Plus three more inside the book: <strong style="color:var(--ink)">Account Audit</strong>, <strong style="color:var(--ink)">Privacy Policy Decoder</strong>, and <strong style="color:var(--ink)">Build My Incident Plan</strong> — 6 prompts total, included in the $19.99 manual.</p>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources">
+    <div class="sec-head"><span class="tag">// Go deeper — verified resources</span>
+      <h2>Cybersecurity programs &amp; official hubs</h2>
+      <p>Real training, real certifications, real reporting hubs — every link below goes to the program's own official site. Free vs. paid is marked on every card. Links verified November 2026.</p>
+    </div>
+
+    <h3 style="font-size:20px;margin:0 0 12px">Start free — official training</h3>
+    <div class="grid3" style="margin-bottom:28px">
+      <div class="card"><span class="badge free">FREE</span><h3>CISA Cybersecurity Training</h3><p>The U.S. Cybersecurity &amp; Infrastructure Security Agency's own training hub — no-cost courses for the public, professionals, and critical-infrastructure operators, including CISA Learning.</p><a class="visit" href="https://www.cisa.gov/topics/cybersecurity-best-practices/cybersecurity-training-exercises" target="_blank" rel="noopener">Visit CISA Training →</a></div>
+      <div class="card"><span class="badge free">FREE TRAINING + EXAM*</span><h3>ISC2 Certified in Cybersecurity (CC)</h3><p>Entry-level certification from the body behind CISSP. No experience required. Free self-paced training and a free first exam attempt under the One Million Certified in Cybersecurity program (*annual maintenance fee applies after you pass — check current terms on ISC2's site).</p><a class="visit" href="https://www.isc2.org/certifications/cc" target="_blank" rel="noopener">Visit ISC2 CC →</a></div>
+      <div class="card"><span class="badge freemium">FREE + PAID</span><h3>Cybrary</h3><p>Free account unlocks foundational courses, career-path starters, and intro labs. Paid Insider Pro unlocks full certification prep and hands-on virtual labs.</p><a class="visit" href="https://www.cybrary.it/collections" target="_blank" rel="noopener">Visit Cybrary →</a></div>
+      <div class="card"><span class="badge freemium">FREE + PAID</span><h3>TryHackMe</h3><p>Hands-on, browser-based labs — 650+ free rooms from complete-beginner to SOC analyst and penetration tester paths. Premium unlocks the full paths and certifications.</p><a class="visit" href="https://tryhackme.com/classrooms" target="_blank" rel="noopener">Visit TryHackMe →</a></div>
+      <div class="card"><span class="badge free">FREE HUB</span><h3>CISA Resources &amp; Tools</h3><p>CISA's free tools library: assessments, exercises, and guidance any American business can use today — the same agency behind the training above.</p><a class="visit" href="https://www.cisa.gov/resources-tools" target="_blank" rel="noopener">Visit CISA Resources →</a></div>
+    </div>
+
+    <h3 style="font-size:20px;margin:0 0 12px">Career certifications — paid</h3>
+    <div class="grid3" style="margin-bottom:28px">
+      <div class="card"><span class="badge paid">PAID</span><h3>Google Cybersecurity Certificate</h3><p>Google's 8-course program on Coursera — under 10 hrs/week, done in under 6 months, prepares you for entry-level analyst roles and for CompTIA Security+. Coursera lists $49/month after a 7-day free trial in the U.S.</p><a class="visit" href="https://coursera.org/professional-certificates/google-cybersecurity" target="_blank" rel="noopener">Visit on Coursera →</a></div>
+      <div class="card"><span class="badge paid">PAID</span><h3>CompTIA Security+</h3><p>The industry-standard early-career cybersecurity certification — globally recognized, DoD-approved, performance-based exam. The benchmark credential most entry-level postings name.</p><a class="visit" href="https://www.comptia.org/en/certifications/security/" target="_blank" rel="noopener">Visit CompTIA Security+ →</a></div>
+    </div>
+
+    <h3 style="font-size:20px;margin:0 0 12px">If it happens to you — official hubs</h3>
+    <div class="grid2">
+      <div class="card"><span class="badge free">FREE • FBI</span><h3>IC3 — Internet Crime Complaint Center</h3><p>The FBI's central hub for reporting cybercrime. File here first — your report feeds real investigations and the annual Internet Crime Report. Filing is free.</p><a class="visit" href="https://www.ic3.gov/Home/About" target="_blank" rel="noopener">Visit IC3.gov →</a></div>
+      <div class="card"><span class="badge free">FREE • FTC</span><h3>FTC — Identity Theft Advice for Consumers</h3><p>The Federal Trade Commission's consumer guidance: how to spot identity theft, place freezes and fraud alerts, and recover step by step.</p><a class="visit" href="https://www.ftc.gov/news-events/topics/identity-theft/advice-consumers" target="_blank" rel="noopener">Visit FTC.gov →</a></div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="get">
+    <div class="offer">
+      <div>
+        <span class="tag">// The complete manual</span>
+        <h2 style="font-size:clamp(30px,4vw,44px);text-transform:uppercase">The 5-Wall Framework — Interactive PDF Book</h2>
+        <ul>
+          <li>All 5 walls, chapter by chapter, with tick-off checklists</li>
+          <li>Fill-in worksheets: account inventory, code word planner, 72-hour plan</li>
+          <li>The Sovereign AI section + all 6 copy-ready defensive prompts</li>
+          <li>Keyword-gap chapter map — find help in the words you actually use</li>
+          <li>Clickable contents &amp; navigation — built to be used, not just read</li>
+        </ul>
+        <p style="color:var(--muted);font-size:14px">Built for American families, creators, and small businesses facing autonomous AI attacks. General educational guidance — not legal or professional security advice for your specific situation.</p>
+      </div>
+      <div style="text-align:center;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:28px">
+        <div class="mono" style="font-size:12px;letter-spacing:.12em;color:var(--dim)">COMPLETE MANUAL • ONE-TIME</div>
+        <div class="bigprice">$19.99</div>
+        <p style="color:var(--muted);margin:6px 0 20px">Instant interactive PDF. Yours to keep, print, and work through wall by wall.</p>
+        <a class="btn" href="https://whop.com/checkout/plan_OoKJmiV1Xiady" style="width:100%;font-size:17px;padding:16px">Get the Manual — $19.99</a>
+        <p class="mono" id="buyNote" style="font-size:12px;color:var(--dim);margin-top:12px">Secure checkout via Whop — $19.99 one-time. Instant access after payment.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap">
+          <span class="badge free">5 WALLS</span><span class="badge freemium">6 PROMPTS</span><span class="badge freemium">3 WORKSHEETS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding-top:0">
+    <div class="sec-head"><span class="tag">// Questions</span><h2>Before you build your walls</h2></div>
+    <details><summary>I'm not technical. Is this for me?</summary><p>Yes — that's exactly who it was written for. Every wall is plain-language actions on the phone and computer you already own. The checklists tell you the tap-by-tap order.</p></details>
+    <details><summary>What makes the PDF "interactive"?</summary><p>Clickable table of contents and chapter navigation, checkboxes you tick off inside the PDF as you complete each action, and fill-in worksheet fields for your account inventory, family code word plan, and 72-hour incident plan.</p></details>
+    <details><summary>What is the Sovereign AI prompt pack?</summary><p>Six copy-ready prompts that turn your AI assistant into a defensive tool: scam-check a suspicious message, verify a deepfake-style request, audit your accounts, decode a privacy policy, build your incident plan, and set up a family code-word protocol — plus the mindset of owning your data instead of renting your mind.</p></details>
+    <details><summary>How much does it cost?</summary><p>$19.99, one time. The interactive PDF book is yours to keep. The resource programs linked above are separate — each card marks whether they're free, freemium, or paid, on their own official sites.</p></details>
+    <details><summary>Does this guarantee I won't get hacked?</summary><p>No honest manual can promise that. The framework's promise is different: make an attack expensive, make it visible, and make it recoverable — the three things that stop an autonomous agent from turning one hole into total loss.</p></details>
+  </section>
+
+  <footer>
+    <p><strong style="color:var(--ink)">THE 5-WALL FRAMEWORK</strong> — Identity • Verification • Speed • Separation • Detection &amp; Recovery. The attacker never sleeps, so the defense can't either.</p>
+    <p>Resource links go to each program's official site and were verified November 2026; program pricing and free offers can change — confirm on the provider's site. This page is educational content, not legal advice.</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast">Prompt copied — paste it into your AI ✓</div>
+
+<script>
+// Ticker
+(function(){
+  var items = ["<b>THREAT:</b> AUTONOMOUS AI ATTACK CHAINS NOW RUN WITHOUT A HUMAN AT THE KEYBOARD","WALL 1 — IDENTITY: UNIQUE PASSWORDS + PASSKEYS","WALL 2 — VERIFICATION: NO CODE WORD, NO ACTION","WALL 3 — SPEED: AUTO-UPDATES ON, EVERYWHERE","WALL 4 — SEPARATION: MONEY ACCOUNTS LIVE APART","WALL 5 — RECOVERY: ALERTS ON + OFFLINE BACKUPS","MANUAL: $19.99 — INTERACTIVE PDF"];
+  var html = items.map(function(t){return "<span>"+t+"</span>"}).join("");
+  document.getElementById('ticker').innerHTML = html + html;
+})();
+// Clock
+setInterval(function(){ var d=new Date(); document.getElementById('termClock').textContent = d.toLocaleTimeString('en-US',{hour12:false}); },1000);
+// Terminal simulation
+(function(){
+  var lines = [
+    '<span class="r">[AGENT]</span> scanning target surface... 214 accounts found',
+    '<span class="r">[AGENT]</span> testing reused password from 2019 breach...',
+    '<span class="y">[WALL 1]</span> passkey required — credential rejected ✓',
+    '<span class="r">[AGENT]</span> voice clone deployed → "send the transfer now"',
+    '<span class="y">[WALL 2]</span> no family code word given — request refused ✓',
+    '<span class="r">[AGENT]</span> probing unpatched router firmware...',
+    '<span class="y">[WALL 3]</span> auto-update already applied — hole closed ✓',
+    '<span class="r">[AGENT]</span> attempting lateral move to money accounts...',
+    '<span class="y">[WALL 4]</span> separation enforced — no path found ✓',
+    '<span class="g">[RESULT]</span> attack cost: HIGH • visibility: TOTAL • recovery: READY',
+    '<span class="c">[5-WALL]</span> defense held. agent moves on to a softer target.'
+  ];
+  var el = document.getElementById('term'), i = 0;
+  function tick(){
+    if(i < lines.length){ el.innerHTML += lines[i] + "<br>"; i++; setTimeout(tick, 950); }
+    else { el.innerHTML += '<span class="cursor"></span>'; setTimeout(function(){ el.innerHTML=""; i=0; tick(); }, 6000); }
+  }
+  tick();
+})();
+// Canvas network
+(function(){
+  var c = document.getElementById('net'), x = c.getContext('2d'), W, H, pts = [];
+  function size(){ W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; }
+  size(); window.addEventListener('resize', size);
+  for(var i=0;i<55;i++) pts.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0006,vy:(Math.random()-.5)*.0006});
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function draw(){
+    x.clearRect(0,0,W,H);
+    pts.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>1)p.vx*=-1; if(p.y<0||p.y>1)p.vy*=-1; });
+    for(var a=0;a<pts.length;a++) for(var b=a+1;b<pts.length;b++){
+      var dx=(pts[a].x-pts[b].x)*W, dy=(pts[a].y-pts[b].y)*H, d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130){ x.strokeStyle='rgba(0,229,255,'+(0.16*(1-d/130))+')'; x.beginPath(); x.moveTo(pts[a].x*W,pts[a].y*H); x.lineTo(pts[b].x*W,pts[b].y*H); x.stroke(); }
+    }
+    pts.forEach(function(p){ x.fillStyle='rgba(0,229,255,.7)'; x.beginPath(); x.arc(p.x*W,p.y*H,1.8,0,7); x.fill(); });
+    if(!reduced) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+// Counters — values are final in the HTML so they read correctly with or without JS;
+// a brief highlight pulse marks them when they scroll into view.
+(function(){
+  var seen = new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; e.target.style.color='var(--cyan)'; setTimeout(function(){ e.target.style.color=''; },600); seen.unobserve(e.target); }); },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){ seen.observe(el); });
+})();
+// Walls data + explorer
+var WALLS = [
+  {n:"WALL 01", t:"Identity", sub:"Starve the agent's favorite food: reused passwords", body:"AI agents eat reused passwords for breakfast — one old breach becomes every account you own. Your email is the master key to your whole life, so it gets guarded hardest.", items:["Unique password on every account — password manager does the remembering","Passkeys or authenticator app everywhere they exist","Hardware key (or strongest 2FA offered) on email + money accounts","Freeze your credit at all three bureaus — free, and it blocks fake accounts in your name"]},
+  {n:"WALL 02", t:"Verification", sub:"The attack may arrive as a voice you trust", body:"The next attack won't always come through a screen — it'll sound like your kid, your boss, your bank. One rule breaks it: anything involving money, passwords, or account changes gets confirmed on a second channel first.", items:["Set a family / team code word — no code word, no action, no exceptions","Money or password request? Hang up, call back on a number you already trust","Treat urgent secrecy (\"don't tell anyone, act now\") as the scam signature","Agree the rule in advance, while nobody is panicking"]},
+  {n:"WALL 03", t:"Speed", sub:"Agents exploit known holes within minutes", body:"These agents don't invent new holes all day — they harvest known ones, fast. An unpatched device is an open door with a welcome mat. Updates are not chores; they're the wall itself.", items:["Auto-updates ON: phones, computers, browsers, routers","Turn on automatic app updates — especially banking, email, messaging","Update the router firmware — the device everyone forgets","Delete apps and browser extensions you no longer use"]},
+  {n:"WALL 04", t:"Separation", sub:"One breach must never become every breach", body:"If the agent gets in somewhere, separation decides whether it got a room or the whole house. Money lives apart from everyday browsing, and every connection gets only the access it truly needs.", items:["Bank, Stripe, Whop and payout accounts: separate email + strongest login","Revoke old API keys and connected apps you don't recognize","Least access: apps and team members get only what they need","Keep work, money, and social logins from sharing one password or inbox"]},
+  {n:"WALL 05", t:"Detection & Recovery", sub:"Make it visible. Make it recoverable.", body:"Assume something eventually gets in. Detection shrinks the damage from months to minutes, and a backup the attacker can't reach turns a catastrophe into a bad weekend.", items:["Login + transaction alerts ON for email, bank, and payout accounts","Backups an attacker on your network can't touch: offline drive or separate cloud","Write your first 3 moves down now: freeze money → secure email from a clean device → work outward","Know the official doors: report at IC3.gov, identity recovery via the FTC (links in Resources)"]}
+];
+var wallState = WALLS.map(function(){ return [false,false,false,false]; });
+var curWall = 0;
+function renderTabs(){
+  document.getElementById('wallTabs').innerHTML = WALLS.map(function(w,i){
+    var done = wallState[i].filter(Boolean).length;
+    return '<button data-i="'+i+'" class="'+(i===curWall?'active':'')+'">'+w.n+' — '+w.t+'<span>'+done+'/4 actions done</span></button>';
+  }).join("");
+  document.querySelectorAll('#wallTabs button').forEach(function(b){ b.addEventListener('click', function(){ curWall = +b.dataset.i; syncWallUI(); }); });
+}
+function renderPanel(){
+  var w = WALLS[curWall];
+  var pct = Math.round(wallState[curWall].filter(Boolean).length / 4 * 100);
+  document.getElementById('wallPanel').innerHTML =
+    '<div><span class="tag">'+w.n+'</span><h3>'+w.t+'</h3><p style="font-weight:700;color:var(--ink)">'+w.sub+'</p><p>'+w.body+'</p><div class="progress"><i style="width:'+pct+'%"></i></div><p class="mono" style="font-size:12px;color:var(--dim)">THIS WALL: '+pct+'% BUILT — FULL CHECKLIST + WORKSHEET IN THE $19.99 MANUAL</p></div>' +
+    '<ul class="checklist">' + w.items.map(function(it,j){ return '<li data-j="'+j+'" class="'+(wallState[curWall][j]?'done':'')+'"><span class="box">'+(wallState[curWall][j]?'✓':'')+'</span><span>'+it+'</span></li>'; }).join("") + '</ul>';
+  document.querySelectorAll('#wallPanel .checklist li').forEach(function(li){ li.addEventListener('click', function(){ var j=+li.dataset.j; wallState[curWall][j]=!wallState[curWall][j]; renderPanel(); renderTabs(); }); });
+}
+function syncWallUI(){ renderTabs(); renderPanel();
+  document.querySelectorAll('#wallviz button').forEach(function(b){ b.classList.toggle('active', +b.dataset.w===curWall); });
+}
+document.querySelectorAll('#wallviz button').forEach(function(b){ b.addEventListener('click', function(){ curWall=+b.dataset.w; syncWallUI(); document.getElementById('walls').scrollIntoView({behavior:'smooth'}); }); });
+syncWallUI();
+// Quiz
+var QS = [
+  "Do you use a different password for your email than for everything else?",
+  "Is two-factor / passkey login turned on for your bank and email?",
+  "Does your family or team have a code word for money requests?",
+  "Are automatic updates ON for your phone, computer, and router?",
+  "Do you get an alert when a new device logs into your accounts?",
+  "Do you have a backup an attacker couldn't reach (offline or separate cloud)?"
+];
+var answers = QS.map(function(){ return null; });
+document.getElementById('quizQs').innerHTML = QS.map(function(q,i){
+  return '<div class="q"><p>'+(i+1)+'. '+q+'</p><div class="opts"><button data-i="'+i+'" data-v="1" aria-label="Question '+(i+1)+' — Yes">YES</button><button data-i="'+i+'" data-v="0" aria-label="Question '+(i+1)+' — No">NO</button></div></div>';
+}).join("");
+document.querySelectorAll('#quizQs .opts button').forEach(function(b){
+  b.addEventListener('click', function(){
+    var i=+b.dataset.i; answers[i]=+b.dataset.v;
+    document.querySelectorAll('#quizQs .opts button[data-i="'+i+'"]').forEach(function(x){ x.className=''; });
+    b.className = answers[i] ? 'sel-y' : 'sel-n';
+    updateScore();
+  });
+});
+function updateScore(){
+  var done = answers.filter(function(a){ return a!==null; }).length;
+  if(!done) return;
+  var yes = answers.filter(function(a){ return a===1; }).length;
+  var score = Math.round(yes / QS.length * 100);
+  var num = document.getElementById('gaugeNum'), bar = document.getElementById('gaugeBar'), txt = document.getElementById('gaugeText');
+  num.textContent = score;
+  bar.style.width = score + '%';
+  bar.style.background = score>=80 ? 'var(--green)' : score>=50 ? 'var(--amber)' : 'var(--red)';
+  num.style.color = score>=80 ? 'var(--green)' : score>=50 ? 'var(--amber)' : 'var(--red)';
+  txt.textContent = done < QS.length ? 'Keep going — answer all 6 for your real exposure read.' :
+    score>=80 ? 'Strong posture. The manual hardens the last gaps and gives you the 72-hour plan for the day something still gets through.' :
+    score>=50 ? 'Half-built walls. An autonomous agent only needs the half that is missing — the manual builds them in order, fastest wins first.' :
+    'Wide open to an automated attack. Good news: Walls 1 and 2 close the biggest holes in under an hour. The manual walks you through both, tap by tap.';
+}
+// Prompts
+var PROMPTS = [
+  {t:"1 — Scam-Check This Message", p:"You are my personal scam analyst. I'm pasting a message I received. Tell me: (1) every red flag, (2) what the sender actually wants, (3) how to verify it safely without clicking anything in the message, (4) your verdict: SAFE / SUSPICIOUS / SCAM. Message: [PASTE MESSAGE]"},
+  {t:"2 — Verify This Request", p:"Someone contacted me claiming to be [NAME] asking for [MONEY / A CODE / ACCESS]. Give me a 60-second verification protocol: the exact questions to ask, which second channel to confirm on, and the red-flag answers that mean I stop immediately. Remember: our rule is no family code word, no action."},
+  {t:"3 — Code Word Protocol", p:"Help me set up a family code-word protocol against voice-clone scams. Give me: how to choose a word that can't be guessed from social media, how to roll it out to [NUMBER] family members without writing it anywhere unsafe, when it must be used, and how often to rotate it."}
+];
+document.getElementById('prompts').innerHTML = PROMPTS.map(function(pr,i){
+  return '<div class="prompt"><h3>'+pr.t+'</h3><pre>'+pr.p+'</pre><button class="copybtn" data-i="'+i+'">Copy this prompt</button></div>';
+}).join("");
+document.querySelectorAll('.copybtn').forEach(function(b){
+  b.addEventListener('click', function(){
+    var text = PROMPTS[+b.dataset.i].p;
+    function done(){ var t=document.getElementById('toast'); t.classList.add('show'); setTimeout(function(){ t.classList.remove('show'); },2200); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(done); } else { done(); }
+  });
+});
+</script>
+</body>
+</html>
